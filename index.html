@@ -64,18 +64,32 @@
         content: none;
       }
 
-      .claim {
-        font-size: 0.95em;
-        margin: 0.2em 0 0.45em;
-        color: #1f3f73;
-      }
-
       .reveal ul {
         margin-left: 0.8em;
       }
 
       .reveal li {
         margin: 0.12em 0;
+      }
+
+      .challenge-stack {
+        margin: 0.2em 0 0.32em;
+      }
+
+      .challenge-highlight {
+        display: block;
+        width: fit-content;
+        margin: 0.12em auto;
+        padding: 0.08em 0.42em;
+        border: 1.8px solid #c83f3f;
+        border-radius: 999px;
+        background: #fff5f5;
+        color: #8f1f1f;
+        text-align: center;
+      }
+
+      .challenge-highlight strong {
+        font-weight: 800;
       }
 
       .reference {
@@ -155,6 +169,38 @@
         max-height: 34vh;
       }
 
+      .visual-gf16 > svg {
+        max-height: 66vh;
+      }
+
+      .task-flow-explain {
+        margin-top: 0.28em;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.24em;
+      }
+
+      .task-flow-item {
+        border: 1px solid #bfd0ea;
+        border-radius: 8px;
+        background: #fbfdff;
+        padding: 0.18em 0.34em;
+        font-size: 0.66em;
+        line-height: 1.24;
+        color: #173a63;
+      }
+
+      .task-flow-item:nth-child(1) { background: #e8f1ff; border-color: #5d86c1; }
+      .task-flow-item:nth-child(2) { background: #e7fbf6; border-color: #3f9f87; }
+      .task-flow-item:nth-child(3) { background: #fff4dd; border-color: #d29632; }
+      .task-flow-item:nth-child(4) { background: #ffece6; border-color: #d67b5c; }
+      .task-flow-item:nth-child(5) { background: #f1ecff; border-color: #8b73c6; }
+      .task-flow-item:nth-child(6) { background: #ffe9f3; border-color: #c4689a; }
+
+      .task-flow-item strong {
+        color: #1f4273;
+      }
+
       .bet-pills {
         display: flex;
         gap: 0.4em;
@@ -199,12 +245,23 @@
         background: #f7fbff;
         color: #18345d;
         font-size: 0.86em;
+        text-align: center;
+      }
+
+      .reveal .plain-box,
+      .reveal .gray-box,
+      .reveal .question-box,
+      .reveal .toy-calc {
+        display: block;
+        width: fit-content;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
       }
 
       .gray-box {
         margin-top: 0.2em;
-        margin-left: auto;
-        margin-right: auto;
+        width: fit-content;
         max-width: 92%;
         padding: 0.28em 0.5em;
         border: 1px solid #c9cfd8;
@@ -233,11 +290,8 @@
         font-size: 0.9em;
         font-weight: 700;
         text-align: center;
-        display: table;
-        width: auto;
+        width: fit-content;
         max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
       }
 
       .toy-calc {
@@ -401,7 +455,7 @@
         left: 0;
         right: auto;
         width: 340px;
-        max-height: 72vh;
+        max-height: calc(100vh - 24px);
         height: auto;
         display: flex;
         flex-direction: column;
@@ -409,7 +463,7 @@
         justify-content: flex-start;
         gap: 8px;
         padding: 10px 12px;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(5px);
         border: 1px solid #b5c6e2;
         border-left: none;
@@ -498,9 +552,11 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        flex: 1 1 auto;
+        min-height: 0;
         overflow-y: auto;
         border-top: 1px solid #d8e3f5;
-        max-height: calc(72vh - 70px);
+        max-height: none;
       }
 
       .toc-group {
@@ -592,7 +648,7 @@
       .top-nav.collapsed {
         width: 58px;
         padding: 8px 6px;
-        background: rgba(255, 255, 255, 0.94);
+        background: rgba(255, 255, 255, 0.5);
       }
 
       .top-nav.collapsed .nav-left,
@@ -609,8 +665,11 @@
         align-items: center;
       }
 
-      .top-nav.collapsed .toc-toggle,
       .top-nav.collapsed .cover-jump {
+        display: none;
+      }
+
+      .top-nav.collapsed .toc-toggle {
         width: 44px;
         padding: 4px 0;
       }
@@ -748,7 +807,7 @@
             <h2>Two Systems Never Touch — Yet Risk Couples</h2>
             <img class="visual" src="assets/infodemic.png" alt="Coupling through human decision layer between rumor and disease networks" style="width: 48%; height: auto; display: block; margin: 0 auto;">
             <p class="question-box">How can two unconnected networks still couple and amplify risk?</p>
-            <p class="plain-box" style="max-width: 84%; margin-left: auto; margin-right: auto; text-align: left;">During COVID, misinformation and disease did not interact directly, but they coupled through human decisions. A rumor changes beliefs, beliefs change actions, and actions change exposure. That is the kind of coupled network dynamics I study. These systems do not touch, yet they amplify each other.</p>
+            <p class="plain-box" style="max-width: 84%;">During COVID, misinformation and disease did not interact directly, but they coupled through human decisions. A rumor changes beliefs, beliefs change actions, and actions change exposure. That is the kind of coupled network dynamics I study. These systems do not touch, yet they amplify each other.</p>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
             <aside class="notes">
               During COVID, misinformation and disease did not interact directly, but they coupled through human decisions.
@@ -766,34 +825,33 @@
             <p class="gray-box">Risk can propagate across domains: information to behavior to health to mobility to supply chain.</p>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
             <aside class="notes">
-              上半图强调非线性放大，下半图强调跨域级联。
-              这一页的目标是把“局部扰动为何变成系统风险”做成直观记忆点。
+              The upper figure highlights nonlinear amplification; the lower figure highlights cross-domain cascades.
+              The goal of this slide is an intuitive takeaway: local perturbations can become system-level risk.
               Next, we identify why modeling and prediction are difficult: heterogeneity, coupling, and interdisciplinary silos.
             </aside>
           </section>
 
           <section id="gf-04" data-subsection="Module 1 — Motivation">
             <h2>Why Graph Dynamics Under Uncertainty Is Hard</h2>
-            <p class="claim"><strong>Claim:</strong> Heterogeneity + coupling + siloed theories make uncertainty unavoidable and nontrivial.</p>
+            <div class="challenge-stack">
+              <p class="challenge-highlight"><strong>Heterogeneous:</strong> different domains have different state variables and data fidelity.</p>
+              <p class="challenge-highlight"><strong>Coupling:</strong> interactions happen through intermediate layers (policy/behavior/market mechanisms).</p>
+              <p class="challenge-highlight"><strong>Interdisciplinary:</strong> models exist in silos; cross-domain reuse is still rare.</p>
+            </div>
             <ul>
-              <li>Heterogeneous: different domains have different state variables and data fidelity.</li>
-              <li>Coupling: interactions happen through intermediate layers (policy/behavior/market mechanisms).</li>
-              <li>Interdisciplinary: models exist in silos; cross-domain reuse is still rare.</li>
               <li>Common bottleneck: pairwise/local reasoning breaks under interactions and uncertainty.</li>
               <li>Therefore we need a tutorial that is task-centered and uncertainty-aware.</li>
             </ul>
-            <img class="visual" src="assets/m1_why_hard_challenges.png" alt="Why graph dynamics under uncertainty is hard">
             <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
             <aside class="notes">
-              收束动机：难点不是单一模型，而是跨层异质与耦合。
-              先不进入图模型细节，先建立 UQ 共识。
+              Motivation wrap-up: the core challenge is not one model, but cross-layer heterogeneity and coupling.
+              Before graph-model details, we first establish a shared UQ vocabulary.
               Before we talk about graph dynamics specifically, we need a shared vocabulary for UQ.
             </aside>
           </section>
 
-          <section id="gf-05" data-subsection="Module 2 — UQ Basics">
+          <section id="gf-05" data-subsection="Module 1 — Motivation">
             <h2>What Is Uncertainty Quantification?</h2>
-            <p class="claim"><strong>Claim:</strong> UQ means producing distributions (not single numbers) for unknowns and predictions.</p>
             <ul>
               <li>Point estimate answers: 'what is the most likely value?'.</li>
               <li>UQ answers: 'how confident are we, and how wrong could we be?'.</li>
@@ -837,15 +895,14 @@
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              先立定义：UQ 的产物是分布与区间，不是单点。
-              讲清 posterior 与 predictive 是两个输出层。
+              Start with the definition: UQ outputs distributions and intervals, not single points.
+              Clarify that posterior and predictive are two distinct output layers.
               Next we define prior/posterior/predictive precisely.
             </aside>
           </section>
 
           <section id="gf-06" data-subsection="Module 2 — UQ Basics">
             <h2>Prior, Posterior, Predictive (The Minimum Toolkit)</h2>
-            <p class="claim"><strong>Claim:</strong> Posterior describes what we learned; predictive describes what we expect next.</p>
             <ul>
               <li>Prior p(θ): belief before data.</li>
               <li>Likelihood p(D|θ): data model.</li>
@@ -856,47 +913,17 @@
             <p class="formula">\[
             p(\theta\mid\mathcal{D}) \propto p(\mathcal{D}\mid\theta)\,p(\theta)
             \]</p>
-            <p class="formula">\[
-            p(y^\ast\mid\mathcal{D}) = \int p(y^\ast\mid\theta)\,p(\theta\mid\mathcal{D})\,d\theta
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .u6-ax{stroke:#345d92;stroke-width:2}
-                  .u6-t{font-family:"Times New Roman";fill:#163960}
-                  .u6-l{fill:none;stroke:#2f6fa6;stroke-width:3}
-                  .u6-r{fill:none;stroke:#d06745;stroke-width:3}
-                </style>
-                <rect x="20" y="20" width="560" height="240" rx="14" fill="#f8fbff" stroke="#a8bddf" stroke-width="2"/>
-                <rect x="620" y="20" width="560" height="240" rx="14" fill="#fffaf7" stroke="#d6b29d" stroke-width="2"/>
-                <text x="44" y="54" class="u6-t" font-size="22">Posterior of θ</text>
-                <line x1="70" y1="220" x2="540" y2="220" class="u6-ax"/>
-                <line x1="70" y1="220" x2="70" y2="70" class="u6-ax"/>
-                <path d="M80 218 C170 216,220 120,300 88 C370 66,450 138,530 214" class="u6-l"/>
-                <circle cx="220" cy="138" r="5" fill="#2f6fa6"/>
-                <circle cx="268" cy="108" r="5" fill="#2f6fa6"/>
-                <circle cx="332" cy="88" r="5" fill="#2f6fa6"/>
-                <text x="78" y="240" class="u6-t" font-size="16">θ</text>
-
-                <text x="644" y="54" class="u6-t" font-size="22">Predictive of \(y^\ast\)</text>
-                <line x1="670" y1="220" x2="1140" y2="220" class="u6-ax"/>
-                <line x1="670" y1="220" x2="670" y2="70" class="u6-ax"/>
-                <path d="M680 216 C760 198,790 120,860 100 C930 82,1020 130,1130 216" class="u6-r"/>
-                <path d="M680 216 C780 210,860 168,940 156 C1010 146,1080 170,1130 210" fill="#f5c9b7" opacity="0.55"/>
-                <text x="678" y="240" class="u6-t" font-size="16">\(y^\ast\)</text>
-              </svg>
-            </div>
+            <img class="visual" src="assets/posterior_prior.png" alt="Posterior and prior comparison" style="width: 60%; height: auto;">
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              逐条对齐 prior/likelihood/posterior/predictive，避免术语混淆。
-              强调 predictive 的积分本质：把参数不确定性传播到未来。
+              Align prior/likelihood/posterior/predictive one-by-one to avoid terminology confusion.
+              Emphasize the integral nature of predictive: it propagates parameter uncertainty to future outcomes.
               Next we clarify intervals: credible vs predictive.
             </aside>
           </section>
 
           <section id="gf-07" data-subsection="Module 2 — UQ Basics">
             <h2>Credible Interval vs Prediction Interval</h2>
-            <p class="claim"><strong>Claim:</strong> Credible intervals are about θ; prediction intervals are about future \(y^\ast\).</p>
             <ul>
               <li>Credible set Cα: P(θ in Cα | D)=1−α.</li>
               <li>Prediction interval Iα: P(\(y^\ast\) in Iα | D)=1−α.</li>
@@ -913,35 +940,41 @@
             <div class="visual">
               <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
                 <style>
-                  .u7-ax{stroke:#355e92;stroke-width:2}
+                  .u7-ax{stroke:#355e92;stroke-width:2.2}
                   .u7-t{font-family:"Times New Roman";fill:#16395f}
+                  .u7-mid{stroke:#5e7fae;stroke-width:2;stroke-dasharray:5 5}
                 </style>
-                <rect x="20" y="20" width="560" height="240" rx="14" fill="#f7fbff" stroke="#a9c0e1" stroke-width="2"/>
-                <rect x="620" y="20" width="560" height="240" rx="14" fill="#fff8f5" stroke="#dbb29d" stroke-width="2"/>
-                <text x="44" y="54" class="u7-t" font-size="22">Credible interval for θ (narrower)</text>
-                <line x1="72" y1="220" x2="540" y2="220" class="u7-ax"/>
-                <path d="M80 218 C180 210,240 108,300 92 C360 108,420 210,530 218" fill="none" stroke="#2f6fa6" stroke-width="3"/>
-                <rect x="244" y="96" width="112" height="124" fill="#c8dcf5" opacity="0.55"/>
-                <text x="258" y="116" class="u7-t" font-size="16">\(C_\alpha\)</text>
+                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f9fbff" stroke="#a9c0e1" stroke-width="2"/>
+                <text x="44" y="56" class="u7-t" font-size="22">Same center, different width</text>
 
-                <text x="644" y="54" class="u7-t" font-size="22">Prediction interval for \(y^\ast\) (wider)</text>
-                <line x1="672" y1="220" x2="1140" y2="220" class="u7-ax"/>
-                <path d="M680 218 C770 212,830 130,900 110 C970 130,1040 212,1130 218" fill="none" stroke="#d06c46" stroke-width="3"/>
-                <rect x="790" y="112" width="220" height="108" fill="#f6d4c7" opacity="0.55"/>
-                <text x="864" y="132" class="u7-t" font-size="16">\(I_\alpha\)</text>
+                <line x1="110" y1="155" x2="1090" y2="155" class="u7-ax"/>
+                <line x1="110" y1="235" x2="1090" y2="235" class="u7-ax"/>
+                <line x1="600" y1="108" x2="600" y2="265" class="u7-mid"/>
+                <text x="614" y="95" class="u7-t" font-size="16">same center</text>
+
+                <text x="120" y="116" class="u7-t" font-size="18">Credible interval \(C_\alpha\) for \(\theta\)</text>
+                <rect x="520" y="130" width="160" height="28" rx="10" fill="#c8dcf5" stroke="#2f6fa6" stroke-width="2"/>
+                <line x1="520" y1="124" x2="520" y2="164" stroke="#2f6fa6" stroke-width="2"/>
+                <line x1="680" y1="124" x2="680" y2="164" stroke="#2f6fa6" stroke-width="2"/>
+                <text x="708" y="149" class="u7-t" font-size="16">narrow</text>
+
+                <text x="120" y="196" class="u7-t" font-size="18">Prediction interval \(I_\alpha\) for \(y^\ast\)</text>
+                <rect x="430" y="210" width="340" height="28" rx="10" fill="#f6d4c7" stroke="#d06c46" stroke-width="2"/>
+                <line x1="430" y1="204" x2="430" y2="244" stroke="#d06c46" stroke-width="2"/>
+                <line x1="770" y1="204" x2="770" y2="244" stroke="#d06c46" stroke-width="2"/>
+                <text x="798" y="229" class="u7-t" font-size="16">wider (adds observation noise)</text>
               </svg>
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              这页目的就是“拆开两个 interval”。
-              用宽度直观说明为什么 prediction interval 更宽。
+              The goal of this slide is to separate the two interval concepts clearly.
+              Use interval width to show intuitively why prediction intervals are wider.
               Now we separate two uncertainty sources: aleatoric vs epistemic.
             </aside>
           </section>
 
           <section id="gf-08" data-subsection="Module 2 — UQ Basics">
             <h2>Aleatoric vs Epistemic Uncertainty</h2>
-            <p class="claim"><strong>Claim:</strong> Aleatoric is irreducible noise; epistemic is reducible model/knowledge uncertainty.</p>
             <ul>
               <li>Aleatoric: randomness in the data-generating process (noise, inherent variability).</li>
               <li>Epistemic: uncertainty due to limited data or model mismatch (can shrink with better data/models).</li>
@@ -955,48 +988,17 @@
             <p class="formula">\[
             \text{(interpretation: aleatoric)}\quad+\quad\text{(epistemic)}
             \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 290" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .u8-t{font-family:"Times New Roman";fill:#173a63}
-                  .u8-ax{stroke:#355f95;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="560" height="250" rx="14" fill="#f7fbff" stroke="#a8bfdc" stroke-width="2"/>
-                <rect x="620" y="20" width="560" height="250" rx="14" fill="#fffaf6" stroke="#d8b8a4" stroke-width="2"/>
-                <text x="44" y="52" class="u8-t" font-size="22">Aleatoric: vertical noise</text>
-                <line x1="72" y1="230" x2="540" y2="230" class="u8-ax"/>
-                <line x1="72" y1="230" x2="72" y2="70" class="u8-ax"/>
-                <line x1="82" y1="220" x2="520" y2="90" stroke="#2f7a4d" stroke-width="3"/>
-                <circle cx="120" cy="206" r="5" fill="#2f6fa6"/>
-                <circle cx="170" cy="188" r="5" fill="#2f6fa6"/>
-                <circle cx="230" cy="182" r="5" fill="#2f6fa6"/>
-                <circle cx="280" cy="144" r="5" fill="#2f6fa6"/>
-                <circle cx="340" cy="146" r="5" fill="#2f6fa6"/>
-                <circle cx="390" cy="128" r="5" fill="#2f6fa6"/>
-                <circle cx="450" cy="120" r="5" fill="#2f6fa6"/>
-                <text x="84" y="250" class="u8-t" font-size="15">same trend, noisy outcomes</text>
-
-                <text x="644" y="52" class="u8-t" font-size="22">Epistemic: model ambiguity in sparse region</text>
-                <line x1="672" y1="230" x2="1140" y2="230" class="u8-ax"/>
-                <line x1="672" y1="230" x2="672" y2="70" class="u8-ax"/>
-                <line x1="682" y1="214" x2="1120" y2="94" stroke="#d06a45" stroke-width="3"/>
-                <line x1="682" y1="198" x2="1120" y2="120" stroke="#5b88bf" stroke-width="3" stroke-dasharray="8 6"/>
-                <rect x="860" y="66" width="120" height="168" fill="#f4cfbe" opacity="0.35"/>
-                <text x="874" y="86" class="u8-t" font-size="15">data-sparse</text>
-                <text x="810" y="250" class="u8-t" font-size="15">multiple plausible models</text>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
+            <img class="visual" src="assets/Aleatoric vs Epistemic.png" alt="Aleatoric vs Epistemic uncertainty figure" style="width: 50%; height: auto;">
+            <p class="reference">Ref: <a href="https://medium.com/data-science/" target="_blank" rel="noopener noreferrer">https://medium.com/data-science/</a></p>
             <aside class="notes">
-              通过左右对比图，把两类不确定性变成可见对象。
-              告诉听众：采更多数据只能主要减少 epistemic。
+              The side-by-side comparison makes both uncertainty types visually concrete.
+              Tell the audience that collecting more data mainly reduces epistemic uncertainty.
               Finally, we need to define what "trustworthy probabilities" mean: calibration.
             </aside>
           </section>
 
           <section id="gf-09" data-subsection="Module 2 — UQ Basics">
             <h2>Calibration and Proper Scoring</h2>
-            <p class="claim"><strong>Claim:</strong> A predictive distribution is only useful if its probabilities match reality (calibration).</p>
             <ul>
               <li>Calibration: among events predicted at probability p, about p fraction should occur.</li>
               <li>Coverage: empirical frequency that intervals contain the truth.</li>
@@ -1038,21 +1040,20 @@
             </div>
             <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
             <aside class="notes">
-              这一页完成 UQ 基础闭环：定义好坏标准。
-              讲清 calibration 与 scoring 的关系。
+              This slide completes the UQ basics loop by defining quality criteria.
+              Clarify the relationship between calibration and scoring.
               Now we bring this UQ vocabulary into dynamic graph problems: what becomes θ, what becomes \(y^\ast\), and why uncertainty is non-local.
             </aside>
           </section>
 
           <section id="gf-10" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Graph Dynamics: What Are the Random Variables?</h2>
-            <p class="claim"><strong>Claim:</strong> Dynamic graph problems have uncertainty in topology, latent states, and observations.</p>
             <ul>
-              <li>Topology over time: adjacency \(A_t\) can evolve or be partially observed.</li>
-              <li>Latent state on nodes/edges: \(X_t\) (e.g., belief, infection, flow, congestion).</li>
-              <li>Observations: \(Y_t\) are noisy, missing, delayed, or aggregated versions of \(X_t\).</li>
-              <li>Parameters: θ control transition rates, coupling strengths, and noise levels.</li>
-              <li>This separation clarifies what to infer and what to predict.</li>
+              <li>\(A_t\): who is connected to whom at time \(t\). Everyday example: household, office, and subway contacts change day by day.</li>
+              <li>\(X_t\): hidden system state. Everyday example: whether someone is infected, believes a rumor, or plans to travel.</li>
+              <li>\(Y_t\): what we actually observe. Everyday example: hospital reports, social posts, and transit counts are noisy and incomplete.</li>
+              <li>\(\theta\): dynamic parameters. Everyday example: transmission rate, recovery rate, policy effect strength, and cross-layer coupling strength.</li>
+              <li>How to read the equation: use \(A_t, X_t, \theta\) to propagate to \(X_{t+1}\), then use \(Y_t\) to infer uncertainty.</li>
             </ul>
             <p class="formula">\[
             A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
@@ -1060,45 +1061,16 @@
             <p class="formula">\[
             X_{t+1} = F(X_t, A_t; \theta) + w_t
             \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g10-n{fill:#fff;stroke:#355f94;stroke-width:2}
-                  .g10-e{stroke:#5b82b5;stroke-width:2}
-                  .g10-t{font-family:"Times New Roman";fill:#163a63}
-                </style>
-                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
-                <text x="50" y="52" class="g10-t" font-size="20">t</text>
-                <text x="430" y="52" class="g10-t" font-size="20">t+1</text>
-                <text x="810" y="52" class="g10-t" font-size="20">t+2</text>
-                <g transform="translate(40,70)">
-                  <line x1="50" y1="50" x2="130" y2="30" class="g10-e"/><line x1="130" y1="30" x2="190" y2="70" class="g10-e"/><line x1="50" y1="50" x2="190" y2="70" class="g10-e"/>
-                  <circle cx="50" cy="50" r="10" class="g10-n"/><circle cx="130" cy="30" r="10" class="g10-n"/><circle cx="190" cy="70" r="10" class="g10-n"/>
-                </g>
-                <g transform="translate(420,70)">
-                  <line x1="50" y1="50" x2="130" y2="30" class="g10-e"/><line x1="130" y1="30" x2="210" y2="40" class="g10-e"/><line x1="50" y1="50" x2="210" y2="40" class="g10-e"/>
-                  <circle cx="50" cy="50" r="10" class="g10-n"/><circle cx="130" cy="30" r="10" class="g10-n"/><circle cx="210" cy="40" r="10" class="g10-n"/>
-                </g>
-                <g transform="translate(800,70)">
-                  <line x1="60" y1="42" x2="130" y2="70" class="g10-e"/><line x1="130" y1="70" x2="200" y2="40" class="g10-e"/><line x1="60" y1="42" x2="200" y2="40" class="g10-e"/>
-                  <circle cx="60" cy="42" r="10" class="g10-n"/><circle cx="130" cy="70" r="10" class="g10-n"/><circle cx="200" cy="40" r="10" class="g10-n"/>
-                </g>
-                <path d="M70 220 C300 190,520 150,760 130 C910 118,1030 108,1140 95" fill="none" stroke="#d06a45" stroke-width="3"/>
-                <path d="M70 220 C300 206,520 178,760 158 C910 146,1030 136,1140 122 L1140 162 C1030 176,910 186,760 198 C520 218,300 238,70 242 Z" fill="#f4cdbd" opacity="0.5"/>
-                <text x="74" y="208" class="g10-t" font-size="16">state uncertainty band widens over time</text>
-              </svg>
-            </div>
             <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
             <aside class="notes">
-              这页只做“对象定义”：A_t, X_t, Y_t, θ 分工明确。
-              先明确随机变量，再谈算法和验证。
+              This slide focuses only on object definitions: clear roles for \(A_t, X_t, Y_t, \theta\).
+              We define random variables first, then discuss methods and validation.
               Next, we show where UQ sits: posterior over latent quantities and predictive over task outputs.
             </aside>
           </section>
 
           <section id="gf-11" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Where UQ Sits: Posterior → Predictive → Decision</h2>
-            <p class="claim"><strong>Claim:</strong> Graph-dynamics UQ is about propagating uncertainty from latent variables to task outputs.</p>
             <ul>
               <li>Infer latent quantities: \(p(A_{1:T}, X_{1:T}, \theta \mid \mathcal{D})\).</li>
               <li>Define a task query Q (e.g., cascade size, source, future state).</li>
@@ -1135,21 +1107,20 @@
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              强调这不是三套独立任务，而是顺序依赖链。
-              point estimate 的缺陷就在于跳过了中间传播。
+              Emphasize this is not three independent tasks but a sequential dependency chain.
+              The core weakness of point estimates is that they skip intermediate uncertainty propagation.
               Now we locate entry points: structural, parametric, observational.
             </aside>
           </section>
 
           <section id="gf-12" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Three Entry Points of Uncertainty in Graph Dynamics</h2>
-            <p class="claim"><strong>Claim:</strong> Structural/parametric/observational uncertainty enter different parts of the model but all affect Q.</p>
             <ul>
-              <li>Structural: uncertainty in edges, communities, coupling links, or multiplex alignment.</li>
-              <li>Parametric: uncertain rates/strengths (transmission, recovery, coupling coefficients).</li>
-              <li>Observational: missing nodes/edges, sensor dropout, reporting delays, aggregation bias.</li>
-              <li>The same observed data can be explained by multiple (A, θ, X) combinations.</li>
-              <li>Practical UQ must keep all three entry points explicit.</li>
+              <li><strong>Structural uncertainty</strong> (\(A_{ij,t}\)): everyday example: we do not know all true contacts; edges are missed or misrecorded.</li>
+              <li><strong>Parametric uncertainty</strong> (\(\theta\)): everyday example: transmission intensity differs across office, dormitory, and subway settings.</li>
+              <li><strong>Observational uncertainty</strong> (\(\varepsilon_t, R_t\)): everyday example: delayed reports, content deletion, and changing reporting standards.</li>
+              <li>The same observations \(Y_t\) can often be explained by multiple \((A,\theta,X)\) combinations, so all three uncertainty types must be retained.</li>
+              <li>All three propagate to the same task output \(p(Q\mid\mathcal{D})\); otherwise risk intervals become overconfident.</li>
             </ul>
             <p class="formula">\[
             A_{ij,t}\sim \mathrm{Bernoulli}(p_{ij,t})
@@ -1160,53 +1131,16 @@
             <p class="formula">\[
             Y_t = H_t X_t + \varepsilon_t,\quad \varepsilon_t\sim \mathcal{N}(0,R_t)
             \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 260" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g12-t{font-family:"Times New Roman";fill:#163b64}
-                  .g12-n{fill:#fff;stroke:#355f95;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="1160" height="220" rx="14" fill="#f8fbff" stroke="#a9c1e1" stroke-width="2"/>
-                <text x="52" y="52" class="g12-t" font-size="20">Structural</text>
-                <text x="470" y="52" class="g12-t" font-size="20">Parametric</text>
-                <text x="860" y="52" class="g12-t" font-size="20">Observational</text>
-                <g>
-                  <circle cx="90" cy="120" r="10" class="g12-n"/><circle cx="160" cy="90" r="10" class="g12-n"/><circle cx="160" cy="150" r="10" class="g12-n"/><circle cx="240" cy="120" r="10" class="g12-n"/>
-                  <line x1="100" y1="120" x2="150" y2="95" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="100" y1="120" x2="150" y2="145" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="170" y1="90" x2="230" y2="120" stroke="#d06745" stroke-width="3" stroke-dasharray="8 6"/>
-                  <line x1="170" y1="150" x2="230" y2="120" stroke="#5d84b8" stroke-width="2"/>
-                </g>
-                <g>
-                  <rect x="460" y="86" width="250" height="70" rx="10" fill="#ffffff" stroke="#87a7d1" stroke-width="2"/>
-                  <text x="480" y="114" class="g12-t" font-size="16">coupling strength</text>
-                  <rect x="480" y="126" width="180" height="10" rx="5" fill="#dce8f8"/>
-                  <rect x="480" y="126" width="86" height="10" rx="5" fill="#5f87bf"/>
-                  <circle cx="566" cy="131" r="8" fill="#2f6fa6"/>
-                </g>
-                <g>
-                  <line x1="870" y1="170" x2="1120" y2="170" stroke="#355f95" stroke-width="2"/>
-                  <line x1="870" y1="170" x2="870" y2="86" stroke="#355f95" stroke-width="2"/>
-                  <path d="M880 166 C930 140,980 134,1030 120 C1070 108,1100 102,1120 94" fill="none" stroke="#2f6fa6" stroke-width="3"/>
-                  <circle cx="920" cy="148" r="4.5" fill="#d06745"/>
-                  <circle cx="975" cy="130" r="4.5" fill="#d06745"/>
-                  <circle cx="1040" cy="128" r="4.5" fill="#d06745"/>
-                  <line x1="1006" y1="114" x2="1024" y2="132" stroke="#c23f38" stroke-width="2.5"/>
-                  <line x1="1024" y1="114" x2="1006" y2="132" stroke="#c23f38" stroke-width="2.5"/>
-                </g>
-              </svg>
-            </div>
             <p class="reference">Ref: <strong>Discovering Latent Network Structure in Point Process Data</strong> — Linderman, Adams — ICML — 2014.</p>
             <aside class="notes">
-              把不确定性入口拆成三类，避免“都叫噪声”的混乱。
-              每类入口都会影响同一个 Q，但传播路径不同。
+              Split uncertainty entry points into three categories to avoid labeling everything as generic noise.
+              Each category affects the same \(Q\), but through different propagation paths.
               Next, we explain the core thesis: why uncertainty is not local in graphs.
             </aside>
           </section>
 
           <section id="gf-13" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Why Uncertainty Is Not Local in Graphs</h2>
-            <p class="claim"><strong>Claim:</strong> Topology and time couple variables, so local uncertainty becomes global outcome uncertainty.</p>
             <ul>
               <li>Graph connectivity breaks independence: paths overlap, so events are correlated.</li>
               <li>Small uncertainty on a bridge/hub can change reachability and cascade regimes.</li>
@@ -1255,223 +1189,92 @@
             </div>
             <p class="reference">Ref: <strong>A simple model of global cascades on random networks</strong> — Duncan J. Watts — PNAS — 2002.</p>
             <aside class="notes">
-              这一页给出主线句的技术含义：局部扰动经拓扑映射变成全局输出变化。
-              不要求观众会推导，只要看懂机制映射关系。
-              We next show one concrete mechanism: spectral amplification near epidemic/cascade thresholds.
+              This slide gives the technical meaning of the core claim: local perturbations become global output changes through topology.
+              The audience does not need full derivations, only the mechanism mapping.
+              Next, we move to the task-centered roadmap and map each task to a UQ deliverable.
             </aside>
           </section>
 
-          <section id="gf-14" data-subsection="Module 3 — UQ × Graph Dynamics">
-            <h2>Mechanism Example: Spectral Amplification Near Thresholds</h2>
-            <p class="claim"><strong>Claim:</strong> In many spreading/flow systems, the dominant eigenvalue controls stability; uncertainty in A becomes amplified.</p>
-            <ul>
-              <li>Many linearized dynamics depend on λ_max(A) (largest eigenvalue).</li>
-              <li>If parameters are near criticality, small topology uncertainty changes the regime.</li>
-              <li>This converts local edge uncertainty into global risk uncertainty (tails).</li>
-              <li>The practical signal is threshold crossing probability, not only mean trajectory.</li>
-            </ul>
-            <p class="formula">\[
-            \beta_c \approx \frac{\delta}{\lambda_{\max}(A)}
-            \]</p>
-            <p class="formula">\[
-            \lambda_{\max}(A+\Delta A) \approx \lambda_{\max}(A) + u^\top (\Delta A)\,u
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g14-t{font-family:"Times New Roman";fill:#163a63}
-                  .g14-ax{stroke:#355e92;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
-                <line x1="90" y1="220" x2="1130" y2="220" class="g14-ax"/>
-                <line x1="90" y1="220" x2="90" y2="70" class="g14-ax"/>
-                <text x="1090" y="245" class="g14-t" font-size="16">β</text>
-                <text x="45" y="86" class="g14-t" font-size="16" transform="rotate(-90 45,86)">prevalence</text>
-                <line x1="660" y1="70" x2="660" y2="220" stroke="#d06745" stroke-width="3" stroke-dasharray="8 6"/>
-                <text x="670" y="88" class="g14-t" font-size="16">critical threshold</text>
-                <rect x="610" y="72" width="100" height="148" fill="#f4d1c2" opacity="0.45"/>
-                <text x="612" y="238" class="g14-t" font-size="15">uncertain β</text>
-                <path d="M100 215 C250 210,360 190,500 160 C620 135,740 100,860 84 C940 72,1020 68,1120 66" fill="none" stroke="#2f6fa6" stroke-width="3"/>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Virus Spread in Networks</strong> — Van Mieghem, Omic, Kooij — IEEE/ACM Transactions on Networking — 2009.</p>
-            <aside class="notes">
-              把谱半径当作“放大器”来讲，重点在阈值附近的敏感性。
-              强调输出要看跨阈值概率和尾部风险。
-              Finally, we highlight time: uncertainty compounds sequentially, motivating filtering/forecasting modules.
-            </aside>
-          </section>
-
-          <section id="gf-15" data-subsection="Module 3 — UQ × Graph Dynamics">
-            <h2>Mechanism Example: Temporal Accumulation of Uncertainty</h2>
-            <p class="claim"><strong>Claim:</strong> Even if uncertainty is small per step, sequential propagation can accumulate into large prediction bands.</p>
-            <ul>
-              <li>Filtering/forecasting is recursive: today’s uncertainty becomes tomorrow’s prior.</li>
-              <li>Model mismatch + observation noise can create widening bands over time.</li>
-              <li>In dynamic graphs, topology changes introduce additional drift uncertainty.</li>
-              <li>Long-horizon reliability therefore depends on propagation quality, not one-step fit.</li>
-            </ul>
-            <p class="formula">\[
-            X_{t+1} = F(X_t,A_t;\theta) + w_t
-            \]</p>
-            <p class="formula">\[
-            \Sigma_{t+1} \approx F_t \Sigma_t F_t^\top + Q_t \quad (\text{linearized covariance propagation})
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 290" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g15-t{font-family:"Times New Roman";fill:#173a63}
-                  .g15-ax{stroke:#355f94;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="1160" height="250" rx="14" fill="#f7fbff" stroke="#a8c0df" stroke-width="2"/>
-                <line x1="80" y1="220" x2="1120" y2="220" class="g15-ax"/>
-                <line x1="80" y1="220" x2="80" y2="70" class="g15-ax"/>
-                <path d="M90 210 C250 198,380 170,520 150 C690 126,860 114,1110 96" fill="none" stroke="#2f6fa6" stroke-width="3"/>
-                <path d="M90 216 C250 212,380 196,520 184 C690 170,860 164,1110 156 L1110 84 C860 104,690 112,520 128 C380 142,250 184,90 204 Z" fill="#f3cbbb" opacity="0.55"/>
-                <text x="94" y="238" class="g15-t" font-size="15">forecast horizon</text>
-                <text x="98" y="90" class="g15-t" font-size="15">widening uncertainty band</text>
-                <g transform="translate(880,34)">
-                  <circle cx="18" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <circle cx="55" cy="12" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <circle cx="55" cy="34" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <line x1="25" y1="22" x2="48" y2="12" stroke="#5f86ba" stroke-width="1.8"/>
-                  <line x1="25" y1="22" x2="48" y2="34" stroke="#5f86ba" stroke-width="1.8"/>
-                </g>
-                <g transform="translate(980,34)">
-                  <circle cx="18" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <circle cx="55" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <circle cx="92" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
-                  <line x1="25" y1="22" x2="48" y2="22" stroke="#5f86ba" stroke-width="1.8"/>
-                  <line x1="62" y1="22" x2="85" y2="22" stroke="#5f86ba" stroke-width="1.8"/>
-                </g>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>A New Approach to Linear Filtering and Prediction Problems</strong> — Rudolf E. Kalman — Journal of Basic Engineering (ASME) — 1960.</p>
-            <aside class="notes">
-              这页强调“时间递推”本身就是风险累积机制。
-              把 one-step 准确和 long-horizon 可靠明确区分。
-              Now we are ready to organize the rest of the tutorial around graph tasks: each task defines Q and the required UQ deliverable.
-            </aside>
-          </section>
 
           <section id="gf-16" data-subsection="Module 4 — Roadmap">
-            <h2>Task-Centered Roadmap: Each Task Defines the Query Q</h2>
-            <p class="claim"><strong>Claim:</strong> We will organize the tutorial by graph tasks; UQ is the deliverable layer for each task.</p>
-            <ul>
-              <li>Step 1: define the task query Q (structure, diffusion, source, state, decision, validation).</li>
-              <li>Step 2: specify the deliverable: posterior, predictive, intervals, tail metrics, robust action.</li>
-              <li>Step 3: choose methods that propagate uncertainty correctly through topology and time.</li>
-              <li>Each module repeats the same template to keep comparisons consistent.</li>
-            </ul>
-            <p class="formula">\[
-            p(Q\mid \mathcal{D}) = \int p(Q\mid \Theta)\,p(\Theta\mid \mathcal{D})\,d\Theta
-            \]</p>
-            <div class="visual">
-              <table class="mechanism-table">
-                <thead>
-                  <tr>
-                    <th>Task</th>
-                    <th>Query Q</th>
-                    <th>Deliverable</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>Structure inference</td><td>which edges/couplings exist</td><td>posterior over structure</td></tr>
-                  <tr><td>Diffusion forecasting</td><td>future spread size/timing</td><td>predictive distribution + tails</td></tr>
-                  <tr><td>Source explanation</td><td>who/where started process</td><td>credible source set</td></tr>
-                  <tr><td>State estimation</td><td>hidden state over time</td><td>filtering/smoothing intervals</td></tr>
-                  <tr><td>Decision/intervention</td><td>policy loss/regret</td><td>robust risk-aware action</td></tr>
-                  <tr><td>Validation</td><td>calibration/coverage metrics</td><td>acceptance test report</td></tr>
-                </tbody>
-              </table>
+            <style>
+              #gf-16 { padding-bottom: 4.6em; }
+            </style>
+            <h2>Six-Task Upstream/Downstream Flow</h2>
+            <div class="visual visual-gf16">
+              <svg viewBox="0 0 1200 500" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g16-box{stroke-width:2.2}
+                  .g16-up{fill:#e8f1ff;stroke:#5d86c1}
+                  .g16-mid1{fill:#e7fbf6;stroke:#3f9f87}
+                  .g16-mid2{fill:#fff4dd;stroke:#d29632}
+                  .g16-mid3{fill:#ffece6;stroke:#d67b5c}
+                  .g16-down1{fill:#f1ecff;stroke:#8b73c6}
+                  .g16-down2{fill:#ffe9f3;stroke:#c4689a}
+                  .g16-t{font-family:"Times New Roman";fill:#163b63}
+                  .g16-k{font-family:"Times New Roman";fill:#2c4f7f}
+                  .g16-a1{stroke:#3f77b4;stroke-width:2.8;marker-end:url(#g16arr1)}
+                  .g16-a2{stroke:#d18832;stroke-width:2.8;marker-end:url(#g16arr2)}
+                  .g16-a3{stroke:#2f8e64;stroke-width:2.8;marker-end:url(#g16arr3)}
+                  .g16-m{fill:#fff8d8;stroke:#caa94f;stroke-width:2.2}
+                </style>
+                <defs>
+                  <marker id="g16arr1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                    <polygon points="0 0,8 4,0 8" fill="#3f77b4"/>
+                  </marker>
+                  <marker id="g16arr2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                    <polygon points="0 0,8 4,0 8" fill="#d18832"/>
+                  </marker>
+                  <marker id="g16arr3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                    <polygon points="0 0,8 4,0 8" fill="#2f8e64"/>
+                  </marker>
+                </defs>
+
+                <rect x="20" y="20" width="1160" height="460" rx="16" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
+                <text x="48" y="50" class="g16-t" font-size="20">Upstream → Midstream → Downstream</text>
+                <rect x="500" y="94" width="220" height="68" rx="13" class="g16-box g16-up"/>
+                <text x="518" y="134" class="g16-t" font-size="20">A. Structure inference</text>
+
+                <rect x="170" y="232" width="260" height="64" rx="12" class="g16-box g16-mid1"/>
+                <text x="188" y="271" class="g16-t" font-size="18">B. Diffusion forecasting</text>
+                <rect x="480" y="232" width="260" height="64" rx="12" class="g16-box g16-mid2"/>
+                <text x="498" y="271" class="g16-t" font-size="18">C. Source explanation</text>
+                <rect x="790" y="232" width="260" height="64" rx="12" class="g16-box g16-mid3"/>
+                <text x="808" y="271" class="g16-t" font-size="18">D. State estimation</text>
+
+                <circle cx="610" cy="356" r="18" class="g16-m"/>
+
+                <rect x="340" y="412" width="250" height="48" rx="10" class="g16-box g16-down1"/>
+                <text x="358" y="442" class="g16-t" font-size="17">E. Decision / intervention</text>
+                <rect x="630" y="412" width="250" height="48" rx="10" class="g16-box g16-down2"/>
+                <text x="648" y="442" class="g16-t" font-size="17">F. Validation / acceptance</text>
+
+                <line x1="610" y1="162" x2="300" y2="232" class="g16-a1"/>
+                <line x1="610" y1="162" x2="610" y2="232" class="g16-a1"/>
+                <line x1="610" y1="162" x2="920" y2="232" class="g16-a1"/>
+
+                <line x1="300" y1="296" x2="594" y2="356" class="g16-a2"/>
+                <line x1="610" y1="296" x2="610" y2="338" class="g16-a2"/>
+                <line x1="920" y1="296" x2="626" y2="356" class="g16-a2"/>
+
+                <line x1="610" y1="374" x2="465" y2="412" class="g16-a3"/>
+                <line x1="610" y1="374" x2="755" y2="412" class="g16-a3"/>
+              </svg>
             </div>
-            <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
+            <div class="task-flow-explain">
+              <div class="task-flow-item"><strong>A:</strong> infer uncertain graph structure and parameters from observed data.</div>
+              <div class="task-flow-item"><strong>B:</strong> forecast spread size and timing under uncertainty.</div>
+              <div class="task-flow-item"><strong>C:</strong> infer likely source nodes and transmission paths.</div>
+              <div class="task-flow-item"><strong>D:</strong> estimate hidden graph states over time.</div>
+              <div class="task-flow-item"><strong>E:</strong> choose robust interventions that balance risk and cost.</div>
+              <div class="task-flow-item"><strong>F:</strong> audit calibration and coverage before deployment.</div>
+            </div>
             <aside class="notes">
-              用一页表把后续模块统一在同一语法里，降低认知负担。
-              重点是“先 Q，再 deliverable，再 method”。
-              Next, we show dependencies: upstream uncertainty propagates downstream.
+              This merged slide only explains upstream/downstream relationships among the six tasks.
+              A is the upstream source, B/C/D are midstream modeling tasks, and E/F are downstream consumers.
             </aside>
           </section>
 
-          <section id="gf-17" data-subsection="Module 4 — Roadmap">
-            <h2>Dependency Map: How Uncertainty Propagates Across Tasks</h2>
-            <p class="claim"><strong>Claim:</strong> Downstream tasks consume upstream posteriors; uncertainty must be propagated end-to-end.</p>
-            <ul>
-              <li>Structure inference affects all downstream predictions.</li>
-              <li>Diffusion/explanation/state models define \(p(Q\mid\Theta)\).</li>
-              <li>Decision consumes \(p(Q\mid\mathcal{D})\); validation audits all layers.</li>
-              <li>Breaking this chain produces overconfident and brittle outcomes.</li>
-            </ul>
-            <p class="formula">\[
-            p(Z\mid \mathcal{D})=\int p(Z\mid A,\theta)\,p(A,\theta\mid \mathcal{D})\,dA\,d\theta
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 250" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g17-b{fill:#fff;stroke:#356094;stroke-width:2}
-                  .g17-t{font-family:"Times New Roman";fill:#163b63}
-                </style>
-                <rect x="40" y="68" width="290" height="110" rx="14" class="g17-b"/>
-                <rect x="455" y="68" width="290" height="110" rx="14" class="g17-b"/>
-                <rect x="870" y="68" width="290" height="110" rx="14" class="g17-b"/>
-                <text x="96" y="106" class="g17-t" font-size="24">Posterior layer</text>
-                <text x="92" y="132" class="g17-t" font-size="17">structure + parameters</text>
-                <text x="515" y="106" class="g17-t" font-size="24">Model layer</text>
-                <text x="506" y="132" class="g17-t" font-size="17">diffusion / inverse / state</text>
-                <text x="934" y="106" class="g17-t" font-size="24">Output layer</text>
-                <text x="922" y="132" class="g17-t" font-size="17">decision + validation</text>
-                <line x1="330" y1="124" x2="455" y2="124" stroke="#537fb3" stroke-width="3"/>
-                <polygon points="455,124 443,118 443,130" fill="#537fb3"/>
-                <line x1="745" y1="124" x2="870" y2="124" stroke="#537fb3" stroke-width="3"/>
-                <polygon points="870,124 858,118 858,130" fill="#537fb3"/>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
-            <aside class="notes">
-              这页回答“为什么要端到端传播不确定性”。
-              每层都可审计，但不能彼此割裂。
-              Finally, we announce the next section: we dive into each task family one by one.
-            </aside>
-          </section>
-
-          <section id="gf-18" data-subsection="Module 4 — Roadmap">
-            <h2>From Here: We Proceed Task-by-Task</h2>
-            <p class="claim"><strong>Claim:</strong> The remainder of the tutorial is organized around dynamic graph tasks, each paired with UQ deliverables.</p>
-            <ul>
-              <li>A. Dynamic structure inference (posterior over edges/communities/couplings).</li>
-              <li>B. Diffusion &amp; cascades (predictive distribution + tail risk).</li>
-              <li>C. Explanation / inverse problems (posterior over sources/paths).</li>
-              <li>D. Graph state estimation (filtering/smoothing bands over time).</li>
-              <li>E. Decision &amp; intervention (robust / risk-aware actions).</li>
-              <li>F. Validation &amp; acceptance (calibration, coverage, stress tests).</li>
-            </ul>
-            <div class="visual">
-              <svg viewBox="0 0 1200 250" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g18-b{fill:#fff;stroke:#356093;stroke-width:2}
-                  .g18-t{font-family:"Times New Roman";fill:#163b64}
-                </style>
-                <rect x="30" y="42" width="360" height="56" rx="10" class="g18-b"/>
-                <rect x="420" y="42" width="360" height="56" rx="10" class="g18-b"/>
-                <rect x="810" y="42" width="360" height="56" rx="10" class="g18-b"/>
-                <rect x="30" y="142" width="360" height="56" rx="10" class="g18-b"/>
-                <rect x="420" y="142" width="360" height="56" rx="10" class="g18-b"/>
-                <rect x="810" y="142" width="360" height="56" rx="10" class="g18-b"/>
-                <text x="52" y="77" class="g18-t" font-size="18">A. Dynamic structure inference</text>
-                <text x="442" y="77" class="g18-t" font-size="18">B. Diffusion and cascades</text>
-                <text x="832" y="77" class="g18-t" font-size="18">C. Explanation / inverse</text>
-                <text x="52" y="177" class="g18-t" font-size="18">D. Graph state estimation</text>
-                <text x="442" y="177" class="g18-t" font-size="18">E. Decision and intervention</text>
-                <text x="832" y="177" class="g18-t" font-size="18">F. Validation and acceptance</text>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
-            <aside class="notes">
-              最后一页是导航承诺：后续每个任务都回到同一 UQ 框架。
-              听众不需要一次记住所有方法，只需记住任务与输出配对。
-              We start with Module A: dynamic structure inference.
-            </aside>
-          </section>
         </section>
       </div>
     </div>
@@ -1522,6 +1325,11 @@
         }
       }
 
+      function toggleToc() {
+        const isCollapsed = topNavEl ? topNavEl.classList.contains('collapsed') : false;
+        setTocCollapsed(!isCollapsed);
+      }
+
       function getSlideTitle(slide, index) {
         if (!slide) return `Slide ${index}`;
         const heading = slide.querySelector('h1, h2, h3');
@@ -1561,14 +1369,16 @@
         const sectionBuckets = [];
         const sectionMap = new Map();
         const slides = Reveal.getSlides();
-        const totalSlides = slides.length;
         slides.forEach((slide) => slide.removeAttribute('data-heading-index'));
 
         slides.forEach((slide, idx) => {
-          slide.setAttribute('data-page-index', `${idx + 1}/${totalSlides}`);
+          const slideIndices = Reveal.getIndices(slide);
+          const sectionNumber = (slideIndices.h || 0) + 1;
+          const sectionSlideNumber = ((slideIndices.v ?? 0) + 1);
+          slide.setAttribute('data-page-index', `${sectionNumber}.${sectionSlideNumber}`);
 
           if (slide && slide.id === 'cover') return;
-          const indices = Reveal.getIndices(slide);
+          const indices = slideIndices;
           const sectionEl = getSectionContainer(slide);
 
           if (!sectionMap.has(sectionEl)) {
@@ -1596,6 +1406,8 @@
           bucket.subsectionMap.get(subsectionTitle).entries.push({
             slide,
             indices,
+            pageNumber: idx + 1,
+            badgeNumber: `${sectionNumber}.${sectionSlideNumber}`,
             title: getSlideTitle(slide, idx + 1),
             itemEl: null,
             groupEl: null,
@@ -1609,26 +1421,25 @@
 
           const groupTitle = document.createElement('span');
           groupTitle.className = 'toc-group-title';
-          groupTitle.textContent = `${bucket.sectionNumber}. ${bucket.title}`;
+          groupTitle.textContent = bucket.title;
           groupLi.appendChild(groupTitle);
 
           const subList = document.createElement('ul');
           subList.className = 'toc-sub-list';
 
-          bucket.subsections.forEach((subsection, subsectionIndex) => {
-            const subsectionNumber = `${bucket.sectionNumber}.${subsectionIndex + 1}`;
+          bucket.subsections.forEach((subsection) => {
             const subsectionLi = document.createElement('li');
             subsectionLi.className = 'toc-subsection';
 
             const subsectionTitleEl = document.createElement('span');
             subsectionTitleEl.className = 'toc-subsection-title';
-            subsectionTitleEl.textContent = `${subsectionNumber} ${subsection.title}`;
+            subsectionTitleEl.textContent = subsection.title;
             subsectionLi.appendChild(subsectionTitleEl);
 
             const subsectionItems = document.createElement('ul');
             subsectionItems.className = 'toc-subsection-items';
 
-            subsection.entries.forEach((entry, entryIndex) => {
+            subsection.entries.forEach((entry) => {
               const itemLi = document.createElement('li');
               itemLi.className = 'toc-item';
 
@@ -1636,13 +1447,13 @@
               btn.type = 'button';
               btn.className = 'toc-link';
 
-              const itemNumber = `${subsectionNumber}.${entryIndex + 1}`;
+              const itemNumber = entry.badgeNumber || String(entry.pageNumber);
               const isCoverSlide = entry.slide && entry.slide.id === 'cover';
               if (!isCoverSlide) {
                 entry.slide.setAttribute('data-heading-index', itemNumber);
               }
-              btn.textContent = `${itemNumber} ${entry.title}`;
-              btn.setAttribute('aria-label', `Go to ${itemNumber}: ${entry.title}`);
+              btn.textContent = `${itemNumber}. ${entry.title}`;
+              btn.setAttribute('aria-label', `Go to page ${itemNumber}: ${entry.title}`);
               btn.addEventListener('click', () => Reveal.slide(entry.indices.h, entry.indices.v || 0));
 
               itemLi.appendChild(btn);
@@ -1717,10 +1528,7 @@
       }
 
       if (tocToggleBtn) {
-        tocToggleBtn.addEventListener('click', () => {
-          const isCollapsed = topNavEl ? topNavEl.classList.contains('collapsed') : false;
-          setTocCollapsed(!isCollapsed);
-        });
+        tocToggleBtn.addEventListener('click', toggleToc);
       }
 
       if (coverJumpBtn) {
@@ -1729,11 +1537,7 @@
         });
       }
 
-      try {
-        setTocCollapsed(localStorage.getItem(tocCollapseStorageKey) === '1', false);
-      } catch (_err) {
-        setTocCollapsed(false, false);
-      }
+      setTocCollapsed(false, false);
 
       Reveal.on('ready', () => {
         buildToc();
