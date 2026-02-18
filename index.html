@@ -1,41 +1,1754 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Global Framework - Dynamic Graph UQ</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/simple.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section data-visibility="hidden">Slide X</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <style>
+      .reveal {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+      }
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+      body {
+        background:
+          radial-gradient(circle at 15% 18%, #eef4ff 0, #eef4ff 18%, transparent 45%),
+          radial-gradient(circle at 88% 86%, #fff1e6 0, #fff1e6 16%, transparent 42%),
+          linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      }
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+      .reveal section {
+        text-align: left;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding-bottom: 2.8em;
+      }
+
+      .reveal section[data-page-index]::after {
+        content: attr(data-page-index);
+        position: absolute;
+        right: 0.44em;
+        bottom: 0.32em;
+        font-size: 0.64em;
+        font-weight: 700;
+        color: #7c91b0;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid #d6e1f2;
+        border-radius: 999px;
+        padding: 0.1em 0.48em;
+        line-height: 1;
+        letter-spacing: 0.01em;
+        z-index: 5;
+      }
+
+      .reveal h2,
+      .reveal h3 {
+        text-align: left;
+        margin-bottom: 0.2em;
+        letter-spacing: 0.01em;
+        color: #10233f;
+        text-transform: none !important;
+      }
+
+      .reveal section h2::before,
+      .reveal section h3::before {
+        content: none;
+      }
+
+      .claim {
+        font-size: 0.95em;
+        margin: 0.2em 0 0.45em;
+        color: #1f3f73;
+      }
+
+      .reveal ul {
+        margin-left: 0.8em;
+      }
+
+      .reveal li {
+        margin: 0.12em 0;
+      }
+
+      .reference {
+        font-size: 0.52em;
+        color: #39577f;
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin: 0;
+      }
+
+      .visual {
+        margin-top: 0.3em;
+        max-width: 100%;
+      }
+
+      .formula {
+        font-size: 0.9em;
+      }
+
+      .formula-subtle {
+        margin-top: 0.2em;
+        font-size: 0.64em;
+        color: #607594;
+        opacity: 0.92;
+      }
+
+      .reveal pre.mermaid {
+        box-shadow: 0 10px 24px rgba(16, 35, 63, 0.08);
+        border: 1px solid #b5c6e2;
+        border-radius: 12px;
+        padding: 0.4em;
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+        overflow: hidden;
+      }
+
+      .visual > svg,
+      .visual .mermaid svg {
+        display: block;
+        margin: 0 auto;
+        max-width: 100% !important;
+        max-height: 30vh;
+        height: auto !important;
+      }
+
+      .visual > img {
+        display: block;
+        margin: 0 auto;
+        max-width: 80% !important;
+        max-height: 30vh;
+        height: auto !important;
+      }
+
+      img.visual {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
+        height: auto;
+      }
+
+      .visual > svg {
+        border: 1px solid #b5c6e2;
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(16, 35, 63, 0.08);
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      }
+
+      .visual > img {
+        border: 1px solid #b5c6e2;
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(16, 35, 63, 0.08);
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      }
+
+      .visual-gf1 > svg {
+        max-height: 34vh;
+      }
+
+      .bet-pills {
+        display: flex;
+        gap: 0.4em;
+        margin: 0.15em 0 0.35em;
+        flex-wrap: wrap;
+      }
+
+      .bet-pill {
+        border: 1px solid #7d93b8;
+        border-radius: 999px;
+        padding: 0.08em 0.5em;
+        font-size: 0.68em;
+        color: #1f3f73;
+        background: #f3f7ff;
+      }
+
+      .step-list {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      .step-list li {
+        border-left: 3px solid #5b7eb7;
+        background: #f6f9ff;
+        padding: 0.28em 0.5em;
+        margin: 0.18em 0;
+      }
+
+      .step-list.compact li {
+        padding: 0.2em 0.42em;
+        margin: 0.12em 0;
+        font-size: 0.92em;
+        line-height: 1.24;
+      }
+
+      .plain-box {
+        margin-top: 0.35em;
+        padding: 0.4em 0.55em;
+        border: 1px solid #b7c7e3;
+        border-radius: 10px;
+        background: #f7fbff;
+        color: #18345d;
+        font-size: 0.86em;
+      }
+
+      .gray-box {
+        margin-top: 0.2em;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 92%;
+        padding: 0.28em 0.5em;
+        border: 1px solid #c9cfd8;
+        border-radius: 12px;
+        background: #f1f3f6;
+        color: #3f4c5e;
+        font-size: 0.78em;
+        line-height: 1.24;
+        text-align: center;
+      }
+
+      .visual-stack-img {
+        width: 59%;
+        height: auto;
+        display: block;
+        margin: 0.14em auto 0;
+      }
+
+      .question-box {
+        margin-top: 0.28em;
+        padding: 0.32em 0.5em;
+        border: 2px solid #c83f3f;
+        border-radius: 12px;
+        background: #fff5f5;
+        color: #8f1f1f;
+        font-size: 0.9em;
+        font-weight: 700;
+        text-align: center;
+        display: table;
+        width: auto;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .toy-calc {
+        margin-top: 0.22em;
+        padding: 0.24em 0.42em;
+        border: 1px dashed #9fb5d8;
+        border-radius: 9px;
+        background: #f7fbff;
+        color: #173a66;
+        font-size: 0.7em;
+        line-height: 1.26;
+      }
+
+      .toy-calc strong {
+        color: #1f4d82;
+      }
+
+      .term-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.35em;
+        margin-top: 0.35em;
+      }
+
+      .term-card {
+        border: 1px solid #bfd0ea;
+        border-radius: 10px;
+        background: #fbfdff;
+        padding: 0.34em 0.45em;
+        font-size: 0.8em;
+        line-height: 1.28;
+      }
+
+      .term-card strong {
+        color: #16365f;
+      }
+
+      .term-card.term-c1 {
+        border-color: #8aa7d3;
+        background: #eef4ff;
+      }
+
+      .term-card.term-c2 {
+        border-color: #83b89c;
+        background: #eef8f2;
+      }
+
+      .term-card.term-c3 {
+        border-color: #d4aa6d;
+        background: #fff7ec;
+      }
+
+      .term-card.term-c4 {
+        border-color: #d79a93;
+        background: #fff2f0;
+      }
+
+      .term-card.term-c1 strong { color: #2f568a; }
+      .term-card.term-c2 strong { color: #2e7d58; }
+      .term-card.term-c3 strong { color: #b07220; }
+      .term-card.term-c4 strong { color: #b64f45; }
+
+      .mechanism-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.32em;
+        font-size: 0.78em;
+        border: 1px solid #b2c5e0;
+        border-bottom: 2px solid #6f8eb8;
+      }
+
+      .mechanism-table th,
+      .mechanism-table td {
+        border: 1px solid #bfd0ea;
+        padding: 0.24em 0.35em;
+        vertical-align: top;
+      }
+
+      .mechanism-table th {
+        background: #eef4ff;
+        color: #173861;
+      }
+
+      .mechanism-table tr:nth-child(even) td {
+        background: #fbfdff;
+      }
+
+      .mechanism-table tbody tr:last-child td,
+      .mechanism-table tbody tr:last-child th {
+        border-bottom: 2px solid #6f8eb8;
+      }
+
+      .micro-bars {
+        margin-top: 0.34em;
+      }
+
+      .micro-row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        align-items: center;
+        gap: 8px;
+        margin: 6px 0;
+        font-size: 0.74em;
+      }
+
+      .micro-row span {
+        color: #16365f;
+      }
+
+      .micro-track {
+        height: 10px;
+        border-radius: 999px;
+        background: #e3edf9;
+        overflow: hidden;
+      }
+
+      .micro-fill {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+      }
+
+      .micro-fill-a {
+        width: 62%;
+        background: linear-gradient(90deg, #2f568a, #5f88be);
+        animation: pulseA 2.8s ease-in-out infinite;
+      }
+
+      .micro-fill-b {
+        width: 34%;
+        background: linear-gradient(90deg, #c47f33, #e0aa64);
+        animation: pulseB 2.8s ease-in-out infinite;
+      }
+
+      .micro-caption {
+        margin-top: 0.2em;
+        font-size: 0.66em;
+        color: #4a6388;
+      }
+
+      @keyframes pulseA {
+        0%, 100% { width: 62%; }
+        50% { width: 70%; }
+      }
+
+      @keyframes pulseB {
+        0%, 100% { width: 34%; }
+        50% { width: 26%; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .micro-fill-a,
+        .micro-fill-b {
+          animation: none;
+        }
+      }
+
+      .top-nav {
+        position: fixed;
+        bottom: 18px;
+        left: 0;
+        right: auto;
+        width: 340px;
+        max-height: 72vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
+        border: 1px solid #b5c6e2;
+        border-left: none;
+        border-radius: 0 12px 12px 0;
+        z-index: 50;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        transition: width 180ms ease, padding 180ms ease, background 180ms ease;
+      }
+
+      .top-nav .nav-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .top-nav .nav-left {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 6px;
+      }
+
+      .toc-toggle {
+        border: 1px solid #9ab0d4;
+        background: #f5f9ff;
+        color: #1f4273;
+        border-radius: 8px;
+        padding: 3px 8px;
+        font-size: 11px;
+        line-height: 1.15;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .toc-toggle:hover {
+        background: #e8f0ff;
+      }
+
+      .cover-jump {
+        border: 1px solid #88a2cb;
+        background: #eaf2ff;
+        color: #173d71;
+        border-radius: 8px;
+        padding: 3px 8px;
+        font-size: 11px;
+        line-height: 1.15;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .cover-jump:hover {
+        background: #dceaff;
+      }
+
+      .top-nav .nav-kicker {
+        display: block;
+        font-size: 10px;
+        text-transform: none;
+        letter-spacing: 0.03em;
+        color: #4c668d;
+      }
+
+      .top-nav .nav-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #10233f;
+        white-space: normal;
+        line-height: 1.2;
+        max-width: 100%;
+        margin-bottom: 2px;
+      }
+
+      .top-nav .nav-page {
+        min-width: 62px;
+        text-align: left;
+        font-size: 12px;
+        color: #2f568a;
+      }
+
+      .toc-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-y: auto;
+        border-top: 1px solid #d8e3f5;
+        max-height: calc(72vh - 70px);
+      }
+
+      .toc-group {
+        margin: 0;
+        border-bottom: 1px solid #edf2fa;
+      }
+
+      .toc-group-title {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        color: #2f4f80;
+        background: #eff5ff;
+        padding: 7px 8px;
+        border-left: 4px solid #9fb5d9;
+        font-weight: 700;
+      }
+
+      .toc-group.active .toc-group-title {
+        border-left-color: #2f568a;
+        color: #1f3f71;
+        background: #e6efff;
+      }
+
+      .toc-sub-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .toc-subsection {
+        margin: 0;
+      }
+
+      .toc-subsection-title {
+        display: block;
+        font-size: 10.5px;
+        letter-spacing: 0.015em;
+        color: #3c5c8d;
+        background: #fafcff;
+        padding: 5px 8px 5px 12px;
+        border-top: 1px solid #edf2fa;
+        border-left: 2px solid #d9e4f6;
+        font-weight: 600;
+      }
+
+      .toc-subsection.active .toc-subsection-title {
+        color: #244a7b;
+        background: #f2f7ff;
+        border-left-color: #6f8fbf;
+      }
+
+      .toc-subsection-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .toc-item {
+        margin: 0;
+        border-top: 1px solid #edf2fa;
+      }
+
+      .toc-link {
+        width: 100%;
+        border: none;
+        background: transparent;
+        color: #2a4774;
+        text-align: left;
+        font-size: 11px;
+        line-height: 1.25;
+        padding: 6px 8px 6px 20px;
+        cursor: pointer;
+      }
+
+      .toc-link:hover {
+        background: #f2f7ff;
+      }
+
+      .toc-item.active .toc-link {
+        background: #d8e8ff;
+        color: #0f2a51;
+        font-weight: 700;
+        border-left: 3px solid #2f568a;
+        padding-left: 17px;
+      }
+
+      .top-nav.collapsed {
+        width: 58px;
+        padding: 8px 6px;
+        background: rgba(255, 255, 255, 0.94);
+      }
+
+      .top-nav.collapsed .nav-left,
+      .top-nav.collapsed .toc-list {
+        display: none;
+      }
+
+      .top-nav.collapsed .nav-head {
+        justify-content: center;
+      }
+
+      .top-nav.collapsed .nav-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-nav.collapsed .toc-toggle,
+      .top-nav.collapsed .cover-jump {
+        width: 44px;
+        padding: 4px 0;
+      }
+
+      .top-progress {
+        position: fixed;
+        bottom: 12px;
+        left: 10px;
+        right: auto;
+        width: 320px;
+        height: 3px;
+        background: rgba(47, 86, 138, 0.16);
+        z-index: 49;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .top-progress-bar {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #2f568a, #4aa6d4);
+        transition: width 180ms ease;
+      }
+
+      @media (max-width: 900px) {
+        .top-nav {
+          width: 270px;
+          padding: 8px 10px;
+        }
+
+        .top-progress {
+          width: 250px;
+        }
+
+        .top-nav .nav-title {
+          font-size: 13px;
+        }
+
+        .term-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .micro-row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .top-nav.collapsed {
+          width: 52px;
+          padding: 7px 5px;
+        }
+      }
+
+      .title-slide {
+        text-align: center !important;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .title-slide h1 {
+        margin-top: 0.2em;
+        margin-bottom: 0.12em;
+        font-size: 3.2em;
+        line-height: 1.08;
+        letter-spacing: 0.005em;
+        color: #1a2b86;
+        font-weight: 800;
+      }
+
+      .title-slide .cover-subtitle {
+        margin: 0;
+        font-size: 2.05em;
+        color: #1a2b86;
+        font-weight: 700;
+      }
+
+      .title-slide .cover-authors {
+        margin-top: 2.2em;
+        margin-bottom: 0.65em;
+        font-size: 1.55em;
+        color: #050505;
+      }
+
+      .title-slide .cover-affiliation {
+        margin: 0;
+        font-size: 1.1em;
+        color: #101010;
+        line-height: 1.22;
+      }
+
+      .title-slide .cover-date {
+        margin-top: 2.2em;
+        font-size: 1.08em;
+        color: #101010;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav" id="topNav" role="navigation" aria-label="Slide navigation">
+      <div class="nav-head">
+        <div class="nav-left">
+          <span class="nav-kicker">Contents</span>
+          <span class="nav-title" id="navTitle">Current: Cover</span>
+          <span class="nav-page" id="navPage">1 / 1</span>
+        </div>
+        <div class="nav-actions">
+          <button class="cover-jump" id="coverJumpBtn" type="button" title="Jump to cover slide">Cover</button>
+          <button class="toc-toggle" id="tocToggleBtn" type="button" aria-controls="tocList" aria-expanded="true" title="Hide table of contents">Hide</button>
+        </div>
+      </div>
+      <ul class="toc-list" id="tocList" aria-label="Table of contents"></ul>
+    </div>
+    <div class="top-progress" aria-hidden="true">
+      <div class="top-progress-bar" id="topProgressBar"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+        <section id="cover" class="title-slide" data-background-color="#e6e6e6">
+          <h1>Uncertainty Quantification for Graph Dynamics</h1>
+          <p class="cover-subtitle">WSDM 2026 Tutorial</p>
+          <p class="cover-authors">Marouane Benbrahim, Tamanna Rashme, Zonghan Zhang<br>Zhiqian Chen</p>
+          <p class="cover-affiliation">Computer Science and Engineering<br>Mississippi State University</p>
+          <p class="cover-date">February 16, 2026</p>
+        </section>
+        <section id="sec-global-framework" data-section-title="Global Framework">
+          <section id="gf-01" data-subsection="Module 1 — Motivation">
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Rumor Can Cost Live</h1>
+            <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
+            <aside class="notes">
+              Next, we unpack the coupling intuition: two networks may not touch, yet risk still propagates.
+            </aside>
+          </section>
+
+          <section id="gf-02" data-subsection="Module 1 — Motivation">
+            <h2>Two Systems Never Touch — Yet Risk Couples</h2>
+            <img class="visual" src="assets/infodemic.png" alt="Coupling through human decision layer between rumor and disease networks" style="width: 48%; height: auto; display: block; margin: 0 auto;">
+            <p class="question-box">How can two unconnected networks still couple and amplify risk?</p>
+            <p class="plain-box" style="max-width: 84%; margin-left: auto; margin-right: auto; text-align: left;">During COVID, misinformation and disease did not interact directly, but they coupled through human decisions. A rumor changes beliefs, beliefs change actions, and actions change exposure. That is the kind of coupled network dynamics I study. These systems do not touch, yet they amplify each other.</p>
+            <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
+            <aside class="notes">
+              During COVID, misinformation and disease did not interact directly, but they coupled through human decisions.
+              A rumor changes beliefs, beliefs change actions, and actions change exposure.
+              These systems do not touch, yet they amplify each other.
+              Now that we see coupling, we show why small perturbations can amplify into system disruption.
+            </aside>
+          </section>
+
+          <section id="gf-03" data-subsection="Module 1 — Motivation">
+            <h2>Cascades Across Networks</h2>
+            <img class="visual visual-stack-img" src="assets/butterfly.png" alt="Tiny perturbation leading to nonlinear amplification">
+            <p class="gray-box">A tiny perturbation can be amplified by nonlinear dynamics into a large system-level shift.</p>
+            <img class="visual visual-stack-img" src="assets/cross-network.png" alt="Cross-domain cascade from information to supply chain">
+            <p class="gray-box">Risk can propagate across domains: information to behavior to health to mobility to supply chain.</p>
+            <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
+            <aside class="notes">
+              上半图强调非线性放大，下半图强调跨域级联。
+              这一页的目标是把“局部扰动为何变成系统风险”做成直观记忆点。
+              Next, we identify why modeling and prediction are difficult: heterogeneity, coupling, and interdisciplinary silos.
+            </aside>
+          </section>
+
+          <section id="gf-04" data-subsection="Module 1 — Motivation">
+            <h2>Why Graph Dynamics Under Uncertainty Is Hard</h2>
+            <p class="claim"><strong>Claim:</strong> Heterogeneity + coupling + siloed theories make uncertainty unavoidable and nontrivial.</p>
+            <ul>
+              <li>Heterogeneous: different domains have different state variables and data fidelity.</li>
+              <li>Coupling: interactions happen through intermediate layers (policy/behavior/market mechanisms).</li>
+              <li>Interdisciplinary: models exist in silos; cross-domain reuse is still rare.</li>
+              <li>Common bottleneck: pairwise/local reasoning breaks under interactions and uncertainty.</li>
+              <li>Therefore we need a tutorial that is task-centered and uncertainty-aware.</li>
+            </ul>
+            <img class="visual" src="assets/m1_why_hard_challenges.png" alt="Why graph dynamics under uncertainty is hard">
+            <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
+            <aside class="notes">
+              收束动机：难点不是单一模型，而是跨层异质与耦合。
+              先不进入图模型细节，先建立 UQ 共识。
+              Before we talk about graph dynamics specifically, we need a shared vocabulary for UQ.
+            </aside>
+          </section>
+
+          <section id="gf-05" data-subsection="Module 2 — UQ Basics">
+            <h2>What Is Uncertainty Quantification?</h2>
+            <p class="claim"><strong>Claim:</strong> UQ means producing distributions (not single numbers) for unknowns and predictions.</p>
+            <ul>
+              <li>Point estimate answers: 'what is the most likely value?'.</li>
+              <li>UQ answers: 'how confident are we, and how wrong could we be?'.</li>
+              <li>Two targets: uncertainty in parameters θ, and uncertainty in future outcomes \(y^\ast\).</li>
+              <li>Deliverables: posterior, predictive, intervals, and calibrated probabilities.</li>
+              <li>UQ is actionable only if it changes decisions (risk, safety, resource allocation).</li>
+            </ul>
+            <p class="formula">\[
+            p(\theta \mid \mathcal{D})
+            \]</p>
+            <p class="formula">\[
+            p(y^\ast \mid \mathcal{D})
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .u5-box{fill:#fff;stroke:#376196;stroke-width:2}
+                  .u5-t{font-family:"Times New Roman";fill:#15355f}
+                  .u5-a{stroke:#537eb3;stroke-width:3;marker-end:url(#u5arr)}
+                </style>
+                <defs>
+                  <marker id="u5arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                    <polygon points="0 0,8 4,0 8" fill="#537eb3"/>
+                  </marker>
+                </defs>
+                <rect x="30" y="58" width="210" height="96" rx="12" class="u5-box"/>
+                <rect x="320" y="58" width="230" height="96" rx="12" class="u5-box"/>
+                <rect x="630" y="58" width="230" height="96" rx="12" class="u5-box"/>
+                <rect x="940" y="58" width="230" height="96" rx="12" class="u5-box"/>
+                <text x="105" y="112" class="u5-t" font-size="26">Data</text>
+                <text x="366" y="103" class="u5-t" font-size="24">Posterior</text>
+                <text x="340" y="132" class="u5-t" font-size="18">uncertainty in θ</text>
+                <text x="675" y="103" class="u5-t" font-size="24">Predictive</text>
+                <text x="658" y="132" class="u5-t" font-size="18">uncertainty in \(y^\ast\)</text>
+                <text x="1006" y="103" class="u5-t" font-size="24">Decision</text>
+                <text x="980" y="132" class="u5-t" font-size="18">risk / safety / resources</text>
+                <line x1="240" y1="106" x2="320" y2="106" class="u5-a"/>
+                <line x1="550" y1="106" x2="630" y2="106" class="u5-a"/>
+                <line x1="860" y1="106" x2="940" y2="106" class="u5-a"/>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
+            <aside class="notes">
+              先立定义：UQ 的产物是分布与区间，不是单点。
+              讲清 posterior 与 predictive 是两个输出层。
+              Next we define prior/posterior/predictive precisely.
+            </aside>
+          </section>
+
+          <section id="gf-06" data-subsection="Module 2 — UQ Basics">
+            <h2>Prior, Posterior, Predictive (The Minimum Toolkit)</h2>
+            <p class="claim"><strong>Claim:</strong> Posterior describes what we learned; predictive describes what we expect next.</p>
+            <ul>
+              <li>Prior p(θ): belief before data.</li>
+              <li>Likelihood p(D|θ): data model.</li>
+              <li>Posterior p(θ|D): updated belief after data.</li>
+              <li>Predictive p(\(y^\ast\)|D): integrates parameter uncertainty into future outcomes.</li>
+              <li>Posterior supports inference; predictive supports action.</li>
+            </ul>
+            <p class="formula">\[
+            p(\theta\mid\mathcal{D}) \propto p(\mathcal{D}\mid\theta)\,p(\theta)
+            \]</p>
+            <p class="formula">\[
+            p(y^\ast\mid\mathcal{D}) = \int p(y^\ast\mid\theta)\,p(\theta\mid\mathcal{D})\,d\theta
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .u6-ax{stroke:#345d92;stroke-width:2}
+                  .u6-t{font-family:"Times New Roman";fill:#163960}
+                  .u6-l{fill:none;stroke:#2f6fa6;stroke-width:3}
+                  .u6-r{fill:none;stroke:#d06745;stroke-width:3}
+                </style>
+                <rect x="20" y="20" width="560" height="240" rx="14" fill="#f8fbff" stroke="#a8bddf" stroke-width="2"/>
+                <rect x="620" y="20" width="560" height="240" rx="14" fill="#fffaf7" stroke="#d6b29d" stroke-width="2"/>
+                <text x="44" y="54" class="u6-t" font-size="22">Posterior of θ</text>
+                <line x1="70" y1="220" x2="540" y2="220" class="u6-ax"/>
+                <line x1="70" y1="220" x2="70" y2="70" class="u6-ax"/>
+                <path d="M80 218 C170 216,220 120,300 88 C370 66,450 138,530 214" class="u6-l"/>
+                <circle cx="220" cy="138" r="5" fill="#2f6fa6"/>
+                <circle cx="268" cy="108" r="5" fill="#2f6fa6"/>
+                <circle cx="332" cy="88" r="5" fill="#2f6fa6"/>
+                <text x="78" y="240" class="u6-t" font-size="16">θ</text>
+
+                <text x="644" y="54" class="u6-t" font-size="22">Predictive of \(y^\ast\)</text>
+                <line x1="670" y1="220" x2="1140" y2="220" class="u6-ax"/>
+                <line x1="670" y1="220" x2="670" y2="70" class="u6-ax"/>
+                <path d="M680 216 C760 198,790 120,860 100 C930 82,1020 130,1130 216" class="u6-r"/>
+                <path d="M680 216 C780 210,860 168,940 156 C1010 146,1080 170,1130 210" fill="#f5c9b7" opacity="0.55"/>
+                <text x="678" y="240" class="u6-t" font-size="16">\(y^\ast\)</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
+            <aside class="notes">
+              逐条对齐 prior/likelihood/posterior/predictive，避免术语混淆。
+              强调 predictive 的积分本质：把参数不确定性传播到未来。
+              Next we clarify intervals: credible vs predictive.
+            </aside>
+          </section>
+
+          <section id="gf-07" data-subsection="Module 2 — UQ Basics">
+            <h2>Credible Interval vs Prediction Interval</h2>
+            <p class="claim"><strong>Claim:</strong> Credible intervals are about θ; prediction intervals are about future \(y^\ast\).</p>
+            <ul>
+              <li>Credible set Cα: P(θ in Cα | D)=1−α.</li>
+              <li>Prediction interval Iα: P(\(y^\ast\) in Iα | D)=1−α.</li>
+              <li>Prediction intervals are usually wider because they include observation noise.</li>
+              <li>Beginners often confuse them; this tutorial will keep them separate consistently.</li>
+              <li>Always report which interval type you are using.</li>
+            </ul>
+            <p class="formula">\[
+            \Pr(\theta \in C_\alpha \mid \mathcal{D}) = 1-\alpha
+            \]</p>
+            <p class="formula">\[
+            \Pr(y^\ast \in I_\alpha \mid \mathcal{D}) = 1-\alpha
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .u7-ax{stroke:#355e92;stroke-width:2}
+                  .u7-t{font-family:"Times New Roman";fill:#16395f}
+                </style>
+                <rect x="20" y="20" width="560" height="240" rx="14" fill="#f7fbff" stroke="#a9c0e1" stroke-width="2"/>
+                <rect x="620" y="20" width="560" height="240" rx="14" fill="#fff8f5" stroke="#dbb29d" stroke-width="2"/>
+                <text x="44" y="54" class="u7-t" font-size="22">Credible interval for θ (narrower)</text>
+                <line x1="72" y1="220" x2="540" y2="220" class="u7-ax"/>
+                <path d="M80 218 C180 210,240 108,300 92 C360 108,420 210,530 218" fill="none" stroke="#2f6fa6" stroke-width="3"/>
+                <rect x="244" y="96" width="112" height="124" fill="#c8dcf5" opacity="0.55"/>
+                <text x="258" y="116" class="u7-t" font-size="16">\(C_\alpha\)</text>
+
+                <text x="644" y="54" class="u7-t" font-size="22">Prediction interval for \(y^\ast\) (wider)</text>
+                <line x1="672" y1="220" x2="1140" y2="220" class="u7-ax"/>
+                <path d="M680 218 C770 212,830 130,900 110 C970 130,1040 212,1130 218" fill="none" stroke="#d06c46" stroke-width="3"/>
+                <rect x="790" y="112" width="220" height="108" fill="#f6d4c7" opacity="0.55"/>
+                <text x="864" y="132" class="u7-t" font-size="16">\(I_\alpha\)</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
+            <aside class="notes">
+              这页目的就是“拆开两个 interval”。
+              用宽度直观说明为什么 prediction interval 更宽。
+              Now we separate two uncertainty sources: aleatoric vs epistemic.
+            </aside>
+          </section>
+
+          <section id="gf-08" data-subsection="Module 2 — UQ Basics">
+            <h2>Aleatoric vs Epistemic Uncertainty</h2>
+            <p class="claim"><strong>Claim:</strong> Aleatoric is irreducible noise; epistemic is reducible model/knowledge uncertainty.</p>
+            <ul>
+              <li>Aleatoric: randomness in the data-generating process (noise, inherent variability).</li>
+              <li>Epistemic: uncertainty due to limited data or model mismatch (can shrink with better data/models).</li>
+              <li>This distinction matters because only epistemic can be reduced by more observations.</li>
+              <li>Many failures come from treating epistemic as aleatoric (or ignoring it).</li>
+              <li>Variance decomposition gives a practical split between the two effects.</li>
+            </ul>
+            <p class="formula">\[
+            \mathrm{Var}(Z)=\mathbb{E}[\mathrm{Var}(Z\mid\Theta)] + \mathrm{Var}(\mathbb{E}[Z\mid\Theta])
+            \]</p>
+            <p class="formula">\[
+            \text{(interpretation: aleatoric)}\quad+\quad\text{(epistemic)}
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 290" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .u8-t{font-family:"Times New Roman";fill:#173a63}
+                  .u8-ax{stroke:#355f95;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="560" height="250" rx="14" fill="#f7fbff" stroke="#a8bfdc" stroke-width="2"/>
+                <rect x="620" y="20" width="560" height="250" rx="14" fill="#fffaf6" stroke="#d8b8a4" stroke-width="2"/>
+                <text x="44" y="52" class="u8-t" font-size="22">Aleatoric: vertical noise</text>
+                <line x1="72" y1="230" x2="540" y2="230" class="u8-ax"/>
+                <line x1="72" y1="230" x2="72" y2="70" class="u8-ax"/>
+                <line x1="82" y1="220" x2="520" y2="90" stroke="#2f7a4d" stroke-width="3"/>
+                <circle cx="120" cy="206" r="5" fill="#2f6fa6"/>
+                <circle cx="170" cy="188" r="5" fill="#2f6fa6"/>
+                <circle cx="230" cy="182" r="5" fill="#2f6fa6"/>
+                <circle cx="280" cy="144" r="5" fill="#2f6fa6"/>
+                <circle cx="340" cy="146" r="5" fill="#2f6fa6"/>
+                <circle cx="390" cy="128" r="5" fill="#2f6fa6"/>
+                <circle cx="450" cy="120" r="5" fill="#2f6fa6"/>
+                <text x="84" y="250" class="u8-t" font-size="15">same trend, noisy outcomes</text>
+
+                <text x="644" y="52" class="u8-t" font-size="22">Epistemic: model ambiguity in sparse region</text>
+                <line x1="672" y1="230" x2="1140" y2="230" class="u8-ax"/>
+                <line x1="672" y1="230" x2="672" y2="70" class="u8-ax"/>
+                <line x1="682" y1="214" x2="1120" y2="94" stroke="#d06a45" stroke-width="3"/>
+                <line x1="682" y1="198" x2="1120" y2="120" stroke="#5b88bf" stroke-width="3" stroke-dasharray="8 6"/>
+                <rect x="860" y="66" width="120" height="168" fill="#f4cfbe" opacity="0.35"/>
+                <text x="874" y="86" class="u8-t" font-size="15">data-sparse</text>
+                <text x="810" y="250" class="u8-t" font-size="15">multiple plausible models</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
+            <aside class="notes">
+              通过左右对比图，把两类不确定性变成可见对象。
+              告诉听众：采更多数据只能主要减少 epistemic。
+              Finally, we need to define what "trustworthy probabilities" mean: calibration.
+            </aside>
+          </section>
+
+          <section id="gf-09" data-subsection="Module 2 — UQ Basics">
+            <h2>Calibration and Proper Scoring</h2>
+            <p class="claim"><strong>Claim:</strong> A predictive distribution is only useful if its probabilities match reality (calibration).</p>
+            <ul>
+              <li>Calibration: among events predicted at probability p, about p fraction should occur.</li>
+              <li>Coverage: empirical frequency that intervals contain the truth.</li>
+              <li>Proper scoring rules reward calibrated + sharp forecasts (not overconfident).</li>
+              <li>Two common scores: log score and Brier score (classification); CRPS (continuous).</li>
+              <li>Calibration diagnostics should be reported with uncertainty estimates, not accuracy alone.</li>
+            </ul>
+            <p class="formula">\[
+            \Pr(Y=1 \mid \hat{p}=p) = p
+            \]</p>
+            <p class="formula">\[
+            \text{Log score: } s(p,y) = -\log p(y)
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .u9-t{font-family:"Times New Roman";fill:#183b63}
+                  .u9-ax{stroke:#355f95;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="700" height="260" rx="14" fill="#f7fbff" stroke="#a8bfdc" stroke-width="2"/>
+                <text x="44" y="52" class="u9-t" font-size="22">Reliability diagram</text>
+                <line x1="90" y1="240" x2="660" y2="240" class="u9-ax"/>
+                <line x1="90" y1="240" x2="90" y2="70" class="u9-ax"/>
+                <line x1="90" y1="240" x2="660" y2="70" stroke="#7d95b7" stroke-width="2" stroke-dasharray="7 6"/>
+                <polyline points="130,218 190,198 250,183 310,158 370,152 430,128 490,120 550,102 610,94" fill="none" stroke="#2f6fa6" stroke-width="3"/>
+                <circle cx="130" cy="218" r="4.5" fill="#2f6fa6"/>
+                <circle cx="250" cy="183" r="4.5" fill="#2f6fa6"/>
+                <circle cx="370" cy="152" r="4.5" fill="#2f6fa6"/>
+                <circle cx="490" cy="120" r="4.5" fill="#2f6fa6"/>
+                <circle cx="610" cy="94" r="4.5" fill="#2f6fa6"/>
+
+                <rect x="760" y="20" width="420" height="260" rx="14" fill="#fff8f5" stroke="#d9b9a6" stroke-width="2"/>
+                <text x="784" y="52" class="u9-t" font-size="22">Sharp vs overconfident</text>
+                <path d="M790 220 C830 210,850 120,910 98 C960 84,1010 126,1080 220" fill="none" stroke="#2f7a4d" stroke-width="3"/>
+                <path d="M790 220 C860 205,930 112,980 88 C1020 70,1090 100,1140 220" fill="none" stroke="#d06845" stroke-width="3" stroke-dasharray="8 6"/>
+                <text x="794" y="244" class="u9-t" font-size="15">green: calibrated and sharp</text>
+                <text x="794" y="264" class="u9-t" font-size="15">orange: overconfident</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
+            <aside class="notes">
+              这一页完成 UQ 基础闭环：定义好坏标准。
+              讲清 calibration 与 scoring 的关系。
+              Now we bring this UQ vocabulary into dynamic graph problems: what becomes θ, what becomes \(y^\ast\), and why uncertainty is non-local.
+            </aside>
+          </section>
+
+          <section id="gf-10" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Graph Dynamics: What Are the Random Variables?</h2>
+            <p class="claim"><strong>Claim:</strong> Dynamic graph problems have uncertainty in topology, latent states, and observations.</p>
+            <ul>
+              <li>Topology over time: adjacency \(A_t\) can evolve or be partially observed.</li>
+              <li>Latent state on nodes/edges: \(X_t\) (e.g., belief, infection, flow, congestion).</li>
+              <li>Observations: \(Y_t\) are noisy, missing, delayed, or aggregated versions of \(X_t\).</li>
+              <li>Parameters: θ control transition rates, coupling strengths, and noise levels.</li>
+              <li>This separation clarifies what to infer and what to predict.</li>
+            </ul>
+            <p class="formula">\[
+            A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
+            \]</p>
+            <p class="formula">\[
+            X_{t+1} = F(X_t, A_t; \theta) + w_t
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g10-n{fill:#fff;stroke:#355f94;stroke-width:2}
+                  .g10-e{stroke:#5b82b5;stroke-width:2}
+                  .g10-t{font-family:"Times New Roman";fill:#163a63}
+                </style>
+                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
+                <text x="50" y="52" class="g10-t" font-size="20">t</text>
+                <text x="430" y="52" class="g10-t" font-size="20">t+1</text>
+                <text x="810" y="52" class="g10-t" font-size="20">t+2</text>
+                <g transform="translate(40,70)">
+                  <line x1="50" y1="50" x2="130" y2="30" class="g10-e"/><line x1="130" y1="30" x2="190" y2="70" class="g10-e"/><line x1="50" y1="50" x2="190" y2="70" class="g10-e"/>
+                  <circle cx="50" cy="50" r="10" class="g10-n"/><circle cx="130" cy="30" r="10" class="g10-n"/><circle cx="190" cy="70" r="10" class="g10-n"/>
+                </g>
+                <g transform="translate(420,70)">
+                  <line x1="50" y1="50" x2="130" y2="30" class="g10-e"/><line x1="130" y1="30" x2="210" y2="40" class="g10-e"/><line x1="50" y1="50" x2="210" y2="40" class="g10-e"/>
+                  <circle cx="50" cy="50" r="10" class="g10-n"/><circle cx="130" cy="30" r="10" class="g10-n"/><circle cx="210" cy="40" r="10" class="g10-n"/>
+                </g>
+                <g transform="translate(800,70)">
+                  <line x1="60" y1="42" x2="130" y2="70" class="g10-e"/><line x1="130" y1="70" x2="200" y2="40" class="g10-e"/><line x1="60" y1="42" x2="200" y2="40" class="g10-e"/>
+                  <circle cx="60" cy="42" r="10" class="g10-n"/><circle cx="130" cy="70" r="10" class="g10-n"/><circle cx="200" cy="40" r="10" class="g10-n"/>
+                </g>
+                <path d="M70 220 C300 190,520 150,760 130 C910 118,1030 108,1140 95" fill="none" stroke="#d06a45" stroke-width="3"/>
+                <path d="M70 220 C300 206,520 178,760 158 C910 146,1030 136,1140 122 L1140 162 C1030 176,910 186,760 198 C520 218,300 238,70 242 Z" fill="#f4cdbd" opacity="0.5"/>
+                <text x="74" y="208" class="g10-t" font-size="16">state uncertainty band widens over time</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
+            <aside class="notes">
+              这页只做“对象定义”：A_t, X_t, Y_t, θ 分工明确。
+              先明确随机变量，再谈算法和验证。
+              Next, we show where UQ sits: posterior over latent quantities and predictive over task outputs.
+            </aside>
+          </section>
+
+          <section id="gf-11" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Where UQ Sits: Posterior → Predictive → Decision</h2>
+            <p class="claim"><strong>Claim:</strong> Graph-dynamics UQ is about propagating uncertainty from latent variables to task outputs.</p>
+            <ul>
+              <li>Infer latent quantities: \(p(A_{1:T}, X_{1:T}, \theta \mid \mathcal{D})\).</li>
+              <li>Define a task query Q (e.g., cascade size, source, future state).</li>
+              <li>Predictive distribution integrates latent uncertainty into Q.</li>
+              <li>Decisions (interventions/policies) should consume \(p(Q\mid\mathcal{D})\), not a point estimate.</li>
+              <li>This creates an auditable chain from evidence to action.</li>
+            </ul>
+            <p class="formula">\[
+            \Theta := (A_{1:T}, X_{1:T}, \theta)
+            \]</p>
+            <p class="formula">\[
+            p(Q\mid \mathcal{D}) = \int p(Q\mid \Theta)\,p(\Theta\mid \mathcal{D})\,d\Theta
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 240" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g11-b{fill:#fff;stroke:#335e92;stroke-width:2}
+                  .g11-t{font-family:"Times New Roman";fill:#173a63}
+                </style>
+                <rect x="40" y="62" width="330" height="116" rx="14" class="g11-b"/>
+                <rect x="435" y="62" width="330" height="116" rx="14" class="g11-b"/>
+                <rect x="830" y="62" width="330" height="116" rx="14" class="g11-b"/>
+                <text x="82" y="104" class="g11-t" font-size="27">Posterior Layer</text>
+                <text x="92" y="134" class="g11-t" font-size="18">infer \(p(\Theta\mid\mathcal{D})\)</text>
+                <text x="492" y="104" class="g11-t" font-size="27">Predictive Layer</text>
+                <text x="484" y="134" class="g11-t" font-size="18">compute \(p(Q\mid\mathcal{D})\)</text>
+                <text x="902" y="104" class="g11-t" font-size="27">Decision Layer</text>
+                <text x="882" y="134" class="g11-t" font-size="18">optimize robust action</text>
+                <line x1="370" y1="120" x2="435" y2="120" stroke="#537fb3" stroke-width="3"/>
+                <polygon points="435,120 423,114 423,126" fill="#537fb3"/>
+                <line x1="765" y1="120" x2="830" y2="120" stroke="#537fb3" stroke-width="3"/>
+                <polygon points="830,120 818,114 818,126" fill="#537fb3"/>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
+            <aside class="notes">
+              强调这不是三套独立任务，而是顺序依赖链。
+              point estimate 的缺陷就在于跳过了中间传播。
+              Now we locate entry points: structural, parametric, observational.
+            </aside>
+          </section>
+
+          <section id="gf-12" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Three Entry Points of Uncertainty in Graph Dynamics</h2>
+            <p class="claim"><strong>Claim:</strong> Structural/parametric/observational uncertainty enter different parts of the model but all affect Q.</p>
+            <ul>
+              <li>Structural: uncertainty in edges, communities, coupling links, or multiplex alignment.</li>
+              <li>Parametric: uncertain rates/strengths (transmission, recovery, coupling coefficients).</li>
+              <li>Observational: missing nodes/edges, sensor dropout, reporting delays, aggregation bias.</li>
+              <li>The same observed data can be explained by multiple (A, θ, X) combinations.</li>
+              <li>Practical UQ must keep all three entry points explicit.</li>
+            </ul>
+            <p class="formula">\[
+            A_{ij,t}\sim \mathrm{Bernoulli}(p_{ij,t})
+            \]</p>
+            <p class="formula">\[
+            \theta \sim p(\theta\mid \mathcal{D})
+            \]</p>
+            <p class="formula">\[
+            Y_t = H_t X_t + \varepsilon_t,\quad \varepsilon_t\sim \mathcal{N}(0,R_t)
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 260" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g12-t{font-family:"Times New Roman";fill:#163b64}
+                  .g12-n{fill:#fff;stroke:#355f95;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="1160" height="220" rx="14" fill="#f8fbff" stroke="#a9c1e1" stroke-width="2"/>
+                <text x="52" y="52" class="g12-t" font-size="20">Structural</text>
+                <text x="470" y="52" class="g12-t" font-size="20">Parametric</text>
+                <text x="860" y="52" class="g12-t" font-size="20">Observational</text>
+                <g>
+                  <circle cx="90" cy="120" r="10" class="g12-n"/><circle cx="160" cy="90" r="10" class="g12-n"/><circle cx="160" cy="150" r="10" class="g12-n"/><circle cx="240" cy="120" r="10" class="g12-n"/>
+                  <line x1="100" y1="120" x2="150" y2="95" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="100" y1="120" x2="150" y2="145" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="170" y1="90" x2="230" y2="120" stroke="#d06745" stroke-width="3" stroke-dasharray="8 6"/>
+                  <line x1="170" y1="150" x2="230" y2="120" stroke="#5d84b8" stroke-width="2"/>
+                </g>
+                <g>
+                  <rect x="460" y="86" width="250" height="70" rx="10" fill="#ffffff" stroke="#87a7d1" stroke-width="2"/>
+                  <text x="480" y="114" class="g12-t" font-size="16">coupling strength</text>
+                  <rect x="480" y="126" width="180" height="10" rx="5" fill="#dce8f8"/>
+                  <rect x="480" y="126" width="86" height="10" rx="5" fill="#5f87bf"/>
+                  <circle cx="566" cy="131" r="8" fill="#2f6fa6"/>
+                </g>
+                <g>
+                  <line x1="870" y1="170" x2="1120" y2="170" stroke="#355f95" stroke-width="2"/>
+                  <line x1="870" y1="170" x2="870" y2="86" stroke="#355f95" stroke-width="2"/>
+                  <path d="M880 166 C930 140,980 134,1030 120 C1070 108,1100 102,1120 94" fill="none" stroke="#2f6fa6" stroke-width="3"/>
+                  <circle cx="920" cy="148" r="4.5" fill="#d06745"/>
+                  <circle cx="975" cy="130" r="4.5" fill="#d06745"/>
+                  <circle cx="1040" cy="128" r="4.5" fill="#d06745"/>
+                  <line x1="1006" y1="114" x2="1024" y2="132" stroke="#c23f38" stroke-width="2.5"/>
+                  <line x1="1024" y1="114" x2="1006" y2="132" stroke="#c23f38" stroke-width="2.5"/>
+                </g>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Discovering Latent Network Structure in Point Process Data</strong> — Linderman, Adams — ICML — 2014.</p>
+            <aside class="notes">
+              把不确定性入口拆成三类，避免“都叫噪声”的混乱。
+              每类入口都会影响同一个 Q，但传播路径不同。
+              Next, we explain the core thesis: why uncertainty is not local in graphs.
+            </aside>
+          </section>
+
+          <section id="gf-13" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Why Uncertainty Is Not Local in Graphs</h2>
+            <p class="claim"><strong>Claim:</strong> Topology and time couple variables, so local uncertainty becomes global outcome uncertainty.</p>
+            <ul>
+              <li>Graph connectivity breaks independence: paths overlap, so events are correlated.</li>
+              <li>Small uncertainty on a bridge/hub can change reachability and cascade regimes.</li>
+              <li>Near thresholds, tiny perturbations can flip the system from stable to unstable.</li>
+              <li>Over time, errors accumulate and amplify through repeated interactions.</li>
+              <li>This is why local confidence scores are insufficient for system risk.</li>
+            </ul>
+            <p class="formula">\[
+            \text{(generic)}\quad Q = g(A_{1:T}, X_{1:T})
+            \]</p>
+            <p class="formula">\[
+            \Delta Q \approx \left\langle \nabla_A g, \Delta A \right\rangle + \left\langle \nabla_X g, \Delta X \right\rangle
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g13-t{font-family:"Times New Roman";fill:#163b63}
+                  .g13-n{fill:#fff;stroke:#355f94;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="780" height="240" rx="14" fill="#f7fbff" stroke="#a9c0e0" stroke-width="2"/>
+                <text x="52" y="52" class="g13-t" font-size="20">Local bridge uncertainty changes global reachability</text>
+                <g>
+                  <circle cx="90" cy="100" r="10" class="g13-n"/><circle cx="150" cy="70" r="10" class="g13-n"/><circle cx="150" cy="130" r="10" class="g13-n"/><circle cx="220" cy="100" r="10" class="g13-n"/>
+                  <line x1="100" y1="100" x2="140" y2="75" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="100" y1="100" x2="140" y2="125" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="160" y1="70" x2="210" y2="100" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="160" y1="130" x2="210" y2="100" stroke="#5d84b8" stroke-width="2"/>
+                </g>
+                <g>
+                  <circle cx="580" cy="100" r="10" class="g13-n"/><circle cx="640" cy="70" r="10" class="g13-n"/><circle cx="640" cy="130" r="10" class="g13-n"/><circle cx="710" cy="100" r="10" class="g13-n"/>
+                  <line x1="590" y1="100" x2="630" y2="75" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="590" y1="100" x2="630" y2="125" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="650" y1="70" x2="700" y2="100" stroke="#5d84b8" stroke-width="2"/>
+                  <line x1="650" y1="130" x2="700" y2="100" stroke="#5d84b8" stroke-width="2"/>
+                </g>
+                <line x1="220" y1="100" x2="580" y2="100" stroke="#d06945" stroke-width="4" stroke-dasharray="9 7"/>
+                <text x="308" y="84" class="g13-t" font-size="16">uncertain bridge edge</text>
+
+                <rect x="830" y="20" width="350" height="240" rx="14" fill="#fff8f5" stroke="#d8b9a5" stroke-width="2"/>
+                <text x="854" y="52" class="g13-t" font-size="20">Outcome panel</text>
+                <rect x="860" y="78" width="290" height="70" rx="10" fill="#ffffff" stroke="#b8cde8"/>
+                <text x="878" y="108" class="g13-t" font-size="17">bridge absent → local spread</text>
+                <rect x="860" y="162" width="290" height="70" rx="10" fill="#ffffff" stroke="#d5b49f"/>
+                <text x="878" y="192" class="g13-t" font-size="17">bridge present → global spread</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>A simple model of global cascades on random networks</strong> — Duncan J. Watts — PNAS — 2002.</p>
+            <aside class="notes">
+              这一页给出主线句的技术含义：局部扰动经拓扑映射变成全局输出变化。
+              不要求观众会推导，只要看懂机制映射关系。
+              We next show one concrete mechanism: spectral amplification near epidemic/cascade thresholds.
+            </aside>
+          </section>
+
+          <section id="gf-14" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Mechanism Example: Spectral Amplification Near Thresholds</h2>
+            <p class="claim"><strong>Claim:</strong> In many spreading/flow systems, the dominant eigenvalue controls stability; uncertainty in A becomes amplified.</p>
+            <ul>
+              <li>Many linearized dynamics depend on λ_max(A) (largest eigenvalue).</li>
+              <li>If parameters are near criticality, small topology uncertainty changes the regime.</li>
+              <li>This converts local edge uncertainty into global risk uncertainty (tails).</li>
+              <li>The practical signal is threshold crossing probability, not only mean trajectory.</li>
+            </ul>
+            <p class="formula">\[
+            \beta_c \approx \frac{\delta}{\lambda_{\max}(A)}
+            \]</p>
+            <p class="formula">\[
+            \lambda_{\max}(A+\Delta A) \approx \lambda_{\max}(A) + u^\top (\Delta A)\,u
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g14-t{font-family:"Times New Roman";fill:#163a63}
+                  .g14-ax{stroke:#355e92;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
+                <line x1="90" y1="220" x2="1130" y2="220" class="g14-ax"/>
+                <line x1="90" y1="220" x2="90" y2="70" class="g14-ax"/>
+                <text x="1090" y="245" class="g14-t" font-size="16">β</text>
+                <text x="45" y="86" class="g14-t" font-size="16" transform="rotate(-90 45,86)">prevalence</text>
+                <line x1="660" y1="70" x2="660" y2="220" stroke="#d06745" stroke-width="3" stroke-dasharray="8 6"/>
+                <text x="670" y="88" class="g14-t" font-size="16">critical threshold</text>
+                <rect x="610" y="72" width="100" height="148" fill="#f4d1c2" opacity="0.45"/>
+                <text x="612" y="238" class="g14-t" font-size="15">uncertain β</text>
+                <path d="M100 215 C250 210,360 190,500 160 C620 135,740 100,860 84 C940 72,1020 68,1120 66" fill="none" stroke="#2f6fa6" stroke-width="3"/>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Virus Spread in Networks</strong> — Van Mieghem, Omic, Kooij — IEEE/ACM Transactions on Networking — 2009.</p>
+            <aside class="notes">
+              把谱半径当作“放大器”来讲，重点在阈值附近的敏感性。
+              强调输出要看跨阈值概率和尾部风险。
+              Finally, we highlight time: uncertainty compounds sequentially, motivating filtering/forecasting modules.
+            </aside>
+          </section>
+
+          <section id="gf-15" data-subsection="Module 3 — UQ × Graph Dynamics">
+            <h2>Mechanism Example: Temporal Accumulation of Uncertainty</h2>
+            <p class="claim"><strong>Claim:</strong> Even if uncertainty is small per step, sequential propagation can accumulate into large prediction bands.</p>
+            <ul>
+              <li>Filtering/forecasting is recursive: today’s uncertainty becomes tomorrow’s prior.</li>
+              <li>Model mismatch + observation noise can create widening bands over time.</li>
+              <li>In dynamic graphs, topology changes introduce additional drift uncertainty.</li>
+              <li>Long-horizon reliability therefore depends on propagation quality, not one-step fit.</li>
+            </ul>
+            <p class="formula">\[
+            X_{t+1} = F(X_t,A_t;\theta) + w_t
+            \]</p>
+            <p class="formula">\[
+            \Sigma_{t+1} \approx F_t \Sigma_t F_t^\top + Q_t \quad (\text{linearized covariance propagation})
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 290" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g15-t{font-family:"Times New Roman";fill:#173a63}
+                  .g15-ax{stroke:#355f94;stroke-width:2}
+                </style>
+                <rect x="20" y="20" width="1160" height="250" rx="14" fill="#f7fbff" stroke="#a8c0df" stroke-width="2"/>
+                <line x1="80" y1="220" x2="1120" y2="220" class="g15-ax"/>
+                <line x1="80" y1="220" x2="80" y2="70" class="g15-ax"/>
+                <path d="M90 210 C250 198,380 170,520 150 C690 126,860 114,1110 96" fill="none" stroke="#2f6fa6" stroke-width="3"/>
+                <path d="M90 216 C250 212,380 196,520 184 C690 170,860 164,1110 156 L1110 84 C860 104,690 112,520 128 C380 142,250 184,90 204 Z" fill="#f3cbbb" opacity="0.55"/>
+                <text x="94" y="238" class="g15-t" font-size="15">forecast horizon</text>
+                <text x="98" y="90" class="g15-t" font-size="15">widening uncertainty band</text>
+                <g transform="translate(880,34)">
+                  <circle cx="18" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <circle cx="55" cy="12" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <circle cx="55" cy="34" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <line x1="25" y1="22" x2="48" y2="12" stroke="#5f86ba" stroke-width="1.8"/>
+                  <line x1="25" y1="22" x2="48" y2="34" stroke="#5f86ba" stroke-width="1.8"/>
+                </g>
+                <g transform="translate(980,34)">
+                  <circle cx="18" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <circle cx="55" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <circle cx="92" cy="22" r="7" fill="#fff" stroke="#355f94" stroke-width="1.8"/>
+                  <line x1="25" y1="22" x2="48" y2="22" stroke="#5f86ba" stroke-width="1.8"/>
+                  <line x1="62" y1="22" x2="85" y2="22" stroke="#5f86ba" stroke-width="1.8"/>
+                </g>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>A New Approach to Linear Filtering and Prediction Problems</strong> — Rudolf E. Kalman — Journal of Basic Engineering (ASME) — 1960.</p>
+            <aside class="notes">
+              这页强调“时间递推”本身就是风险累积机制。
+              把 one-step 准确和 long-horizon 可靠明确区分。
+              Now we are ready to organize the rest of the tutorial around graph tasks: each task defines Q and the required UQ deliverable.
+            </aside>
+          </section>
+
+          <section id="gf-16" data-subsection="Module 4 — Roadmap">
+            <h2>Task-Centered Roadmap: Each Task Defines the Query Q</h2>
+            <p class="claim"><strong>Claim:</strong> We will organize the tutorial by graph tasks; UQ is the deliverable layer for each task.</p>
+            <ul>
+              <li>Step 1: define the task query Q (structure, diffusion, source, state, decision, validation).</li>
+              <li>Step 2: specify the deliverable: posterior, predictive, intervals, tail metrics, robust action.</li>
+              <li>Step 3: choose methods that propagate uncertainty correctly through topology and time.</li>
+              <li>Each module repeats the same template to keep comparisons consistent.</li>
+            </ul>
+            <p class="formula">\[
+            p(Q\mid \mathcal{D}) = \int p(Q\mid \Theta)\,p(\Theta\mid \mathcal{D})\,d\Theta
+            \]</p>
+            <div class="visual">
+              <table class="mechanism-table">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Query Q</th>
+                    <th>Deliverable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Structure inference</td><td>which edges/couplings exist</td><td>posterior over structure</td></tr>
+                  <tr><td>Diffusion forecasting</td><td>future spread size/timing</td><td>predictive distribution + tails</td></tr>
+                  <tr><td>Source explanation</td><td>who/where started process</td><td>credible source set</td></tr>
+                  <tr><td>State estimation</td><td>hidden state over time</td><td>filtering/smoothing intervals</td></tr>
+                  <tr><td>Decision/intervention</td><td>policy loss/regret</td><td>robust risk-aware action</td></tr>
+                  <tr><td>Validation</td><td>calibration/coverage metrics</td><td>acceptance test report</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
+            <aside class="notes">
+              用一页表把后续模块统一在同一语法里，降低认知负担。
+              重点是“先 Q，再 deliverable，再 method”。
+              Next, we show dependencies: upstream uncertainty propagates downstream.
+            </aside>
+          </section>
+
+          <section id="gf-17" data-subsection="Module 4 — Roadmap">
+            <h2>Dependency Map: How Uncertainty Propagates Across Tasks</h2>
+            <p class="claim"><strong>Claim:</strong> Downstream tasks consume upstream posteriors; uncertainty must be propagated end-to-end.</p>
+            <ul>
+              <li>Structure inference affects all downstream predictions.</li>
+              <li>Diffusion/explanation/state models define \(p(Q\mid\Theta)\).</li>
+              <li>Decision consumes \(p(Q\mid\mathcal{D})\); validation audits all layers.</li>
+              <li>Breaking this chain produces overconfident and brittle outcomes.</li>
+            </ul>
+            <p class="formula">\[
+            p(Z\mid \mathcal{D})=\int p(Z\mid A,\theta)\,p(A,\theta\mid \mathcal{D})\,dA\,d\theta
+            \]</p>
+            <div class="visual">
+              <svg viewBox="0 0 1200 250" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g17-b{fill:#fff;stroke:#356094;stroke-width:2}
+                  .g17-t{font-family:"Times New Roman";fill:#163b63}
+                </style>
+                <rect x="40" y="68" width="290" height="110" rx="14" class="g17-b"/>
+                <rect x="455" y="68" width="290" height="110" rx="14" class="g17-b"/>
+                <rect x="870" y="68" width="290" height="110" rx="14" class="g17-b"/>
+                <text x="96" y="106" class="g17-t" font-size="24">Posterior layer</text>
+                <text x="92" y="132" class="g17-t" font-size="17">structure + parameters</text>
+                <text x="515" y="106" class="g17-t" font-size="24">Model layer</text>
+                <text x="506" y="132" class="g17-t" font-size="17">diffusion / inverse / state</text>
+                <text x="934" y="106" class="g17-t" font-size="24">Output layer</text>
+                <text x="922" y="132" class="g17-t" font-size="17">decision + validation</text>
+                <line x1="330" y1="124" x2="455" y2="124" stroke="#537fb3" stroke-width="3"/>
+                <polygon points="455,124 443,118 443,130" fill="#537fb3"/>
+                <line x1="745" y1="124" x2="870" y2="124" stroke="#537fb3" stroke-width="3"/>
+                <polygon points="870,124 858,118 858,130" fill="#537fb3"/>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
+            <aside class="notes">
+              这页回答“为什么要端到端传播不确定性”。
+              每层都可审计，但不能彼此割裂。
+              Finally, we announce the next section: we dive into each task family one by one.
+            </aside>
+          </section>
+
+          <section id="gf-18" data-subsection="Module 4 — Roadmap">
+            <h2>From Here: We Proceed Task-by-Task</h2>
+            <p class="claim"><strong>Claim:</strong> The remainder of the tutorial is organized around dynamic graph tasks, each paired with UQ deliverables.</p>
+            <ul>
+              <li>A. Dynamic structure inference (posterior over edges/communities/couplings).</li>
+              <li>B. Diffusion &amp; cascades (predictive distribution + tail risk).</li>
+              <li>C. Explanation / inverse problems (posterior over sources/paths).</li>
+              <li>D. Graph state estimation (filtering/smoothing bands over time).</li>
+              <li>E. Decision &amp; intervention (robust / risk-aware actions).</li>
+              <li>F. Validation &amp; acceptance (calibration, coverage, stress tests).</li>
+            </ul>
+            <div class="visual">
+              <svg viewBox="0 0 1200 250" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  .g18-b{fill:#fff;stroke:#356093;stroke-width:2}
+                  .g18-t{font-family:"Times New Roman";fill:#163b64}
+                </style>
+                <rect x="30" y="42" width="360" height="56" rx="10" class="g18-b"/>
+                <rect x="420" y="42" width="360" height="56" rx="10" class="g18-b"/>
+                <rect x="810" y="42" width="360" height="56" rx="10" class="g18-b"/>
+                <rect x="30" y="142" width="360" height="56" rx="10" class="g18-b"/>
+                <rect x="420" y="142" width="360" height="56" rx="10" class="g18-b"/>
+                <rect x="810" y="142" width="360" height="56" rx="10" class="g18-b"/>
+                <text x="52" y="77" class="g18-t" font-size="18">A. Dynamic structure inference</text>
+                <text x="442" y="77" class="g18-t" font-size="18">B. Diffusion and cascades</text>
+                <text x="832" y="77" class="g18-t" font-size="18">C. Explanation / inverse</text>
+                <text x="52" y="177" class="g18-t" font-size="18">D. Graph state estimation</text>
+                <text x="442" y="177" class="g18-t" font-size="18">E. Decision and intervention</text>
+                <text x="832" y="177" class="g18-t" font-size="18">F. Validation and acceptance</text>
+              </svg>
+            </div>
+            <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
+            <aside class="notes">
+              最后一页是导航承诺：后续每个任务都回到同一 UQ 框架。
+              听众不需要一次记住所有方法，只需记住任务与输出配对。
+              We start with Module A: dynamic structure inference.
+            </aside>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        mathjax3: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        },
+        plugins: [ RevealNotes, RevealMath.MathJax3 ]
+      });
+
+      const topNavEl = document.getElementById('topNav');
+      const navTitleEl = document.getElementById('navTitle');
+      const navPageEl = document.getElementById('navPage');
+      const topProgressBarEl = document.getElementById('topProgressBar');
+      const tocListEl = document.getElementById('tocList');
+      const coverJumpBtn = document.getElementById('coverJumpBtn');
+      const tocToggleBtn = document.getElementById('tocToggleBtn');
+      const tocCollapseStorageKey = 'reveal_toc_collapsed';
+      let tocEntries = [];
+
+      function setTocCollapsed(collapsed, persist = true) {
+        if (!topNavEl || !tocToggleBtn) return;
+        topNavEl.classList.toggle('collapsed', collapsed);
+        tocToggleBtn.textContent = collapsed ? 'Show' : 'Hide';
+        tocToggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        tocToggleBtn.setAttribute('title', collapsed ? 'Show table of contents' : 'Hide table of contents');
+        if (persist) {
+          try {
+            localStorage.setItem(tocCollapseStorageKey, collapsed ? '1' : '0');
+          } catch (_err) {
+            // Ignore storage failures.
+          }
+        }
+      }
+
+      function getSlideTitle(slide, index) {
+        if (!slide) return `Slide ${index}`;
+        const heading = slide.querySelector('h1, h2, h3');
+        if (heading && heading.textContent.trim()) return heading.textContent.trim();
+        return slide.id ? slide.id.toUpperCase() : `Slide ${index}`;
+      }
+
+      function getSectionContainer(slide) {
+        if (!slide) return null;
+        const parent = slide.parentElement;
+        if (parent && parent.tagName === 'SECTION') return parent;
+        return slide;
+      }
+
+      function getSectionTitle(sectionEl, fallbackIndex) {
+        if (!sectionEl) return `Section ${fallbackIndex}`;
+        if (sectionEl.dataset && sectionEl.dataset.sectionTitle) {
+          return sectionEl.dataset.sectionTitle;
+        }
+        const heading = sectionEl.querySelector('h1, h2, h3');
+        if (heading && heading.textContent.trim()) return heading.textContent.trim();
+        return `Section ${fallbackIndex}`;
+      }
+
+      function getSubsectionTitle(slide) {
+        if (slide && slide.dataset && slide.dataset.subsection) {
+          return slide.dataset.subsection;
+        }
+        return 'General';
+      }
+
+      function buildToc() {
+        if (!tocListEl) return;
+        tocListEl.innerHTML = '';
+        tocEntries = [];
+
+        const sectionBuckets = [];
+        const sectionMap = new Map();
+        const slides = Reveal.getSlides();
+        const totalSlides = slides.length;
+        slides.forEach((slide) => slide.removeAttribute('data-heading-index'));
+
+        slides.forEach((slide, idx) => {
+          slide.setAttribute('data-page-index', `${idx + 1}/${totalSlides}`);
+
+          if (slide && slide.id === 'cover') return;
+          const indices = Reveal.getIndices(slide);
+          const sectionEl = getSectionContainer(slide);
+
+          if (!sectionMap.has(sectionEl)) {
+            const sectionNumber = sectionBuckets.length + 1;
+            sectionMap.set(sectionEl, {
+              sectionEl,
+              sectionNumber,
+              title: getSectionTitle(sectionEl, sectionNumber),
+              subsections: [],
+              subsectionMap: new Map()
+            });
+            sectionBuckets.push(sectionMap.get(sectionEl));
+          }
+
+          const bucket = sectionMap.get(sectionEl);
+          const subsectionTitle = getSubsectionTitle(slide);
+          if (!bucket.subsectionMap.has(subsectionTitle)) {
+            bucket.subsectionMap.set(subsectionTitle, {
+              title: subsectionTitle,
+              entries: []
+            });
+            bucket.subsections.push(bucket.subsectionMap.get(subsectionTitle));
+          }
+
+          bucket.subsectionMap.get(subsectionTitle).entries.push({
+            slide,
+            indices,
+            title: getSlideTitle(slide, idx + 1),
+            itemEl: null,
+            groupEl: null,
+            subsectionEl: null
+          });
+        });
+
+        sectionBuckets.forEach((bucket) => {
+          const groupLi = document.createElement('li');
+          groupLi.className = 'toc-group';
+
+          const groupTitle = document.createElement('span');
+          groupTitle.className = 'toc-group-title';
+          groupTitle.textContent = `${bucket.sectionNumber}. ${bucket.title}`;
+          groupLi.appendChild(groupTitle);
+
+          const subList = document.createElement('ul');
+          subList.className = 'toc-sub-list';
+
+          bucket.subsections.forEach((subsection, subsectionIndex) => {
+            const subsectionNumber = `${bucket.sectionNumber}.${subsectionIndex + 1}`;
+            const subsectionLi = document.createElement('li');
+            subsectionLi.className = 'toc-subsection';
+
+            const subsectionTitleEl = document.createElement('span');
+            subsectionTitleEl.className = 'toc-subsection-title';
+            subsectionTitleEl.textContent = `${subsectionNumber} ${subsection.title}`;
+            subsectionLi.appendChild(subsectionTitleEl);
+
+            const subsectionItems = document.createElement('ul');
+            subsectionItems.className = 'toc-subsection-items';
+
+            subsection.entries.forEach((entry, entryIndex) => {
+              const itemLi = document.createElement('li');
+              itemLi.className = 'toc-item';
+
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'toc-link';
+
+              const itemNumber = `${subsectionNumber}.${entryIndex + 1}`;
+              const isCoverSlide = entry.slide && entry.slide.id === 'cover';
+              if (!isCoverSlide) {
+                entry.slide.setAttribute('data-heading-index', itemNumber);
+              }
+              btn.textContent = `${itemNumber} ${entry.title}`;
+              btn.setAttribute('aria-label', `Go to ${itemNumber}: ${entry.title}`);
+              btn.addEventListener('click', () => Reveal.slide(entry.indices.h, entry.indices.v || 0));
+
+              itemLi.appendChild(btn);
+              subsectionItems.appendChild(itemLi);
+
+              entry.itemEl = itemLi;
+              entry.groupEl = groupLi;
+              entry.subsectionEl = subsectionLi;
+              tocEntries.push(entry);
+            });
+
+            subsectionLi.appendChild(subsectionItems);
+            subList.appendChild(subsectionLi);
+          });
+
+          groupLi.appendChild(subList);
+          tocListEl.appendChild(groupLi);
+        });
+      }
+
+      function updateTopNavigation() {
+        const slides = Reveal.getSlides();
+        const currentSlide = Reveal.getCurrentSlide();
+        const currentIndices = Reveal.getIndices(currentSlide);
+        const currentIndex = Math.max(0, slides.indexOf(currentSlide)) + 1;
+        const total = Math.max(1, slides.length);
+        const progress = total > 1 ? ((currentIndex - 1) / (total - 1)) * 100 : 100;
+
+        const currentSection = getSectionContainer(currentSlide);
+        const currentSectionTitle = getSectionTitle(currentSection, (currentIndices.h || 0) + 1);
+        const currentSubsectionTitle = getSubsectionTitle(currentSlide);
+        const currentSlideTitle = getSlideTitle(currentSlide, currentIndex);
+        const titleParts = [currentSectionTitle];
+        if (currentSubsectionTitle && currentSubsectionTitle !== 'General') {
+          titleParts.push(currentSubsectionTitle);
+        }
+        if (currentSlideTitle !== currentSectionTitle && currentSlideTitle !== currentSubsectionTitle) {
+          titleParts.push(currentSlideTitle);
+        }
+        const titleText = `Current: ${titleParts.join(' / ')}`;
+
+        if (navTitleEl) navTitleEl.textContent = titleText;
+        if (navPageEl) navPageEl.textContent = `${currentIndex} / ${total}`;
+        if (topProgressBarEl) topProgressBarEl.style.width = `${progress}%`;
+
+        if (tocEntries.length) {
+          let activeEntry = null;
+          const groups = new Set();
+          const subsections = new Set();
+
+          tocEntries.forEach((entry) => {
+            const isActive = entry.slide === currentSlide;
+            if (entry.itemEl) entry.itemEl.classList.toggle('active', isActive);
+            if (isActive) activeEntry = entry;
+            if (entry.groupEl) groups.add(entry.groupEl);
+            if (entry.subsectionEl) subsections.add(entry.subsectionEl);
+          });
+
+          groups.forEach((groupEl) => groupEl.classList.remove('active'));
+          subsections.forEach((subsectionEl) => subsectionEl.classList.remove('active'));
+          if (activeEntry && activeEntry.groupEl) {
+            activeEntry.groupEl.classList.add('active');
+          }
+          if (activeEntry && activeEntry.subsectionEl) {
+            activeEntry.subsectionEl.classList.add('active');
+          }
+
+          if (activeEntry && activeEntry.itemEl) {
+            activeEntry.itemEl.scrollIntoView({ block: 'nearest' });
+          }
+        }
+      }
+
+      if (tocToggleBtn) {
+        tocToggleBtn.addEventListener('click', () => {
+          const isCollapsed = topNavEl ? topNavEl.classList.contains('collapsed') : false;
+          setTocCollapsed(!isCollapsed);
+        });
+      }
+
+      if (coverJumpBtn) {
+        coverJumpBtn.addEventListener('click', () => {
+          Reveal.slide(0, 0);
+        });
+      }
+
+      try {
+        setTocCollapsed(localStorage.getItem(tocCollapseStorageKey) === '1', false);
+      } catch (_err) {
+        setTocCollapsed(false, false);
+      }
+
+      Reveal.on('ready', () => {
+        buildToc();
+        updateTopNavigation();
+      });
+      Reveal.on('slidechanged', updateTopNavigation);
+      Reveal.on('fragmentshown', updateTopNavigation);
+      Reveal.on('fragmenthidden', updateTopNavigation);
+
+      if (window.mermaid) {
+        mermaid.initialize({
+          startOnLoad: true,
+          securityLevel: 'loose'
+        });
+      }
+    </script>
+  </body>
 </html>
