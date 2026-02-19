@@ -17,6 +17,7 @@ All other fields are unchanged.
 | Latent Space Models for Dynamic Networks | Sewell & Chen | 2015 | JASA | 560 | [link](https://scholar.google.com/citations?user=KA6xtQ0AAAAJ&hl=en) | Graph |
 | Nonparametric Bayes Dynamic Modelling of Relational Data | Durante & Dunson | 2014 | Biometrika | 240 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph |
 | Dynamic Social Network Analysis Using Latent Space Models | Sarkar & Moore | 2005 | SIGKDD Explor. | 420 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph |
+| Discovering Latent Network Structure in Point Process Data | Linderman & Adams | 2014 | ICML | 76 | [link](https://proceedings.mlr.press/v32/linderman14.html) | Graph |
 | Estimation and Prediction for Stochastic Blockstructures | Nowicki & Snijders | 2001 | JASA | 2400 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph |
 | Stochastic blockmodels with a growing number of classes | Choi et al. | 2012 | Biometrika | 1300 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph |
 | Statistical Clustering of Temporal Networks Through a Dynamic Stochastic Block Model | Matias & Miele | 2017 | JRSS-B | 500 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph |
@@ -45,6 +46,7 @@ All other fields are unchanged.
 | Temporal Networks | Holme & Saramäki | 2012 | Phys. Rep. | 3950 | [link](https://scholar.google.com/citations?user=v9f2xUAAAAAJ&hl=en) | Graph |
 | Mathematics of Epidemics on Networks | Kiss et al. | 2017 | Springer book | 2000 | [link](https://books.google.at/books?id=DlEnDwAAQBAJ) | Graph |
 | Epidemic Spreading in Scale-Free Networks | Pastor-Satorras & Vespignani | 2001 | PRL | 9500 | [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC9803903/) | Graph |
+| Dynamical Interplay between Awareness and Epidemic Spreading in Multiplex Networks | Granell et al. | 2013 | PRL | 1022 | [link](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.111.128701) | Graph |
 | **Towards Uncertainty Quantification and Inference in the Stochastic SIR Epidemic Model** | Capistrán et al. | 2012 | Math. Biosci. | 140 | [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC9803903/) | Graph+UQ |
 | **Loopy Belief Propagation: Convergence and Effects of Message Errors** | Ihler et al. | 2005 | JMLR | 2200 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph+UQ |
 | **Information, Physics, and Computation** | Mézard & Montanari | 2009 | OUP book | 7200 | [link](https://simonp.web.elte.hu/files/kissmillersimontocandindex.pdf) | Graph+UQ |
