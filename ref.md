@@ -6,7 +6,16 @@ All other fields are unchanged.
 
 ---
 
-## Structure Inference (27 papers)
+## Surveys (2 papers)
+
+| Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
+|---|---|---:|---|---:|---|---|
+| Uncertainty Quantification on Graph Learning: A Survey | Chen et al. | 2024 | arXiv | 2 | [link](https://arxiv.org/pdf/2404.14642) | Graph+UQ |
+| Uncertainty in Graph Neural Networks: A Survey | Wang et al. | 2024 | TMLR | 56 | [link](https://arxiv.org/pdf/2403.07185) | Graph+UQ |
+
+---
+
+## Structure Inference (31 papers)
 
 | Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
 |---|---|---:|---|---:|---|---|
@@ -17,15 +26,19 @@ All other fields are unchanged.
 | Latent Space Approaches to Social Network Analysis | Hoff et al. | 2002 | JASA | 3300 | [link](https://doi.org/10.1198/016214502388618906) | Graph |
 | Latent Space Models for Dynamic Networks | Sewell & Chen | 2015 | JASA | 560 | [link](https://doi.org/10.1080/01621459.2014.988214) | Graph |
 | Nonparametric Bayes Dynamic Modelling of Relational Data | Durante & Dunson | 2014 | Biometrika | 240 | [link](https://doi.org/10.1093/biomet/asu040) | Graph |
+| A Bayesian Nonparametric Latent Space Approach to Modeling Evolving Communities in Dynamic Networks | Loyal & Chen | 2020 | arXiv | 25 | [link](https://arxiv.org/abs/2003.07404) | Graph |
 | Dynamic Social Network Analysis Using Latent Space Models | Sarkar & Moore | 2005 | SIGKDD Explor. | 420 | [link](https://doi.org/10.1145/1117454.1117459) | Graph |
 | Discovering Latent Network Structure in Point Process Data | Linderman & Adams | 2014 | ICML | 76 | [link](https://proceedings.mlr.press/v32/linderman14.html) | Graph |
 | Estimation and Prediction for Stochastic Blockstructures | Nowicki & Snijders | 2001 | JASA | 2400 | [link](https://doi.org/10.1198/016214501753208735) | Graph |
 | Stochastic blockmodels with a growing number of classes | Choi et al. | 2012 | Biometrika | 1300 | [link](https://doi.org/10.1093/biomet/asr053) | Graph |
 | Statistical Clustering of Temporal Networks Through a Dynamic Stochastic Block Model | Matias & Miele | 2017 | JRSS-B | 500 | [link](https://doi.org/10.1111/rssb.12200) | Graph |
 | Dynamic Stochastic Blockmodels for Time-Evolving Social Networks | Xu & Hero | 2014 | IEEE JSTSP | 1000 | [link](https://doi.org/10.1109/JSTSP.2014.2310294) | Graph |
+| Dynamic Stochastic Blockmodels: Statistical Models for Time-Evolving Networks | Xu & Hero | 2013 | LNCS (SBP) | 116 | [link](https://doi.org/10.1007/978-3-642-37210-0_22) | Graph |
+| **Uncertainty-Aware Graph Structure Learning** | Han et al. | 2025 | ACM Web Conf | 10 | [link](https://arxiv.org/pdf/2502.12618) | Graph+UQ |
 | Learning Systems of Concepts with an Infinite Relational Model | Kemp et al. | 2006 | AAAI | 1500 | [link](https://www.aaai.org/Papers/AAAI/2006/AAAI06-061.pdf) | Graph |
 | Detecting Change Points in the Large-Scale Structure of Evolving Networks | Peel & Clauset | 2015 | AAAI | 650 | [link](https://doi.org/10.1609/aaai.v29i1.9574) | Graph |
 | A Tutorial on Spectral Clustering | von Luxburg | 2007 | Stat. Comput. | 29000 | [link](https://doi.org/10.1007/s11222-007-9033-z) | Graph |
+| Spectral Clustering Based on the Graph p-Laplacian | Buhler & Hein | 2009 | ICML | 410 | [link](https://doi.org/10.1145/1553374.1553385) | Graph |
 | **A Spectral Graph Uncertainty Principle** | Agaskar & Lu | 2013 | IEEE TIT | 330 | [link](https://doi.org/10.1109/TIT.2013.2252233) | Graph+UQ |
 | A Goodness-of-Fit Test for Stochastic Block Models | Lei | 2016 | Ann. Stat. | 420 | [link](https://doi.org/10.1214/15-AOS1370) | Graph |
 | Bootstrap Consistency for Exchangeable Random Graphs | Green & Shalizi | 2022 | Electron. J. Stat. | 40 | [link](https://doi.org/10.1214/21-EJS1970) | Graph |
@@ -40,7 +53,7 @@ All other fields are unchanged.
 
 ---
 
-## Diffusion & Cascades (19 papers)
+## Diffusion & Cascades (20 papers)
 
 | Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
 |---|---|---:|---|---:|---|---|
@@ -52,6 +65,7 @@ All other fields are unchanged.
 | **Loopy Belief Propagation: Convergence and Effects of Message Errors** | Ihler et al. | 2005 | JMLR | 454 | [link](https://www.jmlr.org/papers/v6/ihler05a.html) | Graph+UQ |
 | **Information, Physics, and Computation** (__Part III Models on graphs__) | Mézard & Montanari | 2009 | OUP book | 7200 | [link](https://doi.org/10.1093/acprof:oso/9780198570837.001.0001) | Graph+UQ |
 | Hawkes Processes for Events in Social Media | Rizoiu et al. | 2017 | WWW companion | 550 | [link](https://doi.org/10.1145/3041021.3051463) | Graph |
+| Learning Social Infectivity in Sparse Low-rank Networks Using Multi-dimensional Hawkes Processes | Zhou, Zha, Song | 2013 | AISTATS | 295 | [link](https://proceedings.mlr.press/v31/zhou13a.html) | Graph |
 | **Approximate Zero-Variance Importance Sampling for Static Network Reliability Estimation** | L'Ecuyer et al. | 2011 | IEEE Trans. Rel. | 73 | [link](https://ieeexplore.ieee.org/document/5753982) | Graph+UQ |
 | Multilevel Monte Carlo Methods | Giles | 2015 | Acta Numerica | 4000 | [link](https://doi.org/10.1017/S096249291500001X) | UQ |
 | Survey of Multifidelity Methods in Uncertainty Propagation, Inference, and Optimization | Peherstorfer et al. | 2018 | SIAM Rev. | 1100 | [link](https://doi.org/10.1137/16M1082469) | UQ |
@@ -66,7 +80,7 @@ All other fields are unchanged.
 
 ---
 
-## Inverse Problems / Explanation (19 papers)
+## Inverse Problems / Explanation (20 papers)
 
 | Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
 |---|---|---:|---|---:|---|---|
@@ -78,6 +92,7 @@ All other fields are unchanged.
 | **Bayesian Inference for Epidemics on Random Graphs** | Britton & O'Neill | 2002 | Scand. J. Stat. | 76 | [link](https://academic.oup.com/jrsssb/article/67/5/731/7109669) | Graph+UQ |
 | **Global Sensitivity Analysis in Epidemiological Modeling** | Lu & Borgonovo | 2023 | EJOR | 61 | [link](https://www.sciencedirect.com/science/article/pii/S0377221721009693) | Graph+UQ |
 | **Sensitivity Analysis of Infectious Disease Models** | Wu et al. | 2013 | J. R. Soc. Interface | 374 | [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC3730677/) | Graph+UQ |
+| **Uncertainty Quantification over Graph with Conformalized Graph Neural Networks** | Huang et al. | 2023 | NeurIPS | 13 | [link](https://openreview.net/forum?id=ygjQCOyNfh) | Graph+UQ |
 | Inverse Problems: A Bayesian Perspective | Stuart | 2010 | Acta Numerica | 3600 | [link](https://doi.org/10.1017/S0962492910000061) | UQ |
 | Estimating Average Causal Effects Under General Interference | Aronow & Samii | 2017 | Ann. Appl. Stat. | 820 | [link](https://doi.org/10.1214/16-AOAS1005) | Graph |
 | Identification and Estimation of Treatment and Interference Effects in Observational Studies on Networks | Forastiere et al. | 2021 | JASA | 190 | [link](https://doi.org/10.1080/01621459.2020.1768100) | Graph |
@@ -92,7 +107,7 @@ All other fields are unchanged.
 
 ---
 
-## State Estimation (21 papers)
+## State Estimation (31 papers)
 
 | Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
 |---|---|---:|---|---:|---|---|
@@ -104,10 +119,20 @@ All other fields are unchanged.
 | **Conformal Prediction for Network-Assisted Regression** | Lunde et al. | 2025 | JASA | 28 | [link](https://arxiv.org/abs/2302.10095) | Graph+UQ |
 | Distribution-Free Predictive Inference for Regression | Lei et al. | 2018 | JASA | 1300 | [link](https://doi.org/10.1080/01621459.2017.1307116) | UQ |
 | **Distributed Kalman Filter with Embedded Consensus Filters** | Olfati-Saber | 2005/2007 | CDC / various | 1376 | [link](https://ieeexplore.ieee.org/document/1583486) | Graph+UQ |
+| **Kalman Filtering Over Graphs: Theory and Applications** | Shi | 2009 | IEEE TAC | 47 | [link](https://ieeexplore.ieee.org/abstract/document/5200489) | Graph+UQ |
+| **Kalman Filter for Tracking Network Dynamic** | Dabush & Routtenberg | 2024 | ICASSP | 3 | [link](https://ieeexplore.ieee.org/document/10446697) | Graph+UQ |
+| **Extended Kalman Filter for Graph Signals in Nonlinear Dynamic Systems** | Sagi et al. | 2023 | ICASSP | 26 | [link](https://ieeexplore.ieee.org/abstract/document/10096261) | Graph+UQ |
+| **GSP-KalmanNet: Tracking Graph Signals via Neural-Aided Kalman Filtering** | Buchnik et al. | 2024 | IEEE TSP | 26 | [link](https://ieeexplore.ieee.org/abstract/document/10632588) | Graph+UQ |
 | **Kalman Filtering of Stationary Graph Signals** | Das et al. | 2025 | ICASSP | 5 | [link](https://arxiv.org/abs/2509.12605) | Graph+UQ |
+| **Unscented Kalman filter of graph signals** | Li et al. | 2023 | Automatica | 21 | [link](https://www.sciencedirect.com/science/article/pii/S0005109822006628) | Graph+UQ |
 | **Real-time freeway traffic state estimation based on extended Kalman filter** | Wang & Papageorgiou | 2005 | Transp. Res. B | 1156 | [link](https://www.sciencedirect.com/science/article/pii/S0191261504000438) | Graph+UQ |
 | **Localized Extended Kalman Filter for Scalable Real-Time Traffic State Estimation** | van Hinsbergen et al. | 2012 | IEEE T-ITS | 176 | [link](https://ieeexplore.ieee.org/document/6105572) | Graph+UQ |
+| **Graph Kalman Filters** | Alippi & Zambon | 2023 | arXiv | 10 | [link](https://arxiv.org/abs/2303.12021) | Graph+UQ |
+| **Gaussian Processes Over Graphs** | Venkitaraman et al. | 2020 | ICASSP | 54 | [link](https://ieeexplore.ieee.org/abstract/document/9053859) | Graph+UQ |
+| **Bayesian Semi-supervised Learning with Graph Gaussian Processes** | Ng et al. | 2018 | NeurIPS | 119 | [link](https://proceedings.neurips.cc/paper_files/paper/2018/hash/1fc214004c9481e4c8073e85323bfd4b-Abstract.html) | Graph+UQ |
+| **Uncertainty Aware Graph Gaussian Process for Semi-Supervised Learning** | Liu et al. | 2020 | AAAI | 42 | [link](https://ojs.aaai.org/index.php/AAAI/article/view/5934) | Graph+UQ |
 | **Matérn Gaussian Processes on Graphs** | Borovitskiy et al. | 2021 | AISTATS | 135 | [link](https://proceedings.mlr.press/v130/borovitskiy21a.html) | Graph+UQ |
+| **Graph Bayesian Optimization: Algorithms, Evaluations and Applications** | Cui & Yang | 2018 | arXiv | 12 | [link](https://arxiv.org/abs/1805.01157) | Graph+UQ |
 | **Data-assimilation and state estimation for contact-based spreading processes using the ensemble kalman filter: Application to COVID-19** | Schaum et al. | 2022 | Chaos, Solitons & Fractals | 9 | [link](https://www.sciencedirect.com/science/article/pii/S0960077922000984) | Graph+UQ |
 | Sensor Selection via Convex Optimization | Joshi & Boyd | 2009 | IEEE TSP | 1500 | [link](https://doi.org/10.1109/TSP.2008.2007095) | Graph |
 | Observability-Based Sensor Placement Improves Contaminant Tracing in River Networks | Bartos & Kerkez | 2021 | Water Resour. Res. | 80 | [link](https://doi.org/10.1029/2020WR028317) | Graph |
