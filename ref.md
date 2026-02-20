@@ -70,7 +70,7 @@ All other fields are unchanged.
 | Multilevel Monte Carlo Methods | Giles | 2015 | Acta Numerica | 4000 | [link](https://doi.org/10.1017/S096249291500001X) | UQ |
 | Survey of Multifidelity Methods in Uncertainty Propagation, Inference, and Optimization | Peherstorfer et al. | 2018 | SIAM Rev. | 1100 | [link](https://doi.org/10.1137/16M1082469) | UQ |
 | Predicting the Output from a Complex Computer Code When Fast Approximations Are Available | Kennedy & O'Hagan | 2000 | Biometrika | 6500 | [link](https://doi.org/10.1093/biomet/87.1.1) | UQ |
-| **Graph Decomposition for Uncertainty Propagation in Interconnected Systems** | Hammad & Principe | 2005 | IEEE CDC | 70 | [link](https://ieeexplore.ieee.org/document/1430306) | Graph+UQ |
+| **Graph decomposition methods for uncertainty propagation in complex, nonlinear interconnected dynamical systems** | Hammad & Principe | 2005 | IEEE CDC | 21 | [link](https://ieeexplore.ieee.org/document/1430306) | Graph+UQ |
 | **Max-Linear Models on Directed Acyclic Graphs** | Gissibl & Klüppelberg | 2018 | Bernoulli | 120 | [link](https://arxiv.org/abs/1512.07522) | Graph+UQ |
 | A simple model of global cascades on random networks | Watts | 2002 | PNAS | 5700 | [link](https://doi.org/10.1073/pnas.082090499) | Graph |
 | Virus spread in networks | Van Mieghem et al. | 2009 | IEEE/ACM ToN | 1318 | [link](https://doi.org/10.1109/TNET.2008.925623) | Graph |
