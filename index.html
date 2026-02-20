@@ -907,23 +907,37 @@
       #gf-12 .g12-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.14em;
+        gap: 0.16em;
       }
 
       #gf-12 .g12-item {
-        padding-right: 0.06em;
-      }
-
-      #gf-12 .g12-item:not(:first-child) {
-        border-left: 1px solid #cad8ea;
-        padding-left: 0.14em;
+        border: 1px solid #cdd9ea;
+        border-radius: 10px;
+        background: #fbfdff;
+        box-shadow: 0 4px 10px rgba(28, 61, 100, 0.05);
+        padding: 0.12em 0.14em;
       }
 
       #gf-12 .g12-title {
         margin: 0;
-        font-size: 0.56em;
+        font-size: 0.6em;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.22;
+      }
+
+      #gf-12 .g12-item.s {
+        border-top: 3px solid #6f9ccf;
+        background: linear-gradient(180deg, #f3f8ff 0%, #fbfdff 32%);
+      }
+
+      #gf-12 .g12-item.p {
+        border-top: 3px solid #c9984e;
+        background: linear-gradient(180deg, #fff9f1 0%, #fbfdff 32%);
+      }
+
+      #gf-12 .g12-item.o {
+        border-top: 3px solid #4d9a8b;
+        background: linear-gradient(180deg, #f2fbf8 0%, #fbfdff 32%);
       }
 
       #gf-12 .g12-item.s .g12-title {
@@ -940,26 +954,30 @@
 
       #gf-12 .g12-text {
         margin: 0.06em 0 0;
-        font-size: 0.57em;
+        font-size: 0.6em;
         line-height: 1.22;
         color: #2a527b;
       }
 
       #gf-12 .g12-formula {
         margin: 0.06em 0 0;
-        font-size: 0.72em;
+        font-size: 0.75em;
         text-align: left;
       }
 
       #gf-12 .g12-bridge {
-        margin: 0.1em 0 0;
-        font-size: 0.58em;
+        margin: 0.12em auto 0;
+        max-width: 92%;
+        text-align: center;
+        font-size: 0.61em;
         line-height: 1.24;
         color: #3b5f86;
       }
 
       #gf-12 .g12-target {
-        margin: 0.08em 0 0;
+        margin: 0.1em auto 0;
+        max-width: 92%;
+        text-align: center;
       }
 
       #gf-12 .g12-target span {
@@ -975,116 +993,487 @@
       #gf-15 .m4-kicker {
         margin: 0.1em auto 0.14em;
         width: fit-content;
-        max-width: 100%;
-        padding: 0.1em 0.48em;
-        border: 1px solid #c5d3e6;
+        max-width: 98%;
+        padding: 0.09em 0.42em;
+        border: 1px solid #c5d5ea;
         border-radius: 999px;
-        background: #f7faff;
-        color: #2f4f78;
-        font-size: 0.7em;
+        background: #f7fbff;
+        color: #2a4c74;
+        font-size: 0.67em;
       }
 
-      #gf-15 .m4-table-wrap {
-        margin-top: 0.1em;
+      #gf-15 .m4-stage {
+        margin-top: 0.08em;
+      }
+
+      #gf-15 .m4-big-wrap {
         border: 1px solid #b9cce6;
         border-radius: 12px;
         overflow: hidden;
         background: #ffffff;
         box-shadow: 0 10px 20px rgba(18, 44, 77, 0.08);
+        padding: 0.08em;
       }
 
-      #gf-15 .m4-compare-table {
+      #gf-15 .m4-big-wrap.fragment.fade-out.visible {
+        display: none;
+      }
+
+      #gf-15 .m4-big-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.1em;
+        align-items: stretch;
+      }
+
+      #gf-15 .m4-big-card {
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      #gf-15 .m4-big-card-title {
+        margin: 0;
+        padding: 0.1em 0.14em;
+        border-bottom: 1px solid #d7dff0;
+        background: #f1f6ff;
+        color: #214a76;
+        font-size: 0.57em;
+        font-weight: 700;
+      }
+
+      #gf-15 .m4-big-card:nth-child(1) .m4-big-card-title {
+        border-bottom-color: #ead6cf;
+        background: linear-gradient(180deg, #fff1ea 0%, #fff8ef 100%);
+        color: #724a35;
+      }
+
+      #gf-15 .m4-big-card:nth-child(2) .m4-big-card-title {
+        border-bottom-color: #cfddf0;
+        background: linear-gradient(180deg, #ecf4ff 0%, #f4f8ff 100%);
+        color: #214a76;
+      }
+
+      #gf-15 .m4-big-table {
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        font-size: 0.64em;
-        line-height: 1.26;
+        font-size: 0.54em;
+        line-height: 1.22;
       }
 
-      #gf-15 .m4-compare-table thead th {
-        padding: 0.15em 0.2em;
-        border-bottom: 1px solid #c7d8ed;
-        background: linear-gradient(180deg, #edf4ff 0%, #e8f1ff 100%);
+      #gf-15 .m4-big-table thead th {
+        padding: 0.11em 0.13em;
+        border-bottom: 1px solid #c6d8ec;
+        background: linear-gradient(180deg, #edf5ff 0%, #e7f1ff 100%);
         color: #1e4673;
         font-weight: 700;
         text-align: left;
       }
 
-      #gf-15 .m4-compare-table thead th:nth-child(3),
-      #gf-15 .m4-compare-table thead th:nth-child(4) {
-        text-align: center;
-        font-size: 1.05em;
+      #gf-15 .m4-big-card:nth-child(1) .m4-big-table thead th {
+        border-bottom-color: #ecd9d2;
+        background: linear-gradient(180deg, #fff4ee 0%, #fff9f2 100%);
+        color: #724b34;
       }
 
-      #gf-15 .m4-compare-table td {
-        padding: 0.14em 0.2em;
+      #gf-15 .m4-big-card:nth-child(2) .m4-big-table thead th {
+        border-bottom-color: #c6d8ec;
+        background: linear-gradient(180deg, #edf5ff 0%, #e7f1ff 100%);
+        color: #1e4673;
+      }
+
+      #gf-15 .m4-big-table th:nth-child(1),
+      #gf-15 .m4-big-table td:nth-child(1) {
+        width: 30%;
+      }
+
+      #gf-15 .m4-big-table th:nth-child(2),
+      #gf-15 .m4-big-table td:nth-child(2) {
+        width: 48%;
+      }
+
+      #gf-15 .m4-big-table th:nth-child(3),
+      #gf-15 .m4-big-table th:nth-child(4),
+      #gf-15 .m4-big-table td:nth-child(3),
+      #gf-15 .m4-big-table td:nth-child(4) {
+        text-align: center;
+        width: 11%;
+      }
+
+      #gf-15 .m4-big-table th:nth-child(3),
+      #gf-15 .m4-big-table td:nth-child(3) {
+        padding-right: 0.36em;
+      }
+
+      #gf-15 .m4-big-table th:nth-child(4),
+      #gf-15 .m4-big-table td:nth-child(4) {
+        padding-left: 0.36em;
+      }
+
+      #gf-15 .m4-big-table td {
+        padding: 0.11em 0.13em;
         border-bottom: 1px solid #d7e2f1;
         vertical-align: top;
         color: #21486f;
       }
 
-      #gf-15 .m4-compare-table td:nth-child(3),
-      #gf-15 .m4-compare-table td:nth-child(4) {
-        text-align: center;
-        font-size: 0.82em;
-        font-weight: 600;
-        width: 15%;
+      #gf-15 .m4-big-card:nth-child(1) .m4-big-table td {
+        border-bottom-color: #eee1d7;
+        color: #5f4b3f;
       }
 
-      #gf-15 .m4-compare-table tbody tr:nth-child(even) td {
+      #gf-15 .m4-big-card:nth-child(2) .m4-big-table td {
+        border-bottom-color: #d7e2f1;
+        color: #21486f;
+      }
+
+      #gf-15 .m4-big-table tbody tr:nth-child(even) td {
         background: #fbfdff;
       }
 
-      #gf-15 .m4-compare-table tbody tr:last-child td {
+      #gf-15 .m4-big-card:nth-child(1) .m4-big-table tbody tr:nth-child(even) td {
+        background: #fffdf9;
+      }
+
+      #gf-15 .m4-big-card:nth-child(2) .m4-big-table tbody tr:nth-child(even) td {
+        background: #fbfdff;
+      }
+
+      #gf-15 .m4-big-table tbody tr:last-child td {
         border-bottom: none;
       }
 
-      #gf-15 .m4-family {
-        font-weight: 700;
-        color: #1f4a7d;
-        white-space: nowrap;
+      #gf-15 .m4-big-card:nth-child(1) .m4-big-table tr.m4-gap-row td {
+        background: #ffe8df !important;
       }
 
-      #gf-15 .m4-methods {
+      #gf-15 .m4-big-card:nth-child(2) .m4-big-table tr.m4-gap-row td {
+        background: #e9f2ff !important;
+      }
+
+      #gf-15 .m4-axis {
+        font-weight: 700;
+        white-space: normal;
+      }
+
+      #gf-15 .m4-big-card:nth-child(1) .m4-axis {
+        color: #6f4a36;
+      }
+
+      #gf-15 .m4-big-card:nth-child(2) .m4-axis {
+        color: #1c4572;
+      }
+
+      #gf-15 .m4-big-card:nth-child(1) .m4-method {
+        color: #7a5642;
+      }
+
+      #gf-15 .m4-big-card:nth-child(2) .m4-method {
         color: #2a547f;
       }
 
-      #gf-15 .m4-focus-row td {
-        background: #f1f8ff !important;
-      }
-
-      #gf-15 .m4-mark {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 1.6em;
-        font-size: 1.28em;
+      #gf-15 .m4-score {
+        --fill: 0%;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 0.86em;
         line-height: 1;
-        font-weight: 800;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        color: transparent;
+        background: linear-gradient(90deg, #dda232 var(--fill), #d4ddea var(--fill));
+        -webkit-background-clip: text;
+        background-clip: text;
       }
 
-      #gf-15 .m4-beyond {
-        margin-top: 0.16em;
-        border: 1px solid #bdd0ea;
-        border-left: 4px solid #4c79b1;
-        border-radius: 10px;
-        background: #f7fbff;
-        padding: 0.16em 0.28em;
-        font-size: 0.68em;
-        line-height: 1.23;
-        color: #234b77;
+      #gf-15 .m4-score::before {
+        content: "★★★★★";
       }
 
-      #gf-15 .m4-mark.yes {
-        color: #2a8b47;
+      #gf-15 .m4-score.s0 {
+        --fill: 0%;
       }
 
-      #gf-15 .m4-mark.no {
-        color: #c53b3b;
+      #gf-15 .m4-score.s1 {
+        --fill: 25%;
       }
 
-      #gf-15 .m4-beyond strong {
-        color: #163f6f;
+      #gf-15 .m4-score.s2 {
+        --fill: 50%;
+      }
+
+      #gf-15 .m4-score.s3 {
+        --fill: 75%;
+      }
+
+      #gf-15 .m4-score.s4 {
+        --fill: 100%;
+      }
+
+      #gf-15 .m4-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.3em;
+        align-items: start;
+        margin-top: 0.1em;
+        min-height: 10.3em;
+        align-content: space-between;
+      }
+
+      #gf-15 .m4-split.fragment {
+        display: none;
+      }
+
+      #gf-15 .m4-split.fragment.visible {
+        display: grid;
+        animation: m4SlideIn 0.34s ease;
+      }
+
+      #gf-15 .m4-split-head {
+        margin: 0 0 0.06em;
+      }
+
+      #gf-15 .m4-mini-card {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.02em 0.03em;
+      }
+
+      #gf-15 .m4-mini-title {
+        margin: 0 0 0.06em;
+        font-size: 0.58em;
+        font-weight: 700;
+        color: #1f4a78;
+      }
+
+      #gf-15 .m4-mini-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.56em;
+        line-height: 1.21;
+      }
+
+      #gf-15 .m4-mini-table thead th {
+        padding: 0.09em 0.12em;
+        border-bottom: 1px solid #cad9ee;
+        background: transparent;
+        color: #1f4875;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      #gf-15 .m4-mini-table td {
+        padding: 0.08em 0.12em;
+        border-bottom: 1px solid #e1e8f4;
+        color: #21496f;
+      }
+
+      #gf-15 .m4-mini-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      #gf-15 .m4-mini-table tr.m4-gap-core td:first-child {
+        color: #1f4a78;
+        font-weight: 700;
+      }
+
+      #gf-15 .m4-mini-table tr.m4-gap-core td {
+        background: transparent;
+      }
+
+      #gf-15 .m4-mini-table tbody tr.m4-gap-core:nth-child(3) td {
+        background: linear-gradient(90deg, rgba(216, 108, 108, 0.13) 0%, rgba(216, 108, 108, 0.04) 38%, transparent 76%);
+      }
+
+      #gf-15 .m4-mini-table tbody tr.m4-gap-core:nth-child(4) td {
+        background: linear-gradient(90deg, rgba(208, 146, 68, 0.14) 0%, rgba(208, 146, 68, 0.04) 38%, transparent 76%);
+      }
+
+      #gf-15 .m4-mini-table tbody tr.m4-gap-core:nth-child(5) td {
+        background: linear-gradient(90deg, rgba(83, 141, 201, 0.14) 0%, rgba(83, 141, 201, 0.04) 38%, transparent 76%);
+      }
+
+      #gf-15 .m4-mini-table th:nth-child(n+2),
+      #gf-15 .m4-mini-table td:nth-child(n+2) {
+        text-align: center;
+        width: 18%;
+      }
+
+      #gf-15 .m4-mini-table th:nth-child(3),
+      #gf-15 .m4-mini-table td:nth-child(3) {
+        padding-right: 0.3em;
+      }
+
+      #gf-15 .m4-mini-table th:nth-child(4),
+      #gf-15 .m4-mini-table td:nth-child(4) {
+        padding-left: 0.3em;
+      }
+
+      #gf-15 .m4-mini-plus.fragment {
+        display: none;
+      }
+
+      #gf-15 .m4-mini-plus.fragment.visible {
+        display: block;
+        animation: m4SlideIn 0.3s ease;
+      }
+
+      #gf-15 .m4-mini-base.fragment.fade-out.visible {
+        display: none;
+      }
+
+      #gf-15 .m4-gap-panel {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.02em 0;
+        margin: 0.18em auto 0;
+        max-width: 98%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #gf-15 .m4-gap-panel.fragment {
+        display: none;
+      }
+
+      #gf-15 .m4-gap-panel.fragment.visible {
+        display: block;
+        animation: m4SlideIn 0.34s ease;
+      }
+
+      #gf-15 .m4-gap-head {
+        margin: 0 0 0.12em;
+        font-size: 0.66em;
+        font-weight: 700;
+        color: #1f4a78;
+        text-align: center;
+      }
+
+      #gf-15 .m4-gap-kicker {
+        margin: 0 0 0.05em;
+        font-size: 0.47em;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #607b9d;
+      }
+
+      #gf-15 .m4-deficit-row {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        align-items: center;
+        gap: 0.07em;
+        margin: 0.03em 0;
+      }
+
+      #gf-15 .m4-deficit-name {
+        font-size: 0.54em;
+        font-weight: 700;
+        color: #1e4a77;
+      }
+
+      #gf-15 .m4-deficit-value {
+        font-size: 0.53em;
+        font-weight: 700;
+        color: #b34b4b;
+      }
+
+      #gf-15 .m4-deficit-bar {
+        height: 0.26em;
+        border-radius: 999px;
+        background: #e3ebf7;
+        overflow: hidden;
+      }
+
+      #gf-15 .m4-deficit-bar span {
+        display: block;
+        height: 100%;
+        width: var(--w, 0%);
+        background: linear-gradient(90deg, #de7e73 0%, #c74e4e 100%);
+      }
+
+      #gf-15 .m4-gap-item {
+        margin: 0;
+        padding: 0.2em 0.22em;
+        border: 1px solid #c6d4e8;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 14px 30px rgba(20, 44, 76, 0.1);
+        min-height: 6.2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 0.62em;
+        line-height: 1.3;
+        color: #244c76;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #gf-15 .m4-gap-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.15em;
+        align-items: stretch;
+        margin-top: 0;
+        width: 100%;
+      }
+
+      #gf-15 .m4-gap-item strong {
+        display: block;
+        margin-bottom: 0.08em;
+        font-size: 1.12em;
+        letter-spacing: 0.012em;
+        color: currentColor;
+      }
+
+      #gf-15 .m4-gap-item::after {
+        content: "";
+        position: absolute;
+        right: -1.05em;
+        bottom: -1.18em;
+        width: 2.8em;
+        height: 2.8em;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0) 72%);
+        pointer-events: none;
+      }
+
+      #gf-15 .m4-gap-item.g1 {
+        border-top: 5px solid #d35858;
+        background: linear-gradient(180deg, #ffe3e3 0%, #fff7f7 38%, #ffffff 100%);
+        color: #7d2e2e;
+      }
+
+      #gf-15 .m4-gap-item.g2 {
+        border-top: 5px solid #cc8736;
+        background: linear-gradient(180deg, #ffefd3 0%, #fff8eb 38%, #ffffff 100%);
+        color: #815a26;
+      }
+
+      #gf-15 .m4-gap-item.g3 {
+        border-top: 5px solid #4a84bc;
+        background: linear-gradient(180deg, #dff0ff 0%, #f2f8ff 38%, #ffffff 100%);
+        color: #25577f;
+      }
+
+      @keyframes m4SlideIn {
+        from {
+          opacity: 0;
+          transform: translateX(14px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
 
       .mechanism-table {
@@ -1187,7 +1576,7 @@
         bottom: 18px;
         left: 0;
         right: auto;
-        width: 340px;
+        width: 316px;
         max-height: calc(100vh - 24px);
         height: auto;
         display: flex;
@@ -1228,10 +1617,12 @@
         background: #f5f9ff;
         color: #1f4273;
         border-radius: 8px;
-        padding: 3px 8px;
-        font-size: 11px;
-        line-height: 1.15;
-        font-weight: 600;
+        width: 28px;
+        height: 26px;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
         cursor: pointer;
       }
 
@@ -1244,9 +1635,11 @@
         background: #eaf2ff;
         color: #173d71;
         border-radius: 8px;
-        padding: 3px 8px;
-        font-size: 11px;
-        line-height: 1.15;
+        width: 28px;
+        height: 26px;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1;
         font-weight: 700;
         cursor: pointer;
       }
@@ -1415,8 +1808,8 @@
       }
 
       .top-nav.collapsed .toc-toggle {
-        width: 44px;
-        padding: 4px 0;
+        width: 28px;
+        padding: 0;
       }
 
       .top-progress {
@@ -1424,7 +1817,7 @@
         bottom: 12px;
         left: 10px;
         right: auto;
-        width: 320px;
+        width: 296px;
         height: 3px;
         background: rgba(47, 86, 138, 0.16);
         z-index: 49;
@@ -1441,12 +1834,12 @@
 
       @media (max-width: 900px) {
         .top-nav {
-          width: 270px;
+          width: 248px;
           padding: 8px 10px;
         }
 
         .top-progress {
-          width: 250px;
+          width: 228px;
         }
 
         .top-nav .nav-title {
@@ -1560,34 +1953,75 @@
           gap: 0.08em;
         }
 
-        #gf-12 .g12-item:not(:first-child) {
-          border-left: 0;
-          border-top: 1px solid #cad8ea;
-          padding-left: 0;
-          padding-top: 0.08em;
+        #gf-12 .g12-item {
+          padding: 0.12em 0.14em;
         }
 
-        #gf-15 .m4-table-wrap {
-          overflow-x: auto;
+        #gf-12 .g12-bridge,
+        #gf-12 .g12-target {
+          max-width: 96%;
         }
 
-        #gf-15 .m4-compare-table {
-          min-width: 860px;
-          font-size: 0.6em;
+        #gf-15 .m4-kicker {
+          font-size: 0.63em;
         }
 
-        #gf-15 .m4-kicker,
-        #gf-15 .m4-beyond {
-          font-size: 0.66em;
+        #gf-15 .m4-big-wrap {
+          overflow: hidden;
         }
 
-        #gf-15 .m4-mark {
-          font-size: 1.2em;
+        #gf-15 .m4-big-grid {
+          grid-template-columns: 1fr;
         }
 
-        #gf-15 .m4-compare-table td:nth-child(3),
-        #gf-15 .m4-compare-table td:nth-child(4) {
-          font-size: 0.78em;
+        #gf-15 .m4-big-table {
+          font-size: 0.58em;
+        }
+
+        #gf-15 .m4-split.fragment.visible {
+          display: block;
+        }
+
+        #gf-15 .m4-split {
+          min-height: auto;
+          gap: 0.16em;
+          margin-top: 0.08em;
+        }
+
+        #gf-15 .m4-mini-card {
+          padding: 0;
+        }
+
+        #gf-15 .m4-mini-table {
+          font-size: 0.56em;
+        }
+
+        #gf-15 .m4-gap-panel {
+          margin: 0.12em auto 0;
+          max-width: 100%;
+        }
+
+        #gf-15 .m4-gap-head {
+          margin: 0 0 0.08em;
+        }
+
+        #gf-15 .m4-gap-cards {
+          grid-template-columns: 1fr;
+          gap: 0.1em;
+        }
+
+        #gf-15 .m4-gap-item {
+          min-height: auto;
+          padding: 0.18em 0.2em;
+        }
+
+        #gf-15 .m4-deficit-row {
+          grid-template-columns: 1fr auto;
+          row-gap: 0.03em;
+        }
+
+        #gf-15 .m4-deficit-bar {
+          grid-column: 1 / -1;
         }
 
         .top-nav.collapsed {
@@ -1718,8 +2152,8 @@
           <span class="nav-page" id="navPage">1 / 1</span>
         </div>
         <div class="nav-actions">
-          <button class="cover-jump" id="coverJumpBtn" type="button" title="Jump to cover slide">Cover</button>
-          <button class="toc-toggle" id="tocToggleBtn" type="button" aria-controls="tocList" aria-expanded="true" title="Hide table of contents">Hide</button>
+          <button class="cover-jump" id="coverJumpBtn" type="button" title="Jump to cover slide" aria-label="Jump to cover slide">&#8962;</button>
+          <button class="toc-toggle" id="tocToggleBtn" type="button" aria-controls="tocList" aria-expanded="true" title="Hide table of contents" aria-label="Hide table of contents">&times;</button>
         </div>
       </div>
       <ul class="toc-list" id="tocList" aria-label="Table of contents"></ul>
@@ -2109,75 +2543,142 @@
           </section>
 
           <section id="gf-15" data-subsection="Module 4 — Roadmap">
-            <h2>2.12: Paper vs Tutorial (Table Comparison)</h2>
-            <p class="m4-kicker">Legend: Paper = Chen et al. (2024); Tutorial = this course. <span class="m4-mark yes">✔</span> covered, <span class="m4-mark no">✖</span> not central.</p>
-            <div class="m4-table-wrap">
-              <table class="m4-compare-table">
-                <thead>
-                  <tr>
-                    <th>Family</th>
-                    <th>Representative Techniques</th>
-                    <th>Paper Coverage</th>
-                    <th>Tutorial Coverage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="m4-family">Sampling-based</td>
-                    <td class="m4-methods">Monte Carlo, MLMC, Particle Filtering</td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr>
-                    <td class="m4-family">Spectral-based</td>
-                    <td class="m4-methods">Polynomial Chaos, KL expansion, Sparse Grid</td>
-                    <td><span class="m4-mark no">✖</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr class="m4-focus-row">
-                    <td class="m4-family">Variance-based</td>
-                    <td class="m4-methods">Sobol, FAST, Morris</td>
-                    <td><span class="m4-mark no">✖</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr>
-                    <td class="m4-family">Bayesian</td>
-                    <td class="m4-methods">MCMC, VI, GP</td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr class="m4-focus-row">
-                    <td class="m4-family">Filtering</td>
-                    <td class="m4-methods">Kalman, EnKF, SMC</td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr>
-                    <td class="m4-family">Robust</td>
-                    <td class="m4-methods">DRO, CVaR</td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                  <tr>
-                    <td class="m4-family">Distribution-free</td>
-                    <td class="m4-methods">Conformal, Calibration</td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                    <td><span class="m4-mark yes">✔</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="m4-beyond">
-              <strong>Tutorial emphasis beyond the survey center:</strong>
-              deeper treatment of Kalman-style state estimation and Sobol-style sensitivity for dynamical-network interventions.
+            <h2>2.12: What Existing Graph-UQ Surveys Still Miss</h2>
+            <div class="m4-stage">
+              <div class="m4-big-wrap fragment fade-out" data-fragment-index="1">
+                <div class="m4-big-grid">
+                  <div class="m4-big-card">
+                    <p class="m4-big-card-title">Table A: Representation + Propagation + Sequential UQ</p>
+                    <table class="m4-big-table">
+                      <thead>
+                        <tr>
+                          <th>Axis</th>
+                          <th>Technique</th>
+                          <th>Wang</th>
+                          <th>Chen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td class="m4-axis">Representation</td><td class="m4-method">Random variable / posterior</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Representation</td><td class="m4-method">Gaussian Process</td><td><span class="m4-score s1" title="1 / 4" aria-label="1 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Representation</td><td class="m4-method">Random field / KL expansion</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s1" title="1 / 4" aria-label="1 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Representation</td><td class="m4-method">Copula / stochastic field</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Propagation</td><td class="m4-method">Monte Carlo</td><td><span class="m4-score s2" title="2 / 4" aria-label="2 out of 4"></span></td><td><span class="m4-score s2" title="2 / 4" aria-label="2 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Propagation</td><td class="m4-method">Polynomial Chaos (PCE)</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Propagation</td><td class="m4-method">Stochastic Galerkin</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Propagation</td><td class="m4-method">KL expansion for propagation</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sequential / Dynamic UQ</td><td class="m4-method">Kalman Filter</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sequential / Dynamic UQ</td><td class="m4-method">EKF / UKF</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sequential / Dynamic UQ</td><td class="m4-method">Ensemble Kalman</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sequential / Dynamic UQ</td><td class="m4-method">Particle Filter</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sequential / Dynamic UQ</td><td class="m4-method">Data Assimilation</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="m4-big-card">
+                    <p class="m4-big-card-title">Table B: Sensitivity + Inverse + Risk + Distribution-Free + SDE</p>
+                    <table class="m4-big-table">
+                      <thead>
+                        <tr>
+                          <th>Axis</th>
+                          <th>Technique</th>
+                          <th>Wang</th>
+                          <th>Chen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sensitivity</td><td class="m4-method">Sobol indices</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Sensitivity</td><td class="m4-method">Variance decomposition</td><td><span class="m4-score s1" title="1 / 4" aria-label="1 out of 4"></span></td><td><span class="m4-score s1" title="1 / 4" aria-label="1 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Sensitivity</td><td class="m4-method">Morris / FAST</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Inverse problems</td><td class="m4-method">Bayesian inverse problem</td><td><span class="m4-score s1" title="1 / 4" aria-label="1 out of 4"></span></td><td><span class="m4-score s2" title="2 / 4" aria-label="2 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Inverse problems</td><td class="m4-method">Ill-posedness regularization</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Risk and reliability</td><td class="m4-method">FORM / SORM</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Risk and reliability</td><td class="m4-method">Rare event simulation</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-row"><td class="m4-axis">Risk and reliability</td><td class="m4-method">CVaR</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Risk and reliability</td><td class="m4-method">DRO</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Distribution-free</td><td class="m4-method">Conformal prediction</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">Calibration</td><td class="m4-method">ECE / Brier</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td></tr>
+                        <tr><td class="m4-axis">SDE-based</td><td class="m4-method">Neural SDE</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="m4-gap-panel">
+                  <p class="m4-gap-kicker">Coverage deficit at a glance</p>
+                  <div class="m4-deficit-row">
+                    <span class="m4-deficit-name">Wang 2024</span>
+                    <span class="m4-deficit-value">17 / 25 zero-coverage</span>
+                    <span class="m4-deficit-bar"><span style="--w: 68%;"></span></span>
+                  </div>
+                  <div class="m4-deficit-row">
+                    <span class="m4-deficit-name">Chen 2024</span>
+                    <span class="m4-deficit-value">15 / 25 zero-coverage</span>
+                    <span class="m4-deficit-bar"><span style="--w: 60%;"></span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="m4-split fragment" data-fragment-index="1">
+                <div class="m4-mini-stack">
+                  <div class="m4-mini-card m4-mini-base fragment fade-out" data-fragment-index="2">
+                    <p class="m4-mini-title">Condensed comparison of the two existing surveys</p>
+                    <table class="m4-mini-table">
+                      <thead>
+                        <tr>
+                          <th>Core area</th>
+                          <th>Wang</th>
+                          <th>Chen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>Bayesian + GP</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr><td>Conformal + calibration</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Sequential UQ (Kalman family)</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Spectral propagation (PCE/KL)</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Sensitivity + reliability</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="m4-mini-card m4-mini-plus fragment" data-fragment-index="2">
+                    <p class="m4-mini-title">Add our tutorial column: full core coverage</p>
+                    <table class="m4-mini-table">
+                      <thead>
+                        <tr>
+                          <th>Core area</th>
+                          <th>Wang</th>
+                          <th>Chen</th>
+                          <th>Tutorial</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>Bayesian + GP</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr><td>Conformal + calibration</td><td><span class="m4-score s3" title="3 / 4" aria-label="3 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Sequential UQ (Kalman family)</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Spectral propagation (PCE/KL)</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                        <tr class="m4-gap-core"><td>Sensitivity + reliability</td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s0" title="0 / 4" aria-label="0 out of 4"></span></td><td><span class="m4-score s4" title="4 / 4" aria-label="4 out of 4"></span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="m4-gap-panel">
+                  <p class="m4-gap-head m4-split-head">Three major gaps in current graph-UQ survey coverage</p>
+                  <div class="m4-gap-cards">
+                    <div class="m4-gap-item g1"><strong>Gap 1: Sequential UQ</strong>Kalman, EnKF, and covariance recursion for graph dynamics are missing.</div>
+                    <div class="m4-gap-item g2"><strong>Gap 2: Spectral propagation</strong>PCE, stochastic Galerkin, and KL-based uncertainty transport are absent.</div>
+                    <div class="m4-gap-item g3"><strong>Gap 3: Sensitivity and reliability</strong>Sobol-style attribution and rare-event risk analysis are not covered.</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <p class="reference">
-              Ref: <a href="https://arxiv.org/html/2404.14642">Chen et al., Uncertainty Quantification on Graph Learning: A Survey (2024)</a>.
+              Ref: <a href="https://arxiv.org/abs/2403.07185">Wang et al., Uncertainty in Graph Neural Networks: A Survey (TMLR 2024)</a>; <a href="https://arxiv.org/abs/2404.14642">Chen et al., Uncertainty Quantification on Graph Learning: A Survey (2024)</a>.
             </p>
             <aside class="notes">
-              Reuse the exact 2.7 family vocabulary, but add source labels for coverage.
-              Emphasize two tutorial depth points: Kalman filtering and Sobol sensitivity.
-              Keep the distinctions directional: paper gives broad survey; tutorial gives dynamic-network operational depth.
+              Step 1: show the complete axis-level comparison with coverage-deficit and Gap 1/2/3 directly below.
+              Step 2: compress into a small table view and show the three major gaps.
+              Step 3: map those three gaps into the final Tutorial column that closes the missing coverage.
             </aside>
           </section>
 
@@ -2298,8 +2799,9 @@
       function setTocCollapsed(collapsed, persist = true) {
         if (!topNavEl || !tocToggleBtn) return;
         topNavEl.classList.toggle('collapsed', collapsed);
-        tocToggleBtn.textContent = collapsed ? 'Show' : 'Hide';
+        tocToggleBtn.innerHTML = collapsed ? '&#9776;' : '&times;';
         tocToggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        tocToggleBtn.setAttribute('aria-label', collapsed ? 'Show table of contents' : 'Hide table of contents');
         tocToggleBtn.setAttribute('title', collapsed ? 'Show table of contents' : 'Hide table of contents');
         if (persist) {
           try {
