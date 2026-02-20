@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Global Framework - Dynamic Graph UQ</title>
+    <title>Uncertainty Quantification for Dynamical Networks - WSDM 2026 Tutorial</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
@@ -354,6 +354,442 @@
       .term-card.term-c3 strong { color: #b07220; }
       .term-card.term-c4 strong { color: #b64f45; }
 
+      .uq26-kicker {
+        margin: 0.16em auto 0.22em;
+        width: fit-content;
+        max-width: 92%;
+        padding: 0.14em 0.54em;
+        border: 1px solid #a7bbda;
+        border-radius: 999px;
+        background: #f4f8ff;
+        color: #224b7e;
+        font-size: 0.7em;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .uq26-card {
+        border: 1px solid #c2d2e8;
+        border-radius: 10px;
+        background: #ffffff;
+        padding: 0.3em 0.45em;
+      }
+
+      .uq26-single {
+        max-width: 86%;
+        margin: 0 auto;
+      }
+
+      .uq26-core {
+        border-top: 3px solid #4b72a9;
+        background: #f9fbff;
+      }
+
+      .uq26-label {
+        margin: 0 0 0.08em;
+        font-size: 0.56em;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #2f588c;
+      }
+
+      .uq26-question {
+        margin: 0;
+        font-size: 0.84em;
+        line-height: 1.28;
+        color: #132f53;
+        font-weight: 700;
+      }
+
+      .uq26-body {
+        margin: 0.12em 0 0;
+        font-size: 0.68em;
+        line-height: 1.28;
+        color: #355881;
+      }
+
+      .uq26-formula-block {
+        margin-top: 0.16em;
+      }
+
+      .uq26-formula-block .formula {
+        margin: 0;
+        font-size: 0.82em;
+      }
+
+      .uqtech-overview {
+        margin-top: 0.14em;
+        padding: 0.14em 0.32em;
+        border: 1px solid #cad8ec;
+        border-radius: 9px;
+        background: #f7fbff;
+        font-size: 0.62em;
+        line-height: 1.28;
+        color: #2b507c;
+        text-align: center;
+      }
+
+      .uqtech-grid {
+        margin-top: 0.12em;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 0.1em;
+        row-gap: 0.1em;
+      }
+
+      .uqtech-item {
+        border: 1px solid #c6d6eb;
+        border-radius: 10px;
+        background: #ffffff;
+        padding: 0.13em 0.22em;
+      }
+
+      .uqtech-item:nth-child(1) { border-left: 3px solid #4f7ab3; }
+      .uqtech-item:nth-child(2) { border-left: 3px solid #3f9a86; }
+      .uqtech-item:nth-child(3) { border-left: 3px solid #d39a3e; }
+      .uqtech-item:nth-child(4) { border-left: 3px solid #8a74c9; }
+      .uqtech-item:nth-child(5) { border-left: 3px solid #cd7a54; }
+      .uqtech-item:nth-child(6) { border-left: 3px solid #a85a7f; }
+      .uqtech-item:nth-child(7) { border-left: 3px solid #4e83a8; }
+
+      .uqtech-head {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.18em;
+      }
+
+      .uqtech-family {
+        font-size: 0.68em;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        font-weight: 700;
+        color: #1f4877;
+      }
+
+      .uqtech-role {
+        font-size: 0.54em;
+        color: #4b688e;
+        border: 1px solid #c5d4ea;
+        border-radius: 999px;
+        background: #eef4ff;
+        padding: 0.02em 0.34em;
+      }
+
+      .uqtech-desc {
+        margin: 0.06em 0 0;
+        font-size: 0.61em;
+        line-height: 1.27;
+        color: #254d78;
+        font-style: italic;
+      }
+
+      .uqtech-methods {
+        margin: 0.08em 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.08em;
+      }
+
+      .uqtech-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.04em 0.34em;
+        border: 1px solid #ccd9ec;
+        border-radius: 7px;
+        background: #f4f8ff;
+        font-size: 0.52em;
+        line-height: 1.2;
+        color: #355b86;
+      }
+
+      #gf-05b h2 {
+        font-size: 1.34em;
+      }
+
+      #gf-05b .uq26-kicker {
+        font-size: 0.78em;
+      }
+
+      #gf-05b .uqtech-overview {
+        font-size: 0.69em;
+      }
+
+      #gf-05b .uqtech-family {
+        font-size: 0.75em;
+      }
+
+      #gf-05b .uqtech-role {
+        font-size: 0.6em;
+      }
+
+      #gf-05b .uqtech-desc {
+        font-size: 0.68em;
+      }
+
+      #gf-05b .uqtech-chip {
+        font-size: 0.58em;
+        padding: 0.05em 0.38em;
+      }
+
+      #gf-05b .reference {
+        font-size: 0.57em;
+      }
+
+      #gf-06 .uq28-bottom {
+        margin-top: 0.08em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.14em;
+        align-items: stretch;
+      }
+
+      #gf-06 .uq28-equation {
+        margin-top: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+      }
+
+      #gf-06 .uq28-equation-label {
+        margin: 0 0 0.06em;
+        font-size: 0.54em;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #4a678d;
+        font-weight: 700;
+      }
+
+      #gf-06 .uq28-equation .formula {
+        margin: 0;
+        font-size: 0.84em;
+      }
+
+      #gf-06 .uq28-note {
+        margin: 0.06em 0 0;
+        font-size: 0.58em;
+        color: #4e6f95;
+        line-height: 1.2;
+      }
+
+      #gf-06 .uq28-figure {
+        margin-top: 0;
+      }
+
+      #gf-06 .uq28-figure-wrap {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+      }
+
+      #gf-06 .uq28-caption {
+        margin-top: 0.08em;
+        font-size: 0.62em;
+        color: #4a678d;
+        text-align: center;
+      }
+
+      #gf-10 .g10-kicker {
+        margin: 0.1em auto 0.16em;
+        width: fit-content;
+        max-width: 92%;
+        padding: 0.1em 0.48em;
+        border: 1px solid #c5d3e6;
+        border-radius: 999px;
+        background: #f7faff;
+        color: #2f4f78;
+        font-size: 0.64em;
+      }
+
+      #gf-10 .g10-layout {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 0.14em;
+        align-items: start;
+      }
+
+      #gf-10 .g10-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.64em;
+        line-height: 1.22;
+        border: 1px solid #c2d3ea;
+      }
+
+      #gf-10 .g10-table th,
+      #gf-10 .g10-table td {
+        border: 1px solid #d4e0f1;
+        padding: 0.12em 0.18em;
+        vertical-align: top;
+      }
+
+      #gf-10 .g10-table th {
+        background: #f2f7ff;
+        color: #234b7a;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      #gf-10 .g10-table td:first-child {
+        white-space: nowrap;
+        font-weight: 700;
+        color: #1f4b80;
+      }
+
+      #gf-10 .g10-equation {
+        border: 1px solid #c2d3ea;
+        border-radius: 8px;
+        background: #fbfdff;
+        padding: 0.12em 0.18em;
+      }
+
+      #gf-10 .g10-label {
+        margin: 0;
+        font-size: 0.55em;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #496a92;
+        font-weight: 700;
+      }
+
+      #gf-10 .g10-equation .formula {
+        margin: 0.04em 0 0;
+        font-size: 0.8em;
+      }
+
+      #gf-10 .g10-note {
+        margin: 0.06em 0 0;
+        font-size: 0.57em;
+        color: #4b6d95;
+        line-height: 1.2;
+      }
+
+      #gf-15 .m4-kicker {
+        margin: 0.1em auto 0.14em;
+        width: fit-content;
+        max-width: 100%;
+        padding: 0.1em 0.48em;
+        border: 1px solid #c5d3e6;
+        border-radius: 999px;
+        background: #f7faff;
+        color: #2f4f78;
+        font-size: 0.7em;
+      }
+
+      #gf-15 .m4-table-wrap {
+        margin-top: 0.1em;
+        border: 1px solid #b9cce6;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 10px 20px rgba(18, 44, 77, 0.08);
+      }
+
+      #gf-15 .m4-compare-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.64em;
+        line-height: 1.26;
+      }
+
+      #gf-15 .m4-compare-table thead th {
+        padding: 0.15em 0.2em;
+        border-bottom: 1px solid #c7d8ed;
+        background: linear-gradient(180deg, #edf4ff 0%, #e8f1ff 100%);
+        color: #1e4673;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      #gf-15 .m4-compare-table thead th:nth-child(3),
+      #gf-15 .m4-compare-table thead th:nth-child(4) {
+        text-align: center;
+        font-size: 1.05em;
+      }
+
+      #gf-15 .m4-compare-table td {
+        padding: 0.14em 0.2em;
+        border-bottom: 1px solid #d7e2f1;
+        vertical-align: top;
+        color: #21486f;
+      }
+
+      #gf-15 .m4-compare-table td:nth-child(3),
+      #gf-15 .m4-compare-table td:nth-child(4) {
+        text-align: center;
+        font-size: 0.82em;
+        font-weight: 600;
+        width: 15%;
+      }
+
+      #gf-15 .m4-compare-table tbody tr:nth-child(even) td {
+        background: #fbfdff;
+      }
+
+      #gf-15 .m4-compare-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      #gf-15 .m4-family {
+        font-weight: 700;
+        color: #1f4a7d;
+        white-space: nowrap;
+      }
+
+      #gf-15 .m4-methods {
+        color: #2a547f;
+      }
+
+      #gf-15 .m4-focus-row td {
+        background: #f1f8ff !important;
+      }
+
+      #gf-15 .m4-stars-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+      }
+
+      #gf-15 .m4-beyond {
+        margin-top: 0.16em;
+        border: 1px solid #bdd0ea;
+        border-left: 4px solid #4c79b1;
+        border-radius: 10px;
+        background: #f7fbff;
+        padding: 0.16em 0.28em;
+        font-size: 0.68em;
+        line-height: 1.23;
+        color: #234b77;
+      }
+
+      #gf-15 .m4-stars {
+        font-size: 1.02em;
+        letter-spacing: 0.03em;
+        color: #1f5688;
+        font-weight: 700;
+      }
+
+      #gf-15 .m4-star-note {
+        margin-top: 0.08em;
+        font-size: 0.72em;
+        color: #54749a;
+        font-weight: 700;
+      }
+
+      #gf-15 .m4-beyond strong {
+        color: #163f6f;
+      }
+
       .mechanism-table {
         width: 100%;
         border-collapse: collapse;
@@ -577,9 +1013,9 @@
       }
 
       .toc-group.active .toc-group-title {
-        border-left-color: #2f568a;
-        color: #1f3f71;
-        background: #e6efff;
+        border-left-color: #7e9fc9;
+        color: #2f4f80;
+        background: #f1f6ff;
       }
 
       .toc-sub-list {
@@ -605,9 +1041,9 @@
       }
 
       .toc-subsection.active .toc-subsection-title {
-        color: #244a7b;
-        background: #f2f7ff;
-        border-left-color: #6f8fbf;
+        color: #365b8a;
+        background: #f7faff;
+        border-left-color: #a9bddb;
       }
 
       .toc-subsection-items {
@@ -631,6 +1067,7 @@
         line-height: 1.25;
         padding: 6px 8px 6px 20px;
         cursor: pointer;
+        position: relative;
       }
 
       .toc-link:hover {
@@ -638,11 +1075,22 @@
       }
 
       .toc-item.active .toc-link {
-        background: #d8e8ff;
-        color: #0f2a51;
+        background: linear-gradient(90deg, #2f568a, #3b669f);
+        color: #ffffff;
         font-weight: 700;
-        border-left: 3px solid #2f568a;
-        padding-left: 17px;
+        border-left: 3px solid #153965;
+        padding-left: 20px;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+      }
+
+      .toc-item.active .toc-link::before {
+        content: "●";
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        transform: translateY(-51%);
+        font-size: 8px;
+        color: #ffffff;
       }
 
       .top-nav.collapsed {
@@ -717,6 +1165,69 @@
           gap: 4px;
         }
 
+        .uq26-card {
+          padding: 0.24em 0.36em;
+        }
+
+        .uq26-single {
+          max-width: 100%;
+        }
+
+        .uqtech-overview {
+          font-size: 0.6em;
+        }
+
+        .uqtech-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .uq26-kicker {
+          font-size: 0.66em;
+        }
+
+        #gf-06 .uq28-bottom {
+          grid-template-columns: 1fr;
+        }
+
+        #gf-10 .g10-layout {
+          grid-template-columns: 1fr;
+        }
+
+        #gf-10 .g10-table {
+          font-size: 0.61em;
+        }
+
+        #gf-10 .g10-equation .formula {
+          font-size: 0.76em;
+        }
+
+        #gf-15 .m4-table-wrap {
+          overflow-x: auto;
+        }
+
+        #gf-15 .m4-compare-table {
+          min-width: 860px;
+          font-size: 0.6em;
+        }
+
+        #gf-15 .m4-kicker,
+        #gf-15 .m4-beyond {
+          font-size: 0.66em;
+        }
+
+        #gf-15 .m4-stars {
+          font-size: 0.95em;
+        }
+
+        #gf-15 .m4-star-note {
+          font-size: 0.68em;
+        }
+
+        #gf-15 .m4-compare-table td:nth-child(3),
+        #gf-15 .m4-compare-table td:nth-child(4) {
+          font-size: 0.78em;
+        }
+
         .top-nav.collapsed {
           width: 52px;
           padding: 7px 5px;
@@ -726,43 +1237,113 @@
       .title-slide {
         text-align: center !important;
         font-family: "Helvetica Neue", Arial, sans-serif;
+        justify-content: center;
+        gap: 0.08em;
+        padding: 1.2em 1.7em 1.9em !important;
+        border-radius: 24px;
+        border: 1px solid #d9e4f4;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(80, 123, 178, 0.11) 0, rgba(80, 123, 178, 0.11) 16%, transparent 46%),
+          radial-gradient(circle at 88% 82%, rgba(66, 133, 167, 0.11) 0, rgba(66, 133, 167, 0.11) 14%, transparent 44%),
+          #ffffff;
+        box-shadow: 0 14px 34px rgba(18, 44, 77, 0.1);
       }
 
-      .title-slide h1 {
-        margin-top: 0.2em;
-        margin-bottom: 0.12em;
-        font-size: 3.2em;
-        line-height: 1.08;
-        letter-spacing: 0.005em;
-        color: #1a2b86;
-        font-weight: 800;
-      }
-
-      .title-slide .cover-subtitle {
-        margin: 0;
-        font-size: 2.05em;
-        color: #1a2b86;
+      .title-slide::before {
+        content: "Research Tutorial";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto 0.42em;
+        padding: 0.1em 0.65em;
+        border-radius: 999px;
+        border: 1px solid #b8cbe5;
+        background: #f4f8ff;
+        color: #355b89;
+        font-size: 0.66em;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
         font-weight: 700;
       }
 
+      .title-slide h1 {
+        margin: 0.06em 0 0.1em;
+        font-size: 2.98em;
+        line-height: 1.06;
+        letter-spacing: 0.004em;
+        color: #173967;
+        font-weight: 800;
+        max-width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        text-wrap: balance;
+      }
+
+      .title-slide .cover-subtitle {
+        margin: 0.02em 0 0;
+        font-size: 1.2em;
+        color: #2b5f94;
+        font-weight: 700;
+        letter-spacing: 0.045em;
+        text-transform: uppercase;
+      }
+
       .title-slide .cover-authors {
-        margin-top: 2.2em;
-        margin-bottom: 0.65em;
-        font-size: 1.55em;
-        color: #050505;
+        margin-top: 1.35em;
+        margin-bottom: 0.42em;
+        font-size: 1.24em;
+        color: #11243d;
+        font-weight: 700;
+        line-height: 1.32;
       }
 
       .title-slide .cover-affiliation {
         margin: 0;
-        font-size: 1.1em;
-        color: #101010;
-        line-height: 1.22;
+        font-size: 0.92em;
+        color: #3f5a78;
+        line-height: 1.28;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .title-slide .cover-date {
-        margin-top: 2.2em;
-        font-size: 1.08em;
-        color: #101010;
+        margin-top: 1.3em;
+        font-size: 0.82em;
+        color: #5a7391;
+        letter-spacing: 0.015em;
+      }
+
+      @media (max-width: 900px) {
+        .title-slide {
+          padding: 1.1em 0.9em 1.3em !important;
+        }
+
+        .title-slide h1 {
+          font-size: 1.9em;
+          line-height: 1.1;
+          max-width: 100%;
+        }
+
+        .title-slide .cover-subtitle {
+          font-size: 0.92em;
+        }
+
+        .title-slide .cover-authors {
+          margin-top: 1.08em;
+          font-size: 0.92em;
+        }
+
+        .title-slide .cover-affiliation {
+          max-width: 100%;
+          font-size: 0.74em;
+        }
+
+        .title-slide .cover-date {
+          margin-top: 0.96em;
+          font-size: 0.66em;
+        }
       }
     </style>
   </head>
@@ -787,14 +1368,14 @@
 
     <div class="reveal">
       <div class="slides">
-        <section id="cover" class="title-slide" data-background-color="#e6e6e6">
-          <h1>Uncertainty Quantification for Graph Dynamics</h1>
+        <section id="cover" class="title-slide" data-background-color="#ffffff">
+          <h1>Uncertainty Quantification for Dynamical Networks</h1>
           <p class="cover-subtitle">WSDM 2026 Tutorial</p>
           <p class="cover-authors">Marouane Benbrahim, Tamanna Rashme, Zonghan Zhang<br>Zhiqian Chen</p>
           <p class="cover-affiliation">Computer Science and Engineering<br>Mississippi State University</p>
           <p class="cover-date">February 16, 2026</p>
         </section>
-        <section id="sec-global-framework" data-section-title="Global Framework">
+        <section id="sec-global-framework" data-section-title="Overview">
           <section id="gf-01" data-subsection="Module 1 — Motivation">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Rumor Can Cost Live</h1>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
@@ -850,126 +1431,113 @@
             </aside>
           </section>
 
-          <section id="gf-05" data-subsection="Module 1 — Motivation">
+          <section id="gf-04b" data-subsection="Module 1 — Motivation">
+            <h2>Influence Maximization as a Problem</h2>
+            <img class="visual" src="assets/chocolate.png" alt="Illustration of selecting influential seed nodes in a community" style="width: 52%; height: auto;">
+            <p class="question-box">Which 3 people should we seed first to maximize influence spread?</p>
+            <p class="toy-calc"><strong>Combinatorial search space:</strong> in a 100-person community with \(k=3\), there are \(\binom{100}{3}=161{,}700\) possible seed sets.</p>
+            <p class="gray-box">Even a small community yields a large optimization problem before uncertainty is added.</p>
+            <p class="reference">Ref: <strong>Maximizing the Spread of Influence through a Social Network</strong> — Kempe, Kleinberg, Tardos — KDD — 2003.</p>
+            <aside class="notes">
+              This slide reframes influence maximization as a combinatorial search problem.
+              Use the chocolate image as intuition, then show that even k=3 in a 100-person community yields 161,700 seed combinations.
+              Next, we transition from motivation into UQ basics.
+            </aside>
+          </section>
+
+          <section id="gf-05" data-subsection="Module 2 — UQ Basics">
             <h2>What Is Uncertainty Quantification?</h2>
-            <ul>
-              <li>Point estimate answers: 'what is the most likely value?'.</li>
-              <li>UQ answers: 'how confident are we, and how wrong could we be?'.</li>
-              <li>Two targets: uncertainty in parameters θ, and uncertainty in future outcomes \(y^\ast\).</li>
-              <li>Deliverables: posterior, predictive, intervals, and calibrated probabilities.</li>
-              <li>UQ is actionable only if it changes decisions (risk, safety, resource allocation).</li>
-            </ul>
-            <p class="formula">\[
-            p(\theta \mid \mathcal{D})
-            \]</p>
-            <p class="formula">\[
-            p(y^\ast \mid \mathcal{D})
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 220" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .u5-box{fill:#fff;stroke:#376196;stroke-width:2}
-                  .u5-t{font-family:"Times New Roman";fill:#15355f}
-                  .u5-a{stroke:#537eb3;stroke-width:3;marker-end:url(#u5arr)}
-                </style>
-                <defs>
-                  <marker id="u5arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                    <polygon points="0 0,8 4,0 8" fill="#537eb3"/>
-                  </marker>
-                </defs>
-                <rect x="30" y="58" width="210" height="96" rx="12" class="u5-box"/>
-                <rect x="320" y="58" width="230" height="96" rx="12" class="u5-box"/>
-                <rect x="630" y="58" width="230" height="96" rx="12" class="u5-box"/>
-                <rect x="940" y="58" width="230" height="96" rx="12" class="u5-box"/>
-                <text x="105" y="112" class="u5-t" font-size="26">Data</text>
-                <text x="366" y="103" class="u5-t" font-size="24">Posterior</text>
-                <text x="340" y="132" class="u5-t" font-size="18">uncertainty in θ</text>
-                <text x="675" y="103" class="u5-t" font-size="24">Predictive</text>
-                <text x="658" y="132" class="u5-t" font-size="18">uncertainty in \(y^\ast\)</text>
-                <text x="1006" y="103" class="u5-t" font-size="24">Decision</text>
-                <text x="980" y="132" class="u5-t" font-size="18">risk / safety / resources</text>
-                <line x1="240" y1="106" x2="320" y2="106" class="u5-a"/>
-                <line x1="550" y1="106" x2="630" y2="106" class="u5-a"/>
-                <line x1="860" y1="106" x2="940" y2="106" class="u5-a"/>
-              </svg>
+            <p class="uq26-kicker">From point estimate to decision-ready uncertainty.</p>
+            <div class="uq26-card uq26-core uq26-single">
+              <p class="uq26-label">Core Question</p>
+              <p class="uq26-question">How sure are we, and what is the cost if this estimate is wrong?</p>
+              <p class="uq26-body">UQ keeps uncertainty in both parameters and future outcomes, rather than collapsing everything to one number.</p>
+              <div class="uq26-formula-block">
+                <p class="formula">\[
+                p(\theta \mid \mathcal{D}),\quad p(y^\ast \mid \mathcal{D})
+                \]</p>
+              </div>
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              Start with the definition: UQ outputs distributions and intervals, not single points.
-              Clarify that posterior and predictive are two distinct output layers.
-              Next we define prior/posterior/predictive precisely.
+              Keep this slide minimal: define the central question and the two uncertainty targets.
+              We intentionally defer method taxonomy to the next slide.
+              After this conceptual definition, move into concrete priors/posteriors/predictives.
+            </aside>
+          </section>
+
+          <section id="gf-05b" data-subsection="Module 2 — UQ Basics">
+            <h2>UQ Technique Families (One-Line Map)</h2>
+            <p class="uq26-kicker">7 families, each mapped to one primary role.</p>
+            <p class="uqtech-overview">Choose by task first: propagation, sensitivity, inference, state tracking, robustness, and coverage guarantee.</p>
+            <div class="uqtech-grid">
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Sampling-based</span><span class="uqtech-role">Propagation</span></p>
+                <p class="uqtech-desc">Propagate uncertainty through repeated stochastic trajectories.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">Monte Carlo</span><span class="uqtech-chip">MLMC</span><span class="uqtech-chip">Particle Filtering</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Spectral-based</span><span class="uqtech-role">Surrogate</span></p>
+                <p class="uqtech-desc">Project random fields to compact bases for fast uncertainty propagation.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">Polynomial Chaos</span><span class="uqtech-chip">KL expansion</span><span class="uqtech-chip">Sparse Grid</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Variance-based</span><span class="uqtech-role">Sensitivity</span></p>
+                <p class="uqtech-desc">Decompose output variance to quantify global input influence.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">Sobol</span><span class="uqtech-chip">FAST</span><span class="uqtech-chip">Morris</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Bayesian</span><span class="uqtech-role">Inference</span></p>
+                <p class="uqtech-desc">Infer posterior distributions for parameters and latent variables.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">MCMC</span><span class="uqtech-chip">VI</span><span class="uqtech-chip">GP</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Filtering</span><span class="uqtech-role">State Tracking</span></p>
+                <p class="uqtech-desc">Update hidden states online as new observations arrive.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">Kalman</span><span class="uqtech-chip">EnKF</span><span class="uqtech-chip">SMC</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Robust</span><span class="uqtech-role">Decision</span></p>
+                <p class="uqtech-desc">Optimize policies against worst-case shifts and tail risk.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">DRO</span><span class="uqtech-chip">CVaR</span></p>
+              </div>
+              <div class="uqtech-item">
+                <p class="uqtech-head"><span class="uqtech-family">Distribution-free</span><span class="uqtech-role">Coverage</span></p>
+                <p class="uqtech-desc">Build finite-sample prediction sets with guaranteed coverage.</p>
+                <p class="uqtech-methods"><span class="uqtech-chip">Conformal</span></p>
+              </div>
+            </div>
+            <p class="reference">Refs: <strong>Bayesian Data Analysis</strong> (Gelman et al., 2013); <strong>Global Sensitivity Analysis</strong> (Saltelli et al., 2008); <strong>Algorithmic Learning in a Random World</strong> (Vovk et al., 2005).</p>
+            <aside class="notes">
+              This is a taxonomy slide, not a derivation slide.
+              Give one sentence per family and map it to a typical use case.
+              Next, we return to the minimum Bayesian toolkit in detail.
             </aside>
           </section>
 
           <section id="gf-06" data-subsection="Module 2 — UQ Basics">
-            <h2>Prior, Posterior, Predictive (The Minimum Toolkit)</h2>
-            <ul>
-              <li>Prior p(θ): belief before data.</li>
-              <li>Likelihood p(D|θ): data model.</li>
-              <li>Posterior p(θ|D): updated belief after data.</li>
-              <li>Predictive p(\(y^\ast\)|D): integrates parameter uncertainty into future outcomes.</li>
-              <li>Posterior supports inference; predictive supports action.</li>
-            </ul>
-            <p class="formula">\[
-            p(\theta\mid\mathcal{D}) \propto p(\mathcal{D}\mid\theta)\,p(\theta)
-            \]</p>
-            <img class="visual" src="assets/posterior_prior.png" alt="Posterior and prior comparison" style="width: 60%; height: auto;">
-            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
-            <aside class="notes">
-              Align prior/likelihood/posterior/predictive one-by-one to avoid terminology confusion.
-              Emphasize the integral nature of predictive: it propagates parameter uncertainty to future outcomes.
-              Next we clarify intervals: credible vs predictive.
-            </aside>
-          </section>
-
-          <section id="gf-07" data-subsection="Module 2 — UQ Basics">
-            <h2>Credible Interval vs Prediction Interval</h2>
-            <ul>
-              <li>Credible set Cα: P(θ in Cα | D)=1−α.</li>
-              <li>Prediction interval Iα: P(\(y^\ast\) in Iα | D)=1−α.</li>
-              <li>Prediction intervals are usually wider because they include observation noise.</li>
-              <li>Beginners often confuse them; this tutorial will keep them separate consistently.</li>
-              <li>Always report which interval type you are using.</li>
-            </ul>
-            <p class="formula">\[
-            \Pr(\theta \in C_\alpha \mid \mathcal{D}) = 1-\alpha
-            \]</p>
-            <p class="formula">\[
-            \Pr(y^\ast \in I_\alpha \mid \mathcal{D}) = 1-\alpha
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .u7-ax{stroke:#355e92;stroke-width:2.2}
-                  .u7-t{font-family:"Times New Roman";fill:#16395f}
-                  .u7-mid{stroke:#5e7fae;stroke-width:2;stroke-dasharray:5 5}
-                </style>
-                <rect x="20" y="20" width="1160" height="240" rx="14" fill="#f9fbff" stroke="#a9c0e1" stroke-width="2"/>
-                <text x="44" y="56" class="u7-t" font-size="22">Same center, different width</text>
-
-                <line x1="110" y1="155" x2="1090" y2="155" class="u7-ax"/>
-                <line x1="110" y1="235" x2="1090" y2="235" class="u7-ax"/>
-                <line x1="600" y1="108" x2="600" y2="265" class="u7-mid"/>
-                <text x="614" y="95" class="u7-t" font-size="16">same center</text>
-
-                <text x="120" y="116" class="u7-t" font-size="18">Credible interval \(C_\alpha\) for \(\theta\)</text>
-                <rect x="520" y="130" width="160" height="28" rx="10" fill="#c8dcf5" stroke="#2f6fa6" stroke-width="2"/>
-                <line x1="520" y1="124" x2="520" y2="164" stroke="#2f6fa6" stroke-width="2"/>
-                <line x1="680" y1="124" x2="680" y2="164" stroke="#2f6fa6" stroke-width="2"/>
-                <text x="708" y="149" class="u7-t" font-size="16">narrow</text>
-
-                <text x="120" y="196" class="u7-t" font-size="18">Prediction interval \(I_\alpha\) for \(y^\ast\)</text>
-                <rect x="430" y="210" width="340" height="28" rx="10" fill="#f6d4c7" stroke="#d06c46" stroke-width="2"/>
-                <line x1="430" y1="204" x2="430" y2="244" stroke="#d06c46" stroke-width="2"/>
-                <line x1="770" y1="204" x2="770" y2="244" stroke="#d06c46" stroke-width="2"/>
-                <text x="798" y="229" class="u7-t" font-size="16">wider (adds observation noise)</text>
-              </svg>
+            <h2>Prior, Likelihood, Posterior (Bayes Update)</h2>
+            <div class="uq28-bottom">
+              <div class="uq28-equation">
+                <p class="uq28-equation-label">Bayes Update</p>
+                <p class="formula">\[
+                \overbrace{p(\theta\mid\mathcal{D})}^{\text{posterior}}
+                \propto
+                \overbrace{p(\mathcal{D}\mid\theta)}^{\text{likelihood}}
+                \overbrace{p(\theta)}^{\text{prior}}
+                \]</p>
+                <p class="uq28-note">Likelihood reweights prior belief to produce posterior belief.</p>
+              </div>
+              <div class="uq28-figure-wrap">
+                <img class="visual uq28-figure" src="assets/posterior_prior.png" alt="Posterior and prior comparison" style="width: 100%; height: auto;">
+                <p class="uq28-caption">Figure: posterior is the prior reshaped by observed evidence.</p>
+              </div>
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              The goal of this slide is to separate the two interval concepts clearly.
-              Use interval width to show intuitively why prediction intervals are wider.
-              Now we separate two uncertainty sources: aleatoric vs epistemic.
+              Explain the equation directly on-slide using overbrace labels consistently.
+              Keep the slide focused on posterior inference only.
+              Next we move to other uncertainty notions and their interpretation.
             </aside>
           </section>
 
@@ -997,119 +1565,38 @@
             </aside>
           </section>
 
-          <section id="gf-09" data-subsection="Module 2 — UQ Basics">
-            <h2>Calibration and Proper Scoring</h2>
-            <ul>
-              <li>Calibration: among events predicted at probability p, about p fraction should occur.</li>
-              <li>Coverage: empirical frequency that intervals contain the truth.</li>
-              <li>Proper scoring rules reward calibrated + sharp forecasts (not overconfident).</li>
-              <li>Two common scores: log score and Brier score (classification); CRPS (continuous).</li>
-              <li>Calibration diagnostics should be reported with uncertainty estimates, not accuracy alone.</li>
-            </ul>
-            <p class="formula">\[
-            \Pr(Y=1 \mid \hat{p}=p) = p
-            \]</p>
-            <p class="formula">\[
-            \text{Log score: } s(p,y) = -\log p(y)
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 300" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .u9-t{font-family:"Times New Roman";fill:#183b63}
-                  .u9-ax{stroke:#355f95;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="700" height="260" rx="14" fill="#f7fbff" stroke="#a8bfdc" stroke-width="2"/>
-                <text x="44" y="52" class="u9-t" font-size="22">Reliability diagram</text>
-                <line x1="90" y1="240" x2="660" y2="240" class="u9-ax"/>
-                <line x1="90" y1="240" x2="90" y2="70" class="u9-ax"/>
-                <line x1="90" y1="240" x2="660" y2="70" stroke="#7d95b7" stroke-width="2" stroke-dasharray="7 6"/>
-                <polyline points="130,218 190,198 250,183 310,158 370,152 430,128 490,120 550,102 610,94" fill="none" stroke="#2f6fa6" stroke-width="3"/>
-                <circle cx="130" cy="218" r="4.5" fill="#2f6fa6"/>
-                <circle cx="250" cy="183" r="4.5" fill="#2f6fa6"/>
-                <circle cx="370" cy="152" r="4.5" fill="#2f6fa6"/>
-                <circle cx="490" cy="120" r="4.5" fill="#2f6fa6"/>
-                <circle cx="610" cy="94" r="4.5" fill="#2f6fa6"/>
-
-                <rect x="760" y="20" width="420" height="260" rx="14" fill="#fff8f5" stroke="#d9b9a6" stroke-width="2"/>
-                <text x="784" y="52" class="u9-t" font-size="22">Sharp vs overconfident</text>
-                <path d="M790 220 C830 210,850 120,910 98 C960 84,1010 126,1080 220" fill="none" stroke="#2f7a4d" stroke-width="3"/>
-                <path d="M790 220 C860 205,930 112,980 88 C1020 70,1090 100,1140 220" fill="none" stroke="#d06845" stroke-width="3" stroke-dasharray="8 6"/>
-                <text x="794" y="244" class="u9-t" font-size="15">green: calibrated and sharp</text>
-                <text x="794" y="264" class="u9-t" font-size="15">orange: overconfident</text>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Strictly Proper Scoring Rules, Prediction, and Estimation</strong> — Gneiting, Raftery — JASA — 2007.</p>
-            <aside class="notes">
-              This slide completes the UQ basics loop by defining quality criteria.
-              Clarify the relationship between calibration and scoring.
-              Now we bring this UQ vocabulary into dynamic graph problems: what becomes θ, what becomes \(y^\ast\), and why uncertainty is non-local.
-            </aside>
-          </section>
-
           <section id="gf-10" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Graph Dynamics: What Are the Random Variables?</h2>
-            <ul>
-              <li>\(A_t\): who is connected to whom at time \(t\). Everyday example: household, office, and subway contacts change day by day.</li>
-              <li>\(X_t\): hidden system state. Everyday example: whether someone is infected, believes a rumor, or plans to travel.</li>
-              <li>\(Y_t\): what we actually observe. Everyday example: hospital reports, social posts, and transit counts are noisy and incomplete.</li>
-              <li>\(\theta\): dynamic parameters. Everyday example: transmission rate, recovery rate, policy effect strength, and cross-layer coupling strength.</li>
-              <li>How to read the equation: use \(A_t, X_t, \theta\) to propagate to \(X_{t+1}\), then use \(Y_t\) to infer uncertainty.</li>
-            </ul>
-            <p class="formula">\[
-            A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
-            \]</p>
-            <p class="formula">\[
-            X_{t+1} = F(X_t, A_t; \theta) + w_t
-            \]</p>
+            <p class="g10-kicker">Define objects first, then specify evolution and observation.</p>
+            <div class="g10-layout">
+              <table class="g10-table">
+                <thead>
+                  <tr><th>Symbol</th><th>Role</th><th>Everyday Reading</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>\(A_t\)</td><td>Time-varying connectivity</td><td>Who contacts whom at day \(t\) (home, office, transit).</td></tr>
+                  <tr><td>\(X_t\)</td><td>Hidden system state</td><td>Unobserved status (infected, informed, traveling, etc.).</td></tr>
+                  <tr><td>\(Y_t\)</td><td>Noisy observation</td><td>What sensors/reports actually record.</td></tr>
+                  <tr><td>\(\theta\)</td><td>Dynamic parameters</td><td>Transmission, recovery, policy, and coupling strength.</td></tr>
+                </tbody>
+              </table>
+              <div class="g10-equation">
+                <p class="g10-label">State Evolution</p>
+                <p class="formula">\[
+                X_{t+1} = F(X_t, A_t; \theta) + w_t
+                \]</p>
+                <p class="g10-label">State/Observation Dimensions</p>
+                <p class="formula">\[
+                A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
+                \]</p>
+                <p class="g10-note">Use \(A_t, X_t,\theta\) to propagate \(X_{t+1}\), and use \(Y_t\) to update uncertainty about hidden states.</p>
+              </div>
+            </div>
             <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
             <aside class="notes">
               This slide focuses only on object definitions: clear roles for \(A_t, X_t, Y_t, \theta\).
               We define random variables first, then discuss methods and validation.
               Next, we show where UQ sits: posterior over latent quantities and predictive over task outputs.
-            </aside>
-          </section>
-
-          <section id="gf-11" data-subsection="Module 3 — UQ × Graph Dynamics">
-            <h2>Where UQ Sits: Posterior → Predictive → Decision</h2>
-            <ul>
-              <li>Infer latent quantities: \(p(A_{1:T}, X_{1:T}, \theta \mid \mathcal{D})\).</li>
-              <li>Define a task query Q (e.g., cascade size, source, future state).</li>
-              <li>Predictive distribution integrates latent uncertainty into Q.</li>
-              <li>Decisions (interventions/policies) should consume \(p(Q\mid\mathcal{D})\), not a point estimate.</li>
-              <li>This creates an auditable chain from evidence to action.</li>
-            </ul>
-            <p class="formula">\[
-            \Theta := (A_{1:T}, X_{1:T}, \theta)
-            \]</p>
-            <p class="formula">\[
-            p(Q\mid \mathcal{D}) = \int p(Q\mid \Theta)\,p(\Theta\mid \mathcal{D})\,d\Theta
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 240" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g11-b{fill:#fff;stroke:#335e92;stroke-width:2}
-                  .g11-t{font-family:"Times New Roman";fill:#173a63}
-                </style>
-                <rect x="40" y="62" width="330" height="116" rx="14" class="g11-b"/>
-                <rect x="435" y="62" width="330" height="116" rx="14" class="g11-b"/>
-                <rect x="830" y="62" width="330" height="116" rx="14" class="g11-b"/>
-                <text x="82" y="104" class="g11-t" font-size="27">Posterior Layer</text>
-                <text x="92" y="134" class="g11-t" font-size="18">infer \(p(\Theta\mid\mathcal{D})\)</text>
-                <text x="492" y="104" class="g11-t" font-size="27">Predictive Layer</text>
-                <text x="484" y="134" class="g11-t" font-size="18">compute \(p(Q\mid\mathcal{D})\)</text>
-                <text x="902" y="104" class="g11-t" font-size="27">Decision Layer</text>
-                <text x="882" y="134" class="g11-t" font-size="18">optimize robust action</text>
-                <line x1="370" y1="120" x2="435" y2="120" stroke="#537fb3" stroke-width="3"/>
-                <polygon points="435,120 423,114 423,126" fill="#537fb3"/>
-                <line x1="765" y1="120" x2="830" y2="120" stroke="#537fb3" stroke-width="3"/>
-                <polygon points="830,120 818,114 818,126" fill="#537fb3"/>
-              </svg>
-            </div>
-            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
-            <aside class="notes">
-              Emphasize this is not three independent tasks but a sequential dependency chain.
-              The core weakness of point estimates is that they skip intermediate uncertainty propagation.
-              Now we locate entry points: structural, parametric, observational.
             </aside>
           </section>
 
@@ -1139,62 +1626,78 @@
             </aside>
           </section>
 
-          <section id="gf-13" data-subsection="Module 3 — UQ × Graph Dynamics">
-            <h2>Why Uncertainty Is Not Local in Graphs</h2>
-            <ul>
-              <li>Graph connectivity breaks independence: paths overlap, so events are correlated.</li>
-              <li>Small uncertainty on a bridge/hub can change reachability and cascade regimes.</li>
-              <li>Near thresholds, tiny perturbations can flip the system from stable to unstable.</li>
-              <li>Over time, errors accumulate and amplify through repeated interactions.</li>
-              <li>This is why local confidence scores are insufficient for system risk.</li>
-            </ul>
-            <p class="formula">\[
-            \text{(generic)}\quad Q = g(A_{1:T}, X_{1:T})
-            \]</p>
-            <p class="formula">\[
-            \Delta Q \approx \left\langle \nabla_A g, \Delta A \right\rangle + \left\langle \nabla_X g, \Delta X \right\rangle
-            \]</p>
-            <div class="visual">
-              <svg viewBox="0 0 1200 280" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g13-t{font-family:"Times New Roman";fill:#163b63}
-                  .g13-n{fill:#fff;stroke:#355f94;stroke-width:2}
-                </style>
-                <rect x="20" y="20" width="780" height="240" rx="14" fill="#f7fbff" stroke="#a9c0e0" stroke-width="2"/>
-                <text x="52" y="52" class="g13-t" font-size="20">Local bridge uncertainty changes global reachability</text>
-                <g>
-                  <circle cx="90" cy="100" r="10" class="g13-n"/><circle cx="150" cy="70" r="10" class="g13-n"/><circle cx="150" cy="130" r="10" class="g13-n"/><circle cx="220" cy="100" r="10" class="g13-n"/>
-                  <line x1="100" y1="100" x2="140" y2="75" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="100" y1="100" x2="140" y2="125" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="160" y1="70" x2="210" y2="100" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="160" y1="130" x2="210" y2="100" stroke="#5d84b8" stroke-width="2"/>
-                </g>
-                <g>
-                  <circle cx="580" cy="100" r="10" class="g13-n"/><circle cx="640" cy="70" r="10" class="g13-n"/><circle cx="640" cy="130" r="10" class="g13-n"/><circle cx="710" cy="100" r="10" class="g13-n"/>
-                  <line x1="590" y1="100" x2="630" y2="75" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="590" y1="100" x2="630" y2="125" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="650" y1="70" x2="700" y2="100" stroke="#5d84b8" stroke-width="2"/>
-                  <line x1="650" y1="130" x2="700" y2="100" stroke="#5d84b8" stroke-width="2"/>
-                </g>
-                <line x1="220" y1="100" x2="580" y2="100" stroke="#d06945" stroke-width="4" stroke-dasharray="9 7"/>
-                <text x="308" y="84" class="g13-t" font-size="16">uncertain bridge edge</text>
-
-                <rect x="830" y="20" width="350" height="240" rx="14" fill="#fff8f5" stroke="#d8b9a5" stroke-width="2"/>
-                <text x="854" y="52" class="g13-t" font-size="20">Outcome panel</text>
-                <rect x="860" y="78" width="290" height="70" rx="10" fill="#ffffff" stroke="#b8cde8"/>
-                <text x="878" y="108" class="g13-t" font-size="17">bridge absent → local spread</text>
-                <rect x="860" y="162" width="290" height="70" rx="10" fill="#ffffff" stroke="#d5b49f"/>
-                <text x="878" y="192" class="g13-t" font-size="17">bridge present → global spread</text>
-              </svg>
+          <section id="gf-15" data-subsection="Module 4 — Roadmap">
+            <h2>2.12: Paper vs Tutorial (Table Comparison)</h2>
+            <p class="m4-kicker">Legend: Paper = Chen et al. (2024); Tutorial = this course. Rating scale: 1★ (low emphasis) to 5★ (core emphasis).</p>
+            <div class="m4-table-wrap">
+              <table class="m4-compare-table">
+                <thead>
+                  <tr>
+                    <th>Family</th>
+                    <th>Representative Techniques</th>
+                    <th>Paper Coverage (5★)</th>
+                    <th>Tutorial Coverage (5★)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="m4-family">Sampling-based</td>
+                    <td class="m4-methods">Monte Carlo, MLMC, Particle Filtering</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★☆☆</span><span class="m4-star-note">3/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="m4-family">Spectral-based</td>
+                    <td class="m4-methods">Polynomial Chaos, KL expansion, Sparse Grid</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★☆☆☆☆</span><span class="m4-star-note">1/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                  </tr>
+                  <tr class="m4-focus-row">
+                    <td class="m4-family">Variance-based</td>
+                    <td class="m4-methods">Sobol, FAST, Morris</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★☆☆☆☆</span><span class="m4-star-note">1/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="m4-family">Bayesian</td>
+                    <td class="m4-methods">MCMC, VI, GP</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                  </tr>
+                  <tr class="m4-focus-row">
+                    <td class="m4-family">Filtering</td>
+                    <td class="m4-methods">Kalman, EnKF, SMC</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★☆☆</span><span class="m4-star-note">3/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="m4-family">Robust</td>
+                    <td class="m4-methods">DRO, CVaR</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="m4-family">Distribution-free</td>
+                    <td class="m4-methods">Conformal, Calibration</td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <p class="reference">Ref: <strong>A simple model of global cascades on random networks</strong> — Duncan J. Watts — PNAS — 2002.</p>
+            <div class="m4-beyond">
+              <strong>Tutorial emphasis beyond the survey center:</strong>
+              deeper treatment of Kalman-style state estimation and Sobol-style sensitivity for dynamical-network interventions.
+            </div>
+            <p class="reference">
+              Ref: <a href="https://arxiv.org/html/2404.14642">Chen et al., Uncertainty Quantification on Graph Learning: A Survey (2024)</a>.
+            </p>
             <aside class="notes">
-              This slide gives the technical meaning of the core claim: local perturbations become global output changes through topology.
-              The audience does not need full derivations, only the mechanism mapping.
-              Next, we move to the task-centered roadmap and map each task to a UQ deliverable.
+              Reuse the exact 2.7 family vocabulary, but add source labels for coverage.
+              Emphasize two tutorial depth points: Kalman filtering and Sobol sensitivity.
+              Keep the distinctions directional: paper gives broad survey; tutorial gives dynamic-network operational depth.
             </aside>
           </section>
-
 
           <section id="gf-16" data-subsection="Module 4 — Roadmap">
             <style>
