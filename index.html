@@ -757,11 +757,14 @@
         background: #f1f8ff !important;
       }
 
-      #gf-15 .m4-stars-wrap {
+      #gf-15 .m4-mark {
         display: inline-flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        min-width: 1.6em;
+        font-size: 1.28em;
         line-height: 1;
+        font-weight: 800;
       }
 
       #gf-15 .m4-beyond {
@@ -776,18 +779,12 @@
         color: #234b77;
       }
 
-      #gf-15 .m4-stars {
-        font-size: 1.02em;
-        letter-spacing: 0.03em;
-        color: #1f5688;
-        font-weight: 700;
+      #gf-15 .m4-mark.yes {
+        color: #2a8b47;
       }
 
-      #gf-15 .m4-star-note {
-        margin-top: 0.08em;
-        font-size: 0.72em;
-        color: #54749a;
-        font-weight: 700;
+      #gf-15 .m4-mark.no {
+        color: #c53b3b;
       }
 
       #gf-15 .m4-beyond strong {
@@ -1219,12 +1216,8 @@
           font-size: 0.66em;
         }
 
-        #gf-15 .m4-stars {
-          font-size: 0.95em;
-        }
-
-        #gf-15 .m4-star-note {
-          font-size: 0.68em;
+        #gf-15 .m4-mark {
+          font-size: 1.2em;
         }
 
         #gf-15 .m4-compare-table td:nth-child(3),
@@ -1636,59 +1629,59 @@
 
           <section id="gf-15" data-subsection="Module 4 — Roadmap">
             <h2>2.12: Paper vs Tutorial (Table Comparison)</h2>
-            <p class="m4-kicker">Legend: Paper = Chen et al. (2024); Tutorial = this course. Rating scale: 1★ (low emphasis) to 5★ (core emphasis).</p>
+            <p class="m4-kicker">Legend: Paper = Chen et al. (2024); Tutorial = this course. <span class="m4-mark yes">✔</span> covered, <span class="m4-mark no">✖</span> not central.</p>
             <div class="m4-table-wrap">
               <table class="m4-compare-table">
                 <thead>
                   <tr>
                     <th>Family</th>
                     <th>Representative Techniques</th>
-                    <th>Paper Coverage (5★)</th>
-                    <th>Tutorial Coverage (5★)</th>
+                    <th>Paper Coverage</th>
+                    <th>Tutorial Coverage</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="m4-family">Sampling-based</td>
                     <td class="m4-methods">Monte Carlo, MLMC, Particle Filtering</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★☆☆</span><span class="m4-star-note">3/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr>
                     <td class="m4-family">Spectral-based</td>
                     <td class="m4-methods">Polynomial Chaos, KL expansion, Sparse Grid</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★☆☆☆☆</span><span class="m4-star-note">1/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                    <td><span class="m4-mark no">✖</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr class="m4-focus-row">
                     <td class="m4-family">Variance-based</td>
                     <td class="m4-methods">Sobol, FAST, Morris</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★☆☆☆☆</span><span class="m4-star-note">1/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                    <td><span class="m4-mark no">✖</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr>
                     <td class="m4-family">Bayesian</td>
                     <td class="m4-methods">MCMC, VI, GP</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr class="m4-focus-row">
                     <td class="m4-family">Filtering</td>
                     <td class="m4-methods">Kalman, EnKF, SMC</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★☆☆</span><span class="m4-star-note">3/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr>
                     <td class="m4-family">Robust</td>
                     <td class="m4-methods">DRO, CVaR</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                   <tr>
                     <td class="m4-family">Distribution-free</td>
                     <td class="m4-methods">Conformal, Calibration</td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★★</span><span class="m4-star-note">5/5</span></span></td>
-                    <td><span class="m4-stars-wrap"><span class="m4-stars">★★★★☆</span><span class="m4-star-note">4/5</span></span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
+                    <td><span class="m4-mark yes">✔</span></td>
                   </tr>
                 </tbody>
               </table>
