@@ -72,6 +72,22 @@
         margin: 0.12em 0;
       }
 
+      .section-home {
+        justify-content: center !important;
+        align-items: center;
+        text-align: center !important;
+      }
+
+      /* Readability bump for dense slides 2.7–2.13 */
+      #gf-05b,
+      #gf-06,
+      #gf-08,
+      #gf-10,
+      #gf-12,
+      #gf-15 {
+        font-size: 1.3em;
+      }
+
       .challenge-stack {
         margin: 0.2em 0 0.32em;
       }
@@ -170,35 +186,68 @@
       }
 
       .visual-gf16 > svg {
-        max-height: 66vh;
+        max-height: 72vh;
       }
 
-      .task-flow-explain {
-        margin-top: 0.28em;
+      #gf-16 .g16-layout {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.24em;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 0.56em;
+        align-items: stretch;
       }
 
-      .task-flow-item {
-        border: 1px solid #bfd0ea;
-        border-radius: 8px;
-        background: #fbfdff;
-        padding: 0.18em 0.34em;
-        font-size: 0.66em;
-        line-height: 1.24;
+      #gf-16 .g16-copy {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.2em 0.25em 0.2em 0;
         color: #173a63;
+        text-align: left;
       }
 
-      .task-flow-item:nth-child(1) { background: #e8f1ff; border-color: #5d86c1; }
-      .task-flow-item:nth-child(2) { background: #e7fbf6; border-color: #3f9f87; }
-      .task-flow-item:nth-child(3) { background: #fff4dd; border-color: #d29632; }
-      .task-flow-item:nth-child(4) { background: #ffece6; border-color: #d67b5c; }
-      .task-flow-item:nth-child(5) { background: #f1ecff; border-color: #8b73c6; }
-      .task-flow-item:nth-child(6) { background: #ffe9f3; border-color: #c4689a; }
+      #gf-16 .g16-copy-kicker {
+        margin: 0 0 0.3em;
+        font-size: 0.82em;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #2d5e92;
+      }
 
-      .task-flow-item strong {
+      #gf-16 .g16-copy-text {
+        margin: 0 0 0.35em;
+        font-size: 0.82em;
+        line-height: 1.34;
+      }
+
+      #gf-16 .g16-points {
+        margin: 0.2em 0 0;
+        padding-left: 1.05em;
+        font-size: 0.78em;
+        line-height: 1.34;
+      }
+
+      #gf-16 .g16-points li {
+        margin: 0.18em 0;
+      }
+
+      #gf-16 .g16-points strong {
         color: #1f4273;
+      }
+
+      #gf-16 .visual > svg {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      @media (max-width: 980px) {
+        #gf-16 .g16-layout {
+          grid-template-columns: 1fr;
+          gap: 0.42em;
+        }
       }
 
       .bet-pills {
@@ -1630,24 +1679,6 @@
         background: #e8f0ff;
       }
 
-      .cover-jump {
-        border: 1px solid #88a2cb;
-        background: #eaf2ff;
-        color: #173d71;
-        border-radius: 8px;
-        width: 28px;
-        height: 26px;
-        padding: 0;
-        font-size: 16px;
-        line-height: 1;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .cover-jump:hover {
-        background: #dceaff;
-      }
-
       .top-nav .nav-kicker {
         display: block;
         font-size: 10px;
@@ -1700,6 +1731,21 @@
         padding: 7px 8px;
         border-left: 4px solid #9fb5d9;
         font-weight: 700;
+      }
+
+      .toc-group-link {
+        width: 100%;
+        border: 0;
+        padding: 7px 8px;
+        background: #eff5ff;
+        text-align: left;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .toc-group-link:hover {
+        color: #153965;
       }
 
       .toc-group.active .toc-group-title {
@@ -1801,10 +1847,6 @@
       .top-nav.collapsed .nav-actions {
         flex-direction: column;
         align-items: center;
-      }
-
-      .top-nav.collapsed .cover-jump {
-        display: none;
       }
 
       .top-nav.collapsed .toc-toggle {
@@ -2036,31 +2078,10 @@
         justify-content: center;
         gap: 0.08em;
         padding: 1.2em 1.7em 1.9em !important;
-        border-radius: 24px;
-        border: 1px solid #d9e4f4;
-        background:
-          radial-gradient(circle at 12% 18%, rgba(80, 123, 178, 0.11) 0, rgba(80, 123, 178, 0.11) 16%, transparent 46%),
-          radial-gradient(circle at 88% 82%, rgba(66, 133, 167, 0.11) 0, rgba(66, 133, 167, 0.11) 14%, transparent 44%),
-          #ffffff;
-        box-shadow: 0 14px 34px rgba(18, 44, 77, 0.1);
-      }
-
-      .title-slide::before {
-        content: "Research Tutorial";
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        margin: 0 auto 0.42em;
-        padding: 0.1em 0.65em;
-        border-radius: 999px;
-        border: 1px solid #b8cbe5;
-        background: #f4f8ff;
-        color: #355b89;
-        font-size: 0.66em;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        font-weight: 700;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
       }
 
       .title-slide h1 {
@@ -2068,6 +2089,7 @@
         font-size: 2.98em;
         line-height: 1.06;
         letter-spacing: 0.004em;
+        text-transform: none !important;
         color: #173967;
         font-weight: 800;
         max-width: 92%;
@@ -2152,7 +2174,6 @@
           <span class="nav-page" id="navPage">1 / 1</span>
         </div>
         <div class="nav-actions">
-          <button class="cover-jump" id="coverJumpBtn" type="button" title="Jump to cover slide" aria-label="Jump to cover slide">&#8962;</button>
           <button class="toc-toggle" id="tocToggleBtn" type="button" aria-controls="tocList" aria-expanded="true" title="Hide table of contents" aria-label="Hide table of contents">&times;</button>
         </div>
       </div>
@@ -2164,12 +2185,12 @@
 
     <div class="reveal">
       <div class="slides">
-        <section id="cover" class="title-slide" data-background-color="#e6e6e6">
-          <h1>Uncertainty Quantification for Dynamical Networks</h1>
+        <section id="cover" class="title-slide" data-background-color="#ffffff">
+          <h1>Uncertainty Quantification For Dynamical Networks</h1>
           <p class="cover-subtitle">WSDM 2026 Tutorial</p>
           <p class="cover-authors">Marouane Benbrahim, Tamanna Rashme, Zonghan Zhang<br>Zhiqian Chen</p>
           <p class="cover-affiliation">Computer Science and Engineering<br>Mississippi State University</p>
-          <p class="cover-date">February 16, 2026</p>
+          <p class="cover-date">Feb 22, 2026</p>
         </section>
         <section id="sec-global-framework" data-section-title="Overview">
           <section id="gf-01" data-subsection="Module 1 — Motivation">
@@ -2684,83 +2705,150 @@
 
           <section id="gf-16" data-subsection="Module 4 — Roadmap">
             <style>
-              #gf-16 { padding-bottom: 4.6em; }
+              #gf-16 { padding-bottom: 2.3em; }
             </style>
-            <h2>Six-Task Upstream/Downstream Flow</h2>
-            <div class="visual visual-gf16">
-              <svg viewBox="0 0 1200 500" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  .g16-box{stroke-width:2.2}
-                  .g16-up{fill:#e8f1ff;stroke:#5d86c1}
-                  .g16-mid1{fill:#e7fbf6;stroke:#3f9f87}
-                  .g16-mid2{fill:#fff4dd;stroke:#d29632}
-                  .g16-mid3{fill:#ffece6;stroke:#d67b5c}
-                  .g16-down1{fill:#f1ecff;stroke:#8b73c6}
-                  .g16-down2{fill:#ffe9f3;stroke:#c4689a}
-                  .g16-t{font-family:"Times New Roman";fill:#163b63}
-                  .g16-k{font-family:"Times New Roman";fill:#2c4f7f}
-                  .g16-a1{stroke:#3f77b4;stroke-width:2.8;marker-end:url(#g16arr1)}
-                  .g16-a2{stroke:#d18832;stroke-width:2.8;marker-end:url(#g16arr2)}
-                  .g16-a3{stroke:#2f8e64;stroke-width:2.8;marker-end:url(#g16arr3)}
-                  .g16-m{fill:#fff8d8;stroke:#caa94f;stroke-width:2.2}
-                </style>
-                <defs>
-                  <marker id="g16arr1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                    <polygon points="0 0,8 4,0 8" fill="#3f77b4"/>
-                  </marker>
-                  <marker id="g16arr2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                    <polygon points="0 0,8 4,0 8" fill="#d18832"/>
-                  </marker>
-                  <marker id="g16arr3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                    <polygon points="0 0,8 4,0 8" fill="#2f8e64"/>
-                  </marker>
-                </defs>
+            <h2>Six-Task Dependency Flow</h2>
+            <div class="g16-layout">
+              <div class="g16-copy">
+                <p class="g16-copy-kicker">How to read this slide</p>
+                <p class="g16-copy-text">The six tasks form one practical pipeline from uncertain evidence to deployable decisions.</p>
+                <ul class="g16-points">
+                  <li><strong>A</strong> estimates uncertain structure and parameters from observed data.</li>
+                  <li><strong>B, C, D</strong> are parallel analyses that consume A: forecasting, source explanation, and hidden-state estimation.</li>
+                  <li><strong>E</strong> turns model outputs into intervention choices under uncertainty.</li>
+                  <li><strong>F</strong> verifies calibration and reliability before real deployment.</li>
+                  <li><strong>Click once:</strong> A and F fade to gray, so B/C/D/E stay highlighted.</li>
+                </ul>
+              </div>
+              <div class="visual visual-gf16">
+                <svg viewBox="0 0 900 500" width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <style>
+                    .g16-node{stroke-width:2.2}
+                    .g16-a{fill:#e8f1ff;stroke:#5d86c1}
+                    .g16-b{fill:#e7fbf6;stroke:#3f9f87}
+                    .g16-c{fill:#fff4dd;stroke:#d29632}
+                    .g16-d{fill:#ffece6;stroke:#d67b5c}
+                    .g16-e{fill:#f1ecff;stroke:#8b73c6}
+                    .g16-f{fill:#ffe9f3;stroke:#c4689a}
+                    .g16-muted-node{fill:#edf0f4;stroke:#a7b0bc}
+                    .g16-focus-node{stroke-width:2.8}
+                    .g16-af-node{stroke-dasharray:10 6;stroke-width:2.8}
+                    .g16-text{font-family:"Times New Roman";fill:#163b63}
+                    .g16-muted-text{fill:#7a8492}
+                    .g16-link{stroke:#496a96;stroke-width:2.6;fill:none;marker-end:url(#g16-arrow)}
+                    .g16-link-muted{stroke:#97a0ac;marker-end:url(#g16-arrow-muted)}
+                  </style>
+                  <defs>
+                    <marker id="g16-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+                      <polygon points="0 0,9 4.5,0 9" fill="#496a96"/>
+                    </marker>
+                    <marker id="g16-arrow-muted" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+                      <polygon points="0 0,9 4.5,0 9" fill="#97a0ac"/>
+                    </marker>
+                  </defs>
 
-                <rect x="20" y="20" width="1160" height="460" rx="16" fill="#f8fbff" stroke="#a9c0e0" stroke-width="2"/>
-                <text x="48" y="50" class="g16-t" font-size="20">Upstream → Midstream → Downstream</text>
-                <rect x="500" y="94" width="220" height="68" rx="13" class="g16-box g16-up"/>
-                <text x="518" y="134" class="g16-t" font-size="20">A. Structure inference</text>
+                  <text x="50" y="48" class="g16-text" font-size="18">Simplified Task Flow (Top to Bottom)</text>
 
-                <rect x="170" y="232" width="260" height="64" rx="12" class="g16-box g16-mid1"/>
-                <text x="188" y="271" class="g16-t" font-size="18">B. Diffusion forecasting</text>
-                <rect x="480" y="232" width="260" height="64" rx="12" class="g16-box g16-mid2"/>
-                <text x="498" y="271" class="g16-t" font-size="18">C. Source explanation</text>
-                <rect x="790" y="232" width="260" height="64" rx="12" class="g16-box g16-mid3"/>
-                <text x="808" y="271" class="g16-t" font-size="18">D. State estimation</text>
+                  <rect x="305" y="56" width="290" height="56" rx="11" class="g16-node g16-a g16-af-node"/>
+                  <text x="324" y="91" class="g16-text" font-size="20">A. Structure inference</text>
 
-                <circle cx="610" cy="356" r="18" class="g16-m"/>
+                  <rect x="60" y="166" width="240" height="58" rx="10" class="g16-node g16-b g16-focus-node"/>
+                  <text x="76" y="201" class="g16-text" font-size="20">B. Diffusion forecasting</text>
+                  <rect x="330" y="166" width="240" height="58" rx="10" class="g16-node g16-c g16-focus-node"/>
+                  <text x="346" y="201" class="g16-text" font-size="20">C. Source explanation</text>
+                  <rect x="600" y="166" width="240" height="58" rx="10" class="g16-node g16-d g16-focus-node"/>
+                  <text x="616" y="201" class="g16-text" font-size="20">D. State estimation</text>
 
-                <rect x="340" y="412" width="250" height="48" rx="10" class="g16-box g16-down1"/>
-                <text x="358" y="442" class="g16-t" font-size="17">E. Decision / intervention</text>
-                <rect x="630" y="412" width="250" height="48" rx="10" class="g16-box g16-down2"/>
-                <text x="648" y="442" class="g16-t" font-size="17">F. Validation / acceptance</text>
+                  <rect x="305" y="286" width="290" height="64" rx="11" class="g16-node g16-e g16-focus-node"/>
+                  <text x="324" y="324" class="g16-text" font-size="20">E. Intervention design</text>
+                  <rect x="305" y="392" width="290" height="56" rx="11" class="g16-node g16-f g16-af-node"/>
+                  <text x="324" y="426" class="g16-text" font-size="20">F. Validation and trust</text>
 
-                <line x1="610" y1="162" x2="300" y2="232" class="g16-a1"/>
-                <line x1="610" y1="162" x2="610" y2="232" class="g16-a1"/>
-                <line x1="610" y1="162" x2="920" y2="232" class="g16-a1"/>
+                  <path d="M450 112 C380 130,290 146,180 166" class="g16-link"/>
+                  <path d="M450 112 C450 132,450 148,450 166" class="g16-link"/>
+                  <path d="M450 112 C520 130,610 146,720 166" class="g16-link"/>
 
-                <line x1="300" y1="296" x2="594" y2="356" class="g16-a2"/>
-                <line x1="610" y1="296" x2="610" y2="338" class="g16-a2"/>
-                <line x1="920" y1="296" x2="626" y2="356" class="g16-a2"/>
+                  <path d="M180 224 C250 244,340 264,450 286" class="g16-link"/>
+                  <path d="M450 224 C450 246,450 266,450 286" class="g16-link"/>
+                  <path d="M720 224 C650 244,560 264,450 286" class="g16-link"/>
+                  <path d="M450 350 C450 366,450 378,450 392" class="g16-link"/>
 
-                <line x1="610" y1="374" x2="465" y2="412" class="g16-a3"/>
-                <line x1="610" y1="374" x2="755" y2="412" class="g16-a3"/>
-              </svg>
-            </div>
-            <div class="task-flow-explain">
-              <div class="task-flow-item"><strong>A:</strong> infer uncertain graph structure and parameters from observed data.</div>
-              <div class="task-flow-item"><strong>B:</strong> forecast spread size and timing under uncertainty.</div>
-              <div class="task-flow-item"><strong>C:</strong> infer likely source nodes and transmission paths.</div>
-              <div class="task-flow-item"><strong>D:</strong> estimate hidden graph states over time.</div>
-              <div class="task-flow-item"><strong>E:</strong> choose robust interventions that balance risk and cost.</div>
-              <div class="task-flow-item"><strong>F:</strong> audit calibration and coverage before deployment.</div>
+                  <g class="fragment fade-in" data-fragment-index="1">
+                    <rect x="305" y="56" width="290" height="56" rx="11" class="g16-node g16-muted-node g16-af-node"/>
+                    <text x="324" y="91" class="g16-text g16-muted-text" font-size="20">A. Structure inference</text>
+                    <rect x="305" y="392" width="290" height="56" rx="11" class="g16-node g16-muted-node g16-af-node"/>
+                    <text x="324" y="426" class="g16-text g16-muted-text" font-size="20">F. Validation and trust</text>
+                    <path d="M450 112 C380 130,290 146,180 166" class="g16-link g16-link-muted"/>
+                    <path d="M450 112 C450 132,450 148,450 166" class="g16-link g16-link-muted"/>
+                    <path d="M450 112 C520 130,610 146,720 166" class="g16-link g16-link-muted"/>
+                    <path d="M450 350 C450 366,450 378,450 392" class="g16-link g16-link-muted"/>
+                  </g>
+                </svg>
+              </div>
             </div>
             <aside class="notes">
-              This merged slide only explains upstream/downstream relationships among the six tasks.
-              A is the upstream source, B/C/D are midstream modeling tasks, and E/F are downstream consumers.
+              The left side gives a compact narration of the six-task pipeline.
+              The right side keeps only the dependency graph in top-to-bottom order: A to B/C/D to E to F.
+              First click: fade A and F to gray to focus attention on B, C, D, and E.
             </aside>
           </section>
 
+        </section>
+
+        <section id="sec-task-b" data-section-title="Diffusion Forecasting">
+          <section id="task-b-home" class="section-home" data-section-home="1">
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Diffusion Forecasting</h1>
+          </section>
+          <section id="task-b-01" data-subsection="Module 1 — Overview">
+            <h2>Diffusion Forecasting</h2>
+            <p class="plain-box">Overview of uncertainty-aware diffusion forecasting on dynamic graphs.</p>
+          </section>
+          <section id="task-b-02" data-subsection="Module 2 — Research Papers">
+            <h2>Diffusion Forecasting: Research Papers</h2>
+            <p class="plain-box">Key papers, methods, and benchmark settings for diffusion forecasting.</p>
+          </section>
+        </section>
+
+        <section id="sec-task-c" data-section-title="Source Explanation">
+          <section id="task-c-home" class="section-home" data-section-home="1">
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Source Explanation</h1>
+          </section>
+          <section id="task-c-01" data-subsection="Module 1 — Overview">
+            <h2>Source Explanation</h2>
+            <p class="plain-box">Overview of source explanation under uncertain transmission pathways.</p>
+          </section>
+          <section id="task-c-02" data-subsection="Module 2 — Research Papers">
+            <h2>Source Explanation: Research Papers</h2>
+            <p class="plain-box">Representative papers on source tracing, explanation quality, and uncertainty calibration.</p>
+          </section>
+        </section>
+
+        <section id="sec-task-d" data-section-title="State Estimation">
+          <section id="task-d-home" class="section-home" data-section-home="1">
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">State Estimation</h1>
+          </section>
+          <section id="task-d-01" data-subsection="Module 1 — Overview">
+            <h2>State Estimation</h2>
+            <p class="plain-box">Overview of latent-state estimation and uncertainty tracking over time.</p>
+          </section>
+          <section id="task-d-02" data-subsection="Module 2 — Research Papers">
+            <h2>State Estimation: Research Papers</h2>
+            <p class="plain-box">Core papers on dynamic state inference, filtering, and uncertainty propagation.</p>
+          </section>
+        </section>
+
+        <section id="sec-task-e" data-section-title="Intervention Design">
+          <section id="task-e-home" class="section-home" data-section-home="1">
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Intervention Design</h1>
+          </section>
+          <section id="task-e-01" data-subsection="Module 1 — Overview">
+            <h2>Intervention Design</h2>
+            <p class="plain-box">Overview of robust intervention design under uncertainty and budget constraints.</p>
+          </section>
+          <section id="task-e-02" data-subsection="Module 2 — Research Papers">
+            <h2>Intervention Design: Research Papers</h2>
+            <p class="plain-box">Key papers on policy optimization, robustness, and risk-aware decisions.</p>
+          </section>
         </section>
       </div>
     </div>
@@ -2791,7 +2879,6 @@
       const navPageEl = document.getElementById('navPage');
       const topProgressBarEl = document.getElementById('topProgressBar');
       const tocListEl = document.getElementById('tocList');
-      const coverJumpBtn = document.getElementById('coverJumpBtn');
       const tocToggleBtn = document.getElementById('tocToggleBtn');
       const tocCollapseStorageKey = 'reveal_toc_collapsed';
       let tocEntries = [];
@@ -2860,20 +2947,20 @@
         if (!tocListEl) return;
         tocListEl.innerHTML = '';
         tocEntries = [];
+        const coverSlide = document.getElementById('cover');
+        const coverIndices = coverSlide ? Reveal.getIndices(coverSlide) : null;
 
         const sectionBuckets = [];
         const sectionMap = new Map();
         const slides = Reveal.getSlides();
-        slides.forEach((slide) => slide.removeAttribute('data-heading-index'));
+        slides.forEach((slide) => {
+          slide.removeAttribute('data-heading-index');
+          slide.removeAttribute('data-page-index');
+        });
 
         slides.forEach((slide, idx) => {
-          const slideIndices = Reveal.getIndices(slide);
-          const sectionNumber = (slideIndices.h || 0) + 1;
-          const sectionSlideNumber = ((slideIndices.v ?? 0) + 1);
-          slide.setAttribute('data-page-index', `${sectionNumber}.${sectionSlideNumber}`);
-
+          const indices = Reveal.getIndices(slide);
           if (slide && slide.id === 'cover') return;
-          const indices = slideIndices;
           const sectionEl = getSectionContainer(slide);
 
           if (!sectionMap.has(sectionEl)) {
@@ -2883,12 +2970,24 @@
               sectionNumber,
               title: getSectionTitle(sectionEl, sectionNumber),
               subsections: [],
-              subsectionMap: new Map()
+              subsectionMap: new Map(),
+              homeEntry: null,
+              entryCount: 0
             });
             sectionBuckets.push(sectionMap.get(sectionEl));
           }
 
           const bucket = sectionMap.get(sectionEl);
+          if (slide.dataset && slide.dataset.sectionHome === '1') {
+            bucket.homeEntry = {
+              slide,
+              indices,
+              pageNumber: idx + 1,
+              title: getSlideTitle(slide, idx + 1)
+            };
+            return;
+          }
+
           const subsectionTitle = getSubsectionTitle(slide);
           if (!bucket.subsectionMap.has(subsectionTitle)) {
             bucket.subsectionMap.set(subsectionTitle, {
@@ -2898,25 +2997,40 @@
             bucket.subsections.push(bucket.subsectionMap.get(subsectionTitle));
           }
 
+          const entryIndex = bucket.entryCount + 1;
+          const badgeNumber = `${bucket.sectionNumber}.${entryIndex}`;
+          slide.setAttribute('data-page-index', badgeNumber);
+
           bucket.subsectionMap.get(subsectionTitle).entries.push({
             slide,
             indices,
             pageNumber: idx + 1,
-            badgeNumber: `${sectionNumber}.${sectionSlideNumber}`,
+            badgeNumber,
             title: getSlideTitle(slide, idx + 1),
             itemEl: null,
             groupEl: null,
             subsectionEl: null
           });
+          bucket.entryCount = entryIndex;
         });
 
         sectionBuckets.forEach((bucket) => {
           const groupLi = document.createElement('li');
           groupLi.className = 'toc-group';
 
-          const groupTitle = document.createElement('span');
-          groupTitle.className = 'toc-group-title';
+          const firstEntry = bucket.subsections.find((subsection) => subsection.entries.length > 0)?.entries[0];
+          const groupTarget =
+            bucket.title === 'Overview' && coverIndices
+              ? coverIndices
+              : (bucket.homeEntry ? bucket.homeEntry.indices : (firstEntry ? firstEntry.indices : null));
+          const groupTitle = document.createElement('button');
+          groupTitle.type = 'button';
+          groupTitle.className = 'toc-group-title toc-group-link';
           groupTitle.textContent = bucket.title;
+          if (groupTarget) {
+            groupTitle.setAttribute('aria-label', `Go to ${bucket.title} overview`);
+            groupTitle.addEventListener('click', () => Reveal.slide(groupTarget.h, groupTarget.v || 0));
+          }
           groupLi.appendChild(groupTitle);
 
           const subList = document.createElement('ul');
@@ -3026,12 +3140,6 @@
 
       if (tocToggleBtn) {
         tocToggleBtn.addEventListener('click', toggleToc);
-      }
-
-      if (coverJumpBtn) {
-        coverJumpBtn.addEventListener('click', () => {
-          Reveal.slide(0, 0);
-        });
       }
 
       setTocCollapsed(false, false);
