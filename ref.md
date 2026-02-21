@@ -88,7 +88,7 @@ All other fields are unchanged.
 | Locating the Source of Diffusion in Large-Scale Networks | Pinto et al. | 2012 | PRL | 750 | [link](https://doi.org/10.1103/PhysRevLett.109.068702) | Graph |
 | Inferring Networks of Diffusion and Influence | Gomez-Rodriguez et al. | 2010 | KDD | 2200 | [link](https://doi.org/10.1145/1835804.1835933) | Graph |
 | **A Tutorial Introduction to Bayesian Inference for Stochastic Epidemic Models Using ABC** | Kypraios et al. | 2017 | Math. Biosci. | 180 | [link](https://doi.org/10.1016/j.mbs.2016.07.001) | Graph+UQ |
-| **Bayesian Inference for Partially Observed Stochastic Epidemics** | O'Neill & Roberts | 1999 | JRSS-A | 445 | [link](https://academic.oup.com/jrsssa/article/162/1/121/7102318) | Graph+UQ |
+| Bayesian Inference for Partially Observed Stochastic Epidemics | O'Neill & Roberts | 1999 | JRSS-A | 445 | [link](https://academic.oup.com/jrsssa/article/162/1/121/7102318) | UQ |
 | **Bayesian Inference for Epidemics on Random Graphs** | Britton & O'Neill | 2002 | Scand. J. Stat. | 76 | [link](https://academic.oup.com/jrsssb/article/67/5/731/7109669) | Graph+UQ |
 | **Global Sensitivity Analysis in Epidemiological Modeling** | Lu & Borgonovo | 2023 | EJOR | 61 | [link](https://www.sciencedirect.com/science/article/pii/S0377221721009693) | Graph+UQ |
 | **Sensitivity Analysis of Infectious Disease Models** | Wu et al. | 2013 | J. R. Soc. Interface | 374 | [link](https://pmc.ncbi.nlm.nih.gov/articles/PMC3730677/) | Graph+UQ |
