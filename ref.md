@@ -63,7 +63,7 @@ All other fields are unchanged.
 | Dynamical Interplay between Awareness and Epidemic Spreading in Multiplex Networks | Granell et al. | 2013 | PRL | 1022 | [link](https://doi.org/10.1103/PhysRevLett.111.128701) | Graph |
 | **Towards Uncertainty Quantification and Inference in the Stochastic SIR Epidemic Model** | Capistrán et al. | 2012 | Math. Biosci. | 27 | [link](https://doi.org/10.1016/j.mbs.2012.08.005) | Graph+UQ |
 | **Loopy Belief Propagation: Convergence and Effects of Message Errors** | Ihler et al. | 2005 | JMLR | 454 | [link](https://www.jmlr.org/papers/v6/ihler05a.html) | Graph+UQ |
-| **Information, Physics, and Computation** (__Part III Models on graphs__) | Mézard & Montanari | 2009 | OUP book | 7200 | [link](https://doi.org/10.1093/acprof:oso/9780198570837.001.0001) | Graph+UQ |
+| **Information, Physics, and Computation** (__Part III Models on graphs__) | Mézard & Montanari | 2009 | OUP book | 2769 | [link](https://doi.org/10.1093/acprof:oso/9780198570837.001.0001) | Graph+UQ |
 | Hawkes Processes for Events in Social Media | Rizoiu et al. | 2017 | WWW companion | 550 | [link](https://doi.org/10.1145/3041021.3051463) | Graph |
 | Learning Social Infectivity in Sparse Low-rank Networks Using Multi-dimensional Hawkes Processes | Zhou, Zha, Song | 2013 | AISTATS | 295 | [link](https://proceedings.mlr.press/v31/zhou13a.html) | Graph |
 | **Approximate Zero-Variance Importance Sampling for Static Network Reliability Estimation** | L'Ecuyer et al. | 2011 | IEEE Trans. Rel. | 73 | [link](https://ieeexplore.ieee.org/document/5753982) | Graph+UQ |
