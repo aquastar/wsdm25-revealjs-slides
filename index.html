@@ -92,6 +92,32 @@
         margin: 0.2em 0 0.32em;
       }
 
+      #gf-04 .motif-pair {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.1em;
+        flex-wrap: wrap;
+      }
+
+      #gf-04 .motif-pair img {
+        height: 210px;
+        width: auto;
+        max-width: 44%;
+        object-fit: contain;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      @media (max-width: 900px) {
+        #gf-04 .motif-pair img {
+          height: 150px;
+          max-width: 86%;
+        }
+      }
+
       .challenge-highlight {
         display: block;
         width: fit-content;
@@ -2231,6 +2257,10 @@
 
           <section id="gf-04" data-subsection="Module 1 — Motivation">
             <h2>Why Graph Dynamics Under Uncertainty Is Hard</h2>
+            <div class="visual motif-pair">
+              <img src="assets/2-cross-network.png?v=3" alt="2-cross-network: cross-domain cascade from information to behavior to mobility">
+              <img src="assets/cross-network-influence.png?v=1" alt="Cross-network influence illustration">
+            </div>
             <div class="challenge-stack">
               <p class="challenge-highlight"><strong>Heterogeneous:</strong> different domains have different state variables and data fidelity.</p>
               <p class="challenge-highlight"><strong>Coupling:</strong> interactions happen through intermediate layers (policy/behavior/market mechanisms).</p>
