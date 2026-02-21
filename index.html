@@ -494,7 +494,7 @@
       }
 
       #gf-05b h2 {
-        font-size: 1.34em;
+        font-size: 1.68em;
       }
 
       #gf-05b {
@@ -547,14 +547,14 @@
       }
 
       #gf-05b .uq27-core-sub {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 600;
         fill: #4a678d;
         text-anchor: middle;
       }
 
       #gf-05b .uq27-ring-label {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 700;
         fill: #6e7f95;
         opacity: 0.58;
@@ -591,7 +591,7 @@
 
       #gf-05b .uq27-panel-title {
         margin: 0;
-        font-size: 0.66em;
+        font-size: 0.74em;
         font-weight: 700;
         color: #234f7e;
         text-align: center;
@@ -608,7 +608,7 @@
         border: 1.4px solid #d75a5a;
         border-radius: 7px;
         background: #fff7f7;
-        font-size: 0.64em;
+        font-size: 0.72em;
         line-height: 1.22;
         color: #8c2d2d;
         align-self: center;
@@ -621,7 +621,7 @@
         border-collapse: separate;
         border-spacing: 0;
         table-layout: auto;
-        font-size: 0.56em;
+        font-size: 0.62em;
         line-height: 1.2;
       }
 
@@ -669,6 +669,62 @@
         color: #2b567f;
         font-size: 0.93em;
         line-height: 1.1;
+        position: relative;
+        cursor: pointer;
+      }
+
+      #uq27-global-tooltip {
+        position: fixed;
+        left: -9999px;
+        top: -9999px;
+        max-width: 500px;
+        padding: 0.56em 0.64em;
+        border-radius: 10px;
+        border: 1px solid #ccd8e6;
+        background: #f2f5f8;
+        color: #1c3552;
+        font-size: 13px;
+        line-height: 1.35;
+        box-shadow: 0 10px 20px rgba(13, 33, 56, 0.22);
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 10000;
+        transition: opacity 100ms ease;
+      }
+
+      #uq27-global-tooltip.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #uq27-global-tooltip .uq27-tip-title {
+        margin: 0 0 0.28em;
+        font-size: 1.06em;
+        font-weight: 900;
+        color: #16314f;
+        border-bottom: 1px solid #d4deea;
+        padding-bottom: 0.18em;
+      }
+
+      #uq27-global-tooltip .uq27-tip-list {
+        margin: 0.08em 0 0;
+        padding-left: 1.1em;
+      }
+
+      #uq27-global-tooltip .uq27-tip-label {
+        display: block;
+        font-weight: 800;
+        color: #204366;
+      }
+
+      #uq27-global-tooltip .uq27-tip-item {
+        margin: 0.14em 0;
+      }
+
+      #uq27-global-tooltip .uq27-tip-body {
+        margin: 0.04em 0 0.02em 0;
+        color: #24486e;
       }
 
       #gf-05b .uq27-step {
@@ -712,7 +768,7 @@
       }
 
       #gf-05b .reference {
-        font-size: 0.57em;
+        font-size: 0.4em;
       }
 
       #gf-06 .uq28-bottom {
@@ -2217,6 +2273,11 @@
           <p class="cover-authors">Marouane Benbrahim, Tamanna Rashme, Zonghan Zhang<br>Zhiqian Chen</p>
           <p class="cover-affiliation">Computer Science and Engineering<br>Mississippi State University</p>
           <p class="cover-date">Feb 22, 2026</p>
+          <aside class="notes">
+            Opening slide. Introduce the tutorial scope, the speakers, and the four main sections.
+            Clarify that we focus on uncertainty-aware methods for dynamical networks.
+            Transition to the motivation section.
+          </aside>
         </section>
         <section id="sec-global-framework" data-section-title="Overview">
           <section id="gf-01" data-subsection="Module 1 — Motivation">
@@ -2292,6 +2353,21 @@
             </aside>
           </section>
 
+          <section id="gf-04c" data-subsection="Module 1 — Motivation">
+            <h2>Source Localization as a Problem</h2>
+            <img class="visual" src="assets/source_localize.png" alt="Source localization illustration on a diffusion graph" style="width: 42%; height: auto;">
+            <p class="question-box"><strong>Challenge 1:</strong> one snapshot of a cascade.</p>
+            <p class="gray-box"><strong>Challenge 2:</strong> more than 1 source node: DDoS attack, Financial Crash, Power Failure.</p>
+            <p class="gray-box"><strong>Challenge 3:</strong> many explanations fit the same observation.</p>
+            <p class="toy-calc"><strong>Search difficulty:</strong> searching in a huge space of possible node sets.</p>
+            <p class="reference">Ref: <strong>Multiple-source localization from a single-snapshot observation using graph Bayesian optimization</strong> — Zhang, Zonghan, Zijian Zhang, Zhiqian Chen — AAAI — 2024.</p>
+            <aside class="notes">
+              Frame source localization as an inverse problem with limited evidence.
+              Emphasize multi-source scenarios and non-identifiability under partial observation.
+              End with the combinatorial search challenge over source-node sets.
+            </aside>
+          </section>
+
           <section id="gf-05" data-subsection="Module 2 — UQ Basics">
             <h2>What Is Uncertainty Quantification?</h2>
             <p class="uq26-kicker">From point estimate to decision-ready uncertainty.</p>
@@ -2314,7 +2390,7 @@
           </section>
 
           <section id="gf-05b" data-subsection="Module 2 — UQ Basics" data-uq27-active="1">
-            <h2>UQ Lifecycle: Seven Functional Categories</h2>
+            <h2>UQ lifecycle</h2>
             <div class="uq27-layout">
               <div class="uq27-main">
                 <svg class="uq27-ring-svg" viewBox="0 0 800 510" aria-label="Seven-category lifecycle ring for uncertainty quantification">
@@ -2828,56 +2904,116 @@
         <section id="sec-task-b" data-section-title="Diffusion Forecasting">
           <section id="task-b-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Diffusion Forecasting</h1>
+            <aside class="notes">
+              Section transition: Diffusion Forecasting.
+              Define the task objective, what is predicted, and where uncertainty enters.
+              Then move to the overview slide.
+            </aside>
           </section>
           <section id="task-b-01" data-subsection="Module 1 — Overview">
             <h2>Diffusion Forecasting</h2>
             <p class="plain-box">Overview of uncertainty-aware diffusion forecasting on dynamic graphs.</p>
+            <aside class="notes">
+              Provide a concise task definition for diffusion forecasting on graphs.
+              Emphasize uncertainty from graph structure, transmission dynamics, and observation noise.
+              Set up the criteria used to compare methods in the paper slide.
+            </aside>
           </section>
           <section id="task-b-02" data-subsection="Module 2 — Research Papers">
             <h2>Diffusion Forecasting: Research Papers</h2>
             <p class="plain-box">Key papers, methods, and benchmark settings for diffusion forecasting.</p>
+            <aside class="notes">
+              Walk through representative papers and summarize each method in one sentence.
+              Compare assumptions, uncertainty modeling choices, and evaluation settings.
+              End with open gaps and practical takeaways.
+            </aside>
           </section>
         </section>
 
         <section id="sec-task-c" data-section-title="Source Explanation">
           <section id="task-c-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Source Explanation</h1>
+            <aside class="notes">
+              Section transition: Source Explanation.
+              Explain that the goal is to infer plausible origins under partial and noisy observations.
+              Then move to the overview slide.
+            </aside>
           </section>
           <section id="task-c-01" data-subsection="Module 1 — Overview">
             <h2>Source Explanation</h2>
             <p class="plain-box">Overview of source explanation under uncertain transmission pathways.</p>
+            <aside class="notes">
+              Define source explanation as an inverse problem with non-identifiability.
+              Highlight key uncertainty sources: missing observations, unknown diffusion parameters, and multiple valid explanations.
+              Prepare the audience for methods and benchmarks in the next slide.
+            </aside>
           </section>
           <section id="task-c-02" data-subsection="Module 2 — Research Papers">
             <h2>Source Explanation: Research Papers</h2>
             <p class="plain-box">Representative papers on source tracing, explanation quality, and uncertainty calibration.</p>
+            <aside class="notes">
+              Present representative papers on source localization and explanation quality.
+              Contrast deterministic ranking versus probabilistic explanation sets.
+              Emphasize calibration and robustness under sparse observations.
+            </aside>
           </section>
         </section>
 
         <section id="sec-task-d" data-section-title="State Estimation">
           <section id="task-d-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">State Estimation</h1>
+            <aside class="notes">
+              Section transition: State Estimation.
+              Explain that we track latent system states over time under noisy, partial measurements.
+              Then move to the overview slide.
+            </aside>
           </section>
           <section id="task-d-01" data-subsection="Module 1 — Overview">
             <h2>State Estimation</h2>
             <p class="plain-box">Overview of latent-state estimation and uncertainty tracking over time.</p>
+            <aside class="notes">
+              Introduce state estimation as sequential posterior updating.
+              Connect this task to filtering and smoothing families in the UQ lifecycle.
+              Clarify what outputs matter: state trajectories and confidence intervals.
+            </aside>
           </section>
           <section id="task-d-02" data-subsection="Module 2 — Research Papers">
             <h2>State Estimation: Research Papers</h2>
             <p class="plain-box">Core papers on dynamic state inference, filtering, and uncertainty propagation.</p>
+            <aside class="notes">
+              Review core papers on dynamic state inference and uncertainty propagation.
+              Compare model assumptions, update mechanisms, and computational tradeoffs.
+              Highlight where graph structure is explicitly used versus ignored.
+            </aside>
           </section>
         </section>
 
         <section id="sec-task-e" data-section-title="Intervention Design">
           <section id="task-e-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Intervention Design</h1>
+            <aside class="notes">
+              Section transition: Intervention Design.
+              Explain that this task turns uncertain predictions into actionable policies.
+              Then move to the overview slide.
+            </aside>
           </section>
           <section id="task-e-01" data-subsection="Module 1 — Overview">
             <h2>Intervention Design</h2>
             <p class="plain-box">Overview of robust intervention design under uncertainty and budget constraints.</p>
+            <aside class="notes">
+              Define intervention design under uncertainty with limited budget and risk constraints.
+              Emphasize the decision objective and the uncertainty-aware policy criterion.
+              Link to downstream validation and trust requirements.
+            </aside>
           </section>
           <section id="task-e-02" data-subsection="Module 2 — Research Papers">
             <h2>Intervention Design: Research Papers</h2>
             <p class="plain-box">Key papers on policy optimization, robustness, and risk-aware decisions.</p>
+            <aside class="notes">
+              Summarize representative papers on robust policy optimization.
+              Compare expected-value optimization against risk-aware or distributionally robust formulations.
+              Close with practical guidance for deployment under uncertainty.
+            </aside>
           </section>
         </section>
       </div>
@@ -2912,6 +3048,7 @@
       const tocToggleBtn = document.getElementById('tocToggleBtn');
       const tocCollapseStorageKey = 'reveal_toc_collapsed';
       let tocEntries = [];
+      let uq27TooltipEl = null;
 
       function setTocCollapsed(collapsed, persist = true) {
         if (!topNavEl || !tocToggleBtn) return;
@@ -2971,6 +3108,316 @@
         const visibleCount = lifecycleSlide.querySelectorAll('.uq27-step.fragment.visible').length;
         const activeIndex = Math.min(7, visibleCount + 1);
         lifecycleSlide.setAttribute('data-uq27-active', String(activeIndex));
+      }
+
+      function ensureUq27Tooltip() {
+        if (uq27TooltipEl && document.body.contains(uq27TooltipEl)) return uq27TooltipEl;
+        const existing = document.getElementById('uq27-global-tooltip');
+        if (existing) {
+          uq27TooltipEl = existing;
+          return uq27TooltipEl;
+        }
+        uq27TooltipEl = document.createElement('div');
+        uq27TooltipEl.id = 'uq27-global-tooltip';
+        uq27TooltipEl.setAttribute('role', 'tooltip');
+        document.body.appendChild(uq27TooltipEl);
+        return uq27TooltipEl;
+      }
+
+      function positionUq27Tooltip(clientX, clientY) {
+        const tooltip = ensureUq27Tooltip();
+        const margin = 12;
+        const offsetX = 16;
+        const offsetY = 18;
+        const rect = tooltip.getBoundingClientRect();
+        let left = clientX + offsetX;
+        let top = clientY + offsetY;
+
+        if (left + rect.width + margin > window.innerWidth) {
+          left = Math.max(margin, clientX - rect.width - offsetX);
+        }
+        if (top + rect.height + margin > window.innerHeight) {
+          top = Math.max(margin, clientY - rect.height - offsetY);
+        }
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+      }
+
+      function buildUq27TooltipPayload(chip) {
+        if (!chip) return null;
+        const term = chip.dataset.tipTerm || chip.textContent.trim();
+        const what = chip.dataset.tipWhat || '';
+        const use = chip.dataset.tipUse || '';
+        const output = chip.dataset.tipOutput || '';
+        const fact = chip.dataset.tipFact || '';
+        return { term, what, use, output, fact };
+      }
+
+      function renderUq27Tooltip(payload) {
+        if (!payload || !payload.term) return;
+        const tooltip = ensureUq27Tooltip();
+        tooltip.innerHTML = '';
+
+        const title = document.createElement('p');
+        title.className = 'uq27-tip-title';
+        title.textContent = payload.term;
+        tooltip.appendChild(title);
+
+        const whatText = [payload.what, payload.output ? `Output: ${payload.output}` : '', payload.fact ? `Fact: ${payload.fact}` : '']
+          .filter(Boolean)
+          .join(' ');
+        const rows = [
+          ['What', whatText],
+          ['When', payload.use]
+        ];
+
+        const list = document.createElement('ul');
+        list.className = 'uq27-tip-list';
+        rows.forEach(([label, text]) => {
+          if (!text) return;
+          const item = document.createElement('li');
+          item.className = 'uq27-tip-item';
+
+          const labelEl = document.createElement('span');
+          labelEl.className = 'uq27-tip-label';
+          labelEl.textContent = label;
+
+          const bodyEl = document.createElement('p');
+          bodyEl.className = 'uq27-tip-body';
+          bodyEl.textContent = text;
+
+          item.appendChild(labelEl);
+          item.appendChild(bodyEl);
+          list.appendChild(item);
+        });
+        tooltip.appendChild(list);
+
+      }
+
+      function showUq27Tooltip(payload, clientX, clientY) {
+        if (!payload) return;
+        renderUq27Tooltip(payload);
+        const tooltip = ensureUq27Tooltip();
+        tooltip.classList.add('visible');
+        positionUq27Tooltip(clientX, clientY);
+      }
+
+      function hideUq27Tooltip() {
+        const tooltip = ensureUq27Tooltip();
+        tooltip.classList.remove('visible');
+        tooltip.style.left = '-9999px';
+        tooltip.style.top = '-9999px';
+      }
+
+      function getUq27PanelClass(chip) {
+        const panel = chip.closest('.uq27-panel');
+        if (!panel) return '';
+        return Array.from(panel.classList).find((cls) => /^p[1-7]$/.test(cls)) || '';
+      }
+
+      function bindUq27TechniqueTooltips() {
+        document.querySelectorAll('#gf-05b .uq27-chip').forEach((chip) => {
+          if (chip.dataset.tipBound === '1') return;
+          chip.dataset.tipBound = '1';
+          chip.setAttribute('tabindex', '0');
+
+          chip.addEventListener('mouseenter', (event) => {
+            const payload = buildUq27TooltipPayload(chip);
+            if (!payload) return;
+            showUq27Tooltip(payload, event.clientX, event.clientY);
+          });
+
+          chip.addEventListener('mousemove', (event) => {
+            const tooltip = ensureUq27Tooltip();
+            if (!tooltip.classList.contains('visible')) return;
+            positionUq27Tooltip(event.clientX, event.clientY);
+          });
+
+          chip.addEventListener('mouseleave', hideUq27Tooltip);
+
+          chip.addEventListener('focus', () => {
+            const payload = buildUq27TooltipPayload(chip);
+            if (!payload) return;
+            const rect = chip.getBoundingClientRect();
+            showUq27Tooltip(payload, rect.left + (rect.width / 2), rect.bottom);
+          });
+
+          chip.addEventListener('blur', hideUq27Tooltip);
+        });
+      }
+
+      function mergeUq27TechniqueFamilies() {
+        const families = [
+          {
+            label: 'Kalman filtering (KF, EKF, UKF, EnKF)',
+            members: ['Kalman filter', 'EKF', 'UKF', 'EnKF']
+          },
+          {
+            label: 'Monte Carlo family (MC, QMC, MLMC)',
+            members: ['Monte Carlo', 'Quasi-Monte Carlo', 'Multi-level Monte Carlo']
+          },
+          {
+            label: 'Sobol sensitivity (first-order + total)',
+            members: ['Sobol indices', 'Total Sobol index']
+          },
+          {
+            label: 'Conformal prediction (split, jackknife+)',
+            members: ['Conformal prediction', 'Split conformal', 'Jackknife+']
+          },
+          {
+            label: 'Online conformal (adaptive coverage)',
+            members: ['Online conformal', 'Adaptive coverage control']
+          },
+          {
+            label: 'Tail risk metrics (VaR, CVaR)',
+            members: ['VaR', 'CVaR']
+          }
+        ];
+
+        document.querySelectorAll('#gf-05b .uq27-tech-table td:nth-child(2)').forEach((cell) => {
+          families.forEach((family) => {
+            const chips = Array.from(cell.querySelectorAll('.uq27-chip'));
+            const matched = chips.filter((chip) => family.members.includes(chip.textContent.trim()));
+            if (matched.length < 2) return;
+            const anchor = matched[0];
+            anchor.textContent = family.label;
+            matched.slice(1).forEach((chip) => chip.remove());
+          });
+        });
+      }
+
+      function applyUq27TechniqueTooltips() {
+        mergeUq27TechniqueFamilies();
+
+        const descriptions = {
+          '4D-Var': 'Assimilates observations by optimizing trajectories over a time window.',
+          'Adaptive coverage control': 'Adjusts conformal thresholds online to maintain target coverage.',
+          'Bayesian inference': "Updates belief distributions using observed data and Bayes' rule.",
+          'Bayesian inverse problems': 'Infers unknown inputs and parameters from observed outputs probabilistically.',
+          'Bayesian updating': 'Recursively updates posterior distributions as new data arrives.',
+          'CVaR': 'Expected loss in the worst tail beyond VaR.',
+          'Conformal prediction': 'Distribution-free prediction sets with finite-sample coverage guarantees.',
+          'Copula models': 'Models dependence structure separately from marginal distributions.',
+          'Coverage control': 'Targets desired interval or set coverage under uncertainty.',
+          'Data assimilation': 'Combines model dynamics with observations to estimate hidden states.',
+          'Derivative-based sensitivity': 'Uses gradients to rank influential uncertain inputs.',
+          'EKF': 'Linearizes nonlinear dynamics for approximate Gaussian filtering.',
+          'EnKF': 'Uses state ensembles to propagate and update uncertainty.',
+          'FAST': 'Frequency-based global sensitivity analysis method.',
+          'FORM': 'First-order approximation of reliability and failure probability.',
+          'Gaussian process': 'Nonparametric Bayesian model with uncertainty over functions.',
+          'Gaussian random field': 'Spatial random process with Gaussian joint distributions.',
+          'HMC': 'MCMC with Hamiltonian dynamics for efficient posterior sampling.',
+          'Importance sampling': 'Reweights samples to estimate rare or target events efficiently.',
+          'Jackknife+': 'Conformal variant improving predictive interval stability.',
+          'KL + FEM': 'Karhunen-Loeve expansion combined with finite-element simulation.',
+          'KL expansion': 'Represents random fields via orthogonal stochastic modes.',
+          'Kalman filter': 'Optimal recursive estimator for linear-Gaussian systems.',
+          'Laplace approximation': 'Approximates posterior near MAP with a Gaussian.',
+          'MAP estimation': 'Finds parameter mode maximizing posterior probability.',
+          'MCMC': 'Generates samples from complex posterior distributions.',
+          'Mixture models': 'Represents multimodal uncertainty via weighted components.',
+          'Model discrepancy': 'Explicit term for model-form error versus reality.',
+          'Monte Carlo': 'Propagates uncertainty by repeated random simulation.',
+          'Morris screening': 'Low-cost screening method for influential factors.',
+          'Multi-level Monte Carlo': 'Combines coarse and fine simulations to reduce sampling cost.',
+          'Offline initialization': 'Initial prior and state estimation before online updates.',
+          'Online conformal': 'Conformal prediction updated sequentially over streaming data.',
+          'PCE': 'Polynomial basis surrogate for uncertainty propagation.',
+          'Particle filter': 'Sequential Monte Carlo for nonlinear and non-Gaussian state estimation.',
+          'Posterior measure': 'Probability distribution after conditioning on observations.',
+          'Posterior over parameters': 'Uncertainty distribution for inferred model parameters.',
+          'Probability measure': 'Formal mathematical definition of uncertainty on outcomes.',
+          'Quasi-Monte Carlo': 'Uses low-discrepancy sequences for faster convergence.',
+          'RTS smoother': 'Backward pass that improves filtered state estimates.',
+          'Random fields': 'Random variables indexed over space or time.',
+          'Random variables': 'Numerical quantities governed by probability distributions.',
+          'SMC': 'Sequential sampling-resampling framework for evolving posteriors.',
+          'SORM': 'Second-order reliability approximation near the failure boundary.',
+          'Sequential propagation': 'Propagates uncertainty forward step-by-step over time.',
+          'Sequential rare-event control': 'Tracks and controls tail risk over time.',
+          'Sobol indices': 'Variance-based attribution of output uncertainty to inputs.',
+          'Sparse grid': 'Efficient high-dimensional quadrature and interpolation construction.',
+          'Sparse priors': 'Priors promoting parsimonious parameter representations.',
+          'Split conformal': 'Calibrates prediction sets on held-out data.',
+          'Stochastic Galerkin': 'Intrusive spectral method for stochastic PDEs.',
+          'Stochastic collocation': 'Non-intrusive sampling on selected collocation nodes.',
+          'Stochastic finite elements': 'Finite-element formulations with random coefficients.',
+          'Subset simulation': 'Rare-event estimation via nested conditional sampling.',
+          'Support role': 'Auxiliary component that supports dynamic inference.',
+          'Temporal discrepancy tracking': 'Monitors model error drift over time.',
+          'Tikhonov': 'Regularization that penalizes unstable inverse solutions.',
+          'Time-dependent reliability': 'Failure probability that evolves over time.',
+          'Time-resolved sensitivity': 'Sensitivity analysis as a function of time.',
+          'Total Sobol index': 'Main plus interaction contribution of each input.',
+          'UKF': 'Unscented-transform filter for nonlinear Gaussian systems.',
+          'VaR': 'Loss quantile at a chosen risk level.',
+          'Variational inference': 'Optimizes a tractable approximation to the posterior.',
+          'Wasserstein DRO': 'Robust optimization with Wasserstein distribution uncertainty sets.',
+          'Kalman filtering (KF, EKF, UKF, EnKF)': 'Recursive state estimation family balancing prediction and observations in linear/nonlinear settings.',
+          'Monte Carlo family (MC, QMC, MLMC)': 'Sampling-based propagation family trading accuracy and compute cost with different convergence properties.',
+          'Sobol sensitivity (first-order + total)': 'Variance-based global sensitivity family quantifying both direct and interaction contributions.',
+          'Conformal prediction (split, jackknife+)': 'Distribution-free interval/set prediction family with finite-sample coverage guarantees.',
+          'Online conformal (adaptive coverage)': 'Streaming conformal family that updates thresholds online to maintain target coverage.',
+          'Tail risk metrics (VaR, CVaR)': 'Risk metrics family that summarizes quantile loss and expected tail loss.',
+          'f-divergence DRO': 'Robust optimization with f-divergence uncertainty sets.',
+          'gPC': 'Generalized polynomial chaos for non-Gaussian inputs.'
+        };
+
+        const panelContext = {
+          p1: {
+            use: 'when you need to define uncertain inputs before running a model.',
+            output: 'a probabilistic representation (prior/latent uncertainty model).',
+            fact: 'Good uncertainty representation is upstream; weak priors can bias all downstream steps.'
+          },
+          p2: {
+            use: 'when uncertain inputs must be pushed through a simulator or equations.',
+            output: 'an uncertainty distribution over outputs or trajectories.',
+            fact: 'Sampling error shrinks about 1/sqrt(N), so 4x more samples gives about 2x lower Monte Carlo error.'
+          },
+          p3: {
+            use: 'when data arrives over time and state estimates must be updated recursively.',
+            output: 'time-evolving posterior states and uncertainty bands.',
+            fact: 'Sequential filters trade model prediction against measurement trust via the gain.'
+          },
+          p4: {
+            use: 'when you need to identify which factors drive output uncertainty most.',
+            output: 'ranked importance scores and contribution decomposition.',
+            fact: 'Global sensitivity can reveal interaction effects that one-factor-at-a-time methods miss.'
+          },
+          p5: {
+            use: 'when unknown parameters must be inferred from noisy observations.',
+            output: 'posterior parameter estimates and credibility intervals.',
+            fact: 'Inverse problems are often ill-posed; priors or regularization stabilize estimates.'
+          },
+          p6: {
+            use: 'when focusing on failures, extremes, and decision risk under uncertainty.',
+            output: 'failure probability, tail-risk metrics, or robust decisions.',
+            fact: 'Tail metrics distinguish typical loss from worst-case scenarios (e.g., VaR vs CVaR).'
+          },
+          p7: {
+            use: 'when strict distribution assumptions are unreliable or unavailable.',
+            output: 'prediction sets or guarantees with calibrated finite-sample coverage.',
+            fact: 'Conformal prediction provides finite-sample coverage under exchangeability, not Gaussian assumptions.'
+          }
+        };
+
+        document.querySelectorAll('#gf-05b .uq27-chip').forEach((chip) => {
+          const key = chip.textContent.trim();
+          const what = descriptions[key] || `${key} is an uncertainty quantification technique.`;
+          const panelKey = getUq27PanelClass(chip);
+          const ctx = panelContext[panelKey] || null;
+          chip.dataset.tipTerm = key;
+          chip.dataset.tipWhat = what;
+          chip.dataset.tipUse = ctx ? ctx.use : '';
+          chip.dataset.tipOutput = ctx ? ctx.output : '';
+          chip.dataset.tipFact = ctx ? ctx.fact : '';
+          chip.setAttribute('aria-label', `${key}. ${what}`);
+          chip.removeAttribute('title');
+        });
+
+        bindUq27TechniqueTooltips();
       }
 
       function buildToc() {
@@ -3175,10 +3622,14 @@
       setTocCollapsed(false, false);
 
       Reveal.on('ready', () => {
+        applyUq27TechniqueTooltips();
         buildToc();
         updateTopNavigation();
       });
-      Reveal.on('slidechanged', updateTopNavigation);
+      Reveal.on('slidechanged', () => {
+        hideUq27Tooltip();
+        updateTopNavigation();
+      });
       Reveal.on('fragmentshown', updateTopNavigation);
       Reveal.on('fragmenthidden', updateTopNavigation);
 
