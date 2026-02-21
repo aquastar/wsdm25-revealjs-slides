@@ -57,6 +57,7 @@ All other fields are unchanged.
 
 | Paper Title | Author | Year | Venue | Citations | Paper Link | Scope |
 |---|---|---:|---|---:|---|---|
+|Exploring Influence Maximization: State-of-the-Art Methods,Taxonomies, and Trends| Sunil Kumar Meena, Shashank Sheshar Singh and Kuldeep Singh | 2026 | TKDD | 0| https://dl.acm.org/doi/epdf/10.1145/3779058 | Graph |
 | Temporal Networks | Holme & Saramäki | 2012 | Phys. Rep. | 3950 | [link](https://doi.org/10.1016/j.physrep.2012.03.001) | Graph |
 | Mathematics of Epidemics on Networks | Kiss et al. | 2017 | Springer book | 2000 | [link](https://doi.org/10.1007/978-3-319-50806-1) | Graph |
 | Epidemic Spreading in Scale-Free Networks | Pastor-Satorras & Vespignani | 2001 | PRL | 9500 | [link](https://doi.org/10.1103/PhysRevLett.86.3200) | Graph |
