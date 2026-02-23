@@ -100,6 +100,132 @@
         flex-wrap: wrap;
       }
 
+      #gf-03b {
+        background: #ffffff;
+      }
+
+      #gf-03a h2 {
+        margin: 0.06em 0 0.24em;
+        text-align: center;
+        font-size: 1.68em;
+        font-weight: 800;
+        color: #112a48;
+      }
+
+      #gf-03a .g03a-grid {
+        width: min(98%, 34em);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.12em;
+      }
+
+      #gf-03a .g03a-card {
+        margin: 0;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.06em;
+      }
+
+      #gf-03a .g03a-card img,
+      #gf-03a .g03a-card video {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        display: block;
+      }
+
+      #gf-03a .g03a-caption {
+        margin: 0;
+        font-size: 0.54em;
+        line-height: 1.2;
+        color: #2f4f78;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      #gf-03b h2 {
+        margin: 0.06em 0 0.3em;
+        font-size: 1.9em;
+        font-weight: 800;
+        text-align: center;
+        color: #0d0d0d;
+      }
+
+      #gf-03b .g03b-list {
+        margin: 0.08em auto 0;
+        width: min(100%, 34em);
+        display: grid;
+        gap: 0.22em;
+      }
+
+      #gf-03b .g03b-item {
+        margin: 0;
+        font-size: 0.92em;
+        line-height: 1.26;
+        color: #151515;
+        white-space: nowrap;
+      }
+
+      #gf-03b .g03b-bullet {
+        margin-right: 0.2em;
+        font-weight: 700;
+      }
+
+      #gf-03b .g03b-num {
+        color: #bb1e0b;
+        font-weight: 800;
+      }
+
+      #gf-03b .g03b-src {
+        color: #8d8d8d;
+      }
+
+      #gf-03b .g03b-question,
+      #gf-03c .g03b-question {
+        margin: 0.42em auto 0;
+        width: fit-content;
+        max-width: 95%;
+        border: 2px solid #b82410;
+        background: #ffffff;
+        color: #b82410;
+        text-align: center;
+        font-size: 1.22em;
+        line-height: 1.3;
+        padding: 0.16em 0.52em;
+      }
+
+      #gf-03b .g03b-question strong,
+      #gf-03c .g03b-question strong {
+        font-weight: 800;
+      }
+
+      #gf-03c .g03c-pair {
+        margin: 0.22em auto 0;
+        width: min(100%, 36em);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.12em;
+        align-items: start;
+      }
+
+      #gf-03c .g03c-pair img {
+        width: 100%;
+        height: 220px;
+        object-fit: contain;
+        display: block;
+      }
+
+      #gf-03c .g03c-note {
+        margin: 0.14em 0 0;
+        text-align: center;
+        font-size: 0.68em;
+        color: #234872;
+        font-weight: 700;
+      }
+
       #gf-04 .motif-pair img {
         height: 210px;
         width: auto;
@@ -115,6 +241,53 @@
         #gf-04 .motif-pair img {
           height: 150px;
           max-width: 86%;
+        }
+
+        #gf-03b h2 {
+          font-size: 1.26em;
+        }
+
+        #gf-03a h2 {
+          font-size: 1.12em;
+        }
+
+        #gf-03a .g03a-grid {
+          width: min(98%, 24em);
+          gap: 0.1em;
+        }
+
+        #gf-03a .g03a-card img,
+        #gf-03a .g03a-card video {
+          height: 130px;
+        }
+
+        #gf-03a .g03a-caption {
+          font-size: 0.46em;
+        }
+
+        #gf-03b .g03b-item {
+          font-size: 0.72em;
+          white-space: nowrap;
+        }
+
+        #gf-03b .g03b-question,
+        #gf-03c .g03b-question {
+          font-size: 0.92em;
+          width: fit-content;
+          max-width: 95%;
+        }
+
+        #gf-03c .g03c-pair {
+          grid-template-columns: 1fr;
+          width: min(98%, 22em);
+        }
+
+        #gf-03c .g03c-pair img {
+          height: 170px;
+        }
+
+        #gf-03c .g03c-note {
+          font-size: 0.58em;
         }
       }
 
@@ -212,13 +385,13 @@
       }
 
       .visual-gf16 > svg {
-        max-height: 72vh;
+        max-height: 78vh;
       }
 
       #gf-16 .g16-layout {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 0.56em;
+        grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+        gap: 0.44em;
         align-items: stretch;
       }
 
@@ -310,6 +483,140 @@
         margin: 0.12em 0;
         font-size: 0.92em;
         line-height: 1.24;
+      }
+
+      .agenda-slide .agenda-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.64em;
+        margin-top: 0.2em;
+      }
+
+      .agenda-slide .agenda-col {
+        border-top: 3px solid #5d647c;
+        padding-top: 0.22em;
+      }
+
+      .agenda-slide .agenda-num {
+        margin: 0 0 0.08em;
+        font-size: 1.06em;
+        font-weight: 700;
+        color: #58617a;
+      }
+
+      .agenda-slide .agenda-head {
+        margin: 0;
+        font-size: 1.16em;
+        line-height: 1.22;
+        font-weight: 800;
+        color: #525b74;
+      }
+
+      .agenda-slide .agenda-list {
+        margin: 0.34em 0 0 0.86em;
+      }
+
+      .agenda-slide .agenda-list li {
+        margin: 0.16em 0;
+        color: #5b6480;
+      }
+
+      .agenda-slide .agenda-muted {
+        color: #c4c9d4;
+      }
+
+      .agenda-slide .agenda-active {
+        color: #e84646;
+        font-weight: 800;
+        opacity: 1;
+      }
+
+      .agenda-slide .agenda-list li.agenda-active,
+      .agenda-slide .agenda-list li.agenda-active * {
+        color: #e84646 !important;
+      }
+
+      .agenda-slide .agenda-active::marker {
+        color: #e84646;
+      }
+
+      .agenda-slide .agenda-muted::marker {
+        color: #c4c9d4;
+      }
+
+      .xor-example-slide .xor-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 0.5em;
+        align-items: start;
+        margin-top: 0.16em;
+      }
+
+      .xor-example-slide .xor-points {
+        margin: 0.1em 0 0 0.9em;
+        font-size: 0.84em;
+        line-height: 1.28;
+        color: #59617a;
+      }
+
+      .xor-example-slide .xor-points li {
+        margin: 0.16em 0;
+      }
+
+      .xor-example-slide .xor-head {
+        font-weight: 800;
+        color: #4f5770;
+      }
+
+      .xor-example-slide .xor-table-wrap {
+        border: 1px solid #d6d9e2;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .xor-example-slide .xor-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 0.84em;
+      }
+
+      .xor-example-slide .xor-table th {
+        padding: 0.34em 0.3em;
+        text-align: left;
+        background: #f3f4f7;
+        color: #565f77;
+        font-weight: 800;
+      }
+
+      .xor-example-slide .xor-table td {
+        padding: 0.34em 0.3em;
+        color: #565f77;
+        border-top: 1px solid #e8ebf2;
+      }
+
+      .xor-example-slide .xor-table tbody tr:nth-child(odd) td {
+        background: #ececef;
+      }
+
+      .xor-example-slide .xor-table tbody tr:nth-child(even) td {
+        background: #f7f7f9;
+      }
+
+      .corr-example-slide .corr-box {
+        border: 1px solid #b9bec9;
+        border-radius: 24px;
+        background: #efeff2;
+        padding: 0.72em 0.64em;
+        margin-top: 0.18em;
+      }
+
+      .corr-example-slide .corr-eq {
+        margin: 0.18em 0;
+        text-align: center;
+        color: #2f3446;
+        font-size: 1em;
       }
 
       .plain-box {
@@ -491,6 +798,72 @@
       .uq26-formula-block .formula {
         margin: 0;
         font-size: 0.82em;
+      }
+
+      #gf-05 .uq26-stack {
+        max-width: 92%;
+        margin: 0 auto;
+      }
+
+      #gf-05 .uq26-question-frame {
+        margin: 0 auto;
+        max-width: 92%;
+        border: 2px solid #d65a5a;
+        border-radius: 10px;
+        padding: 0.14em 0.3em;
+        text-align: center;
+      }
+
+      #gf-05 .uq26-question-tag {
+        margin: 0;
+        font-size: 0.52em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #9b2f2f;
+      }
+
+      #gf-05 .uq26-question-main {
+        margin: 0.05em 0 0;
+        font-size: 0.84em;
+        line-height: 1.24;
+        color: #8f2b2b;
+        font-weight: 700;
+      }
+
+      #gf-05 .uq26-terms {
+        margin: 0.16em auto 0;
+        max-width: 92%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.14em;
+        align-items: start;
+      }
+
+      #gf-05 .uq26-term {
+        padding: 0.02em 0;
+        text-align: left;
+      }
+
+      #gf-05 .uq26-term-title {
+        margin: 0;
+        font-size: 0.6em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: #274e78;
+      }
+
+      #gf-05 .uq26-term .formula {
+        margin: 0.04em 0 0;
+        font-size: 0.78em;
+        text-align: left;
+      }
+
+      #gf-05 .uq26-term-text {
+        margin: 0.04em 0 0;
+        font-size: 0.58em;
+        line-height: 1.24;
+        color: #2f557f;
       }
 
       #gf-05b h2 {
@@ -787,9 +1160,17 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 0.1em;
         height: 100%;
         text-align: center;
+      }
+
+      #gf-06 .uq28-step {
+        border: 1px solid #cad9ed;
+        border-radius: 10px;
+        background: #f8fbff;
+        padding: 0.1em 0.12em;
       }
 
       #gf-06 .uq28-equation-label {
@@ -928,44 +1309,77 @@
       }
 
       #gf-10 .g10-kicker {
-        margin: 0.1em 0 0.14em;
-        color: #4a698f;
+        margin: 0.08em auto 0.14em;
+        max-width: 28em;
+        color: #3f628d;
         font-size: 0.62em;
-        line-height: 1.22;
+        line-height: 1.24;
+        text-align: center;
       }
 
       #gf-10 .g10-layout {
         display: grid;
-        grid-template-columns: 1.16fr 1fr;
-        gap: 0.18em;
-        align-items: start;
+        grid-template-columns: 1.14fr 1fr;
+        gap: 0.15em;
+        align-items: stretch;
+      }
+
+      #gf-10 .g10-card {
+        padding: 0.02em 0.04em;
+      }
+
+      #gf-10 .g10-card + .g10-card {
+        border-left: 1px solid #cfddf0;
+        padding-left: 0.12em;
+      }
+
+      #gf-10 .g10-card-title {
+        margin: 0 0 0.08em;
+        font-size: 0.54em;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #234a78;
+        font-weight: 800;
       }
 
       #gf-10 .g10-table {
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        font-size: 0.62em;
-        line-height: 1.22;
+        font-size: 0.64em;
+        line-height: 1.24;
       }
 
       #gf-10 .g10-table th,
       #gf-10 .g10-table td {
         border: 0;
-        padding: 0.11em 0.14em;
+        padding: 0.11em 0.13em;
         vertical-align: top;
       }
 
       #gf-10 .g10-table th {
-        background: transparent;
-        color: #234b7a;
+        background: #eaf2ff;
+        color: #1f4672;
         font-weight: 700;
         text-align: left;
-        border-bottom: 1.5px solid #bccde5;
+        border-bottom: 1px solid #c7d7ec;
+      }
+
+      #gf-10 .g10-table th:first-child {
+        border-top-left-radius: 9px;
+      }
+
+      #gf-10 .g10-table th:last-child {
+        border-top-right-radius: 9px;
       }
 
       #gf-10 .g10-table td {
-        border-bottom: 1px solid #dbe6f4;
+        border-bottom: 1px solid #d5e3f4;
+        background: transparent;
+      }
+
+      #gf-10 .g10-table tbody tr:nth-child(even) td {
+        background: rgba(244, 249, 255, 0.58);
       }
 
       #gf-10 .g10-table tbody tr:last-child td {
@@ -981,12 +1395,14 @@
       #gf-10 .g10-system {
         display: flex;
         flex-direction: column;
-        gap: 0.1em;
+        gap: 0.09em;
+        height: 100%;
+        justify-content: space-between;
       }
 
       #gf-10 .g10-eq-block {
-        border-left: 3px solid #9cb5d5;
-        padding-left: 0.34em;
+        border-left: 4px solid #7ea6d4;
+        padding: 0.03em 0 0.03em 0.11em;
       }
 
       #gf-10 .g10-label {
@@ -1000,31 +1416,33 @@
 
       #gf-10 .g10-eq-block .formula {
         margin: 0.04em 0 0;
-        font-size: 0.8em;
+        font-size: 0.78em;
         text-align: left;
       }
 
       #gf-10 .g10-flow {
         margin: 0.02em 0 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.08em;
+        display: grid;
+        gap: 0.06em;
       }
 
       #gf-10 .g10-flow span {
-        display: inline-block;
-        padding: 0.05em 0.3em;
-        border: 1px solid #c8d8ec;
+        display: block;
+        text-align: center;
+        padding: 0.02em 0.12em;
         border-radius: 999px;
-        background: #f8fbff;
+        background: transparent;
         font-size: 0.53em;
-        color: #335a84;
+        color: #2f5781;
+        font-weight: 600;
       }
 
       #gf-10 .g10-note {
-        margin: 0.02em 0 0;
+        margin: 0;
+        border-top: 1px solid #ccdcef;
+        padding-top: 0.08em;
         font-size: 0.57em;
-        color: #4b6d95;
+        color: #47688f;
         line-height: 1.2;
       }
 
@@ -1049,11 +1467,45 @@
         padding: 0.12em 0.14em;
       }
 
+      #gf-12 .g12-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.08em;
+      }
+
       #gf-12 .g12-title {
         margin: 0;
         font-size: 0.6em;
         font-weight: 700;
         line-height: 1.22;
+        flex: 1;
+      }
+
+      #gf-12 .g12-tag {
+        margin: 0.02em 0 0;
+        display: inline-block;
+        padding: 0.08em 0.46em;
+        border-radius: 999px;
+        font-size: 0.42em;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+
+      #gf-12 .g12-tag.e {
+        color: #2b578a;
+        background: #e9f2ff;
+      }
+
+      #gf-12 .g12-tag.a {
+        color: #2e6b5f;
+        background: #eaf8f4;
+      }
+
+      #gf-12 .g12-tag.m {
+        color: #7c5a24;
+        background: #fff2df;
       }
 
       #gf-12 .g12-item.s {
@@ -1096,29 +1548,42 @@
         text-align: left;
       }
 
-      #gf-12 .g12-bridge {
+      #gf-12 .g12-footer {
         margin: 0.12em auto 0;
-        max-width: 92%;
-        text-align: center;
-        font-size: 0.61em;
-        line-height: 1.24;
-        color: #3b5f86;
+        max-width: 94%;
+        display: grid;
+        gap: 0.08em;
       }
 
-      #gf-12 .g12-target {
-        margin: 0.1em auto 0;
-        max-width: 92%;
-        text-align: center;
+      #gf-12 .g12-legend {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.08em;
       }
 
-      #gf-12 .g12-target span {
+      #gf-12 .g12-legend span {
         display: inline-block;
-        padding: 0.06em 0.34em;
-        border: 1px solid #c6d8ec;
+        padding: 0.07em 0.4em;
         border-radius: 999px;
-        background: #f8fbff;
-        font-size: 0.54em;
-        color: #2d567f;
+        border: 1px solid #d2deee;
+        background: #f6faff;
+        font-size: 0.47em;
+        color: #4d6f98;
+        line-height: 1.2;
+      }
+
+      #gf-12 .g12-legend strong {
+        color: #2b578a;
+      }
+
+      #gf-12 .g12-bridge {
+        margin: 0;
+        text-align: center;
+        font-size: 0.58em;
+        line-height: 1.28;
+        color: #3b5f86;
       }
 
       #gf-15 .m4-kicker {
@@ -1175,9 +1640,9 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-big-card-title {
-        border-bottom-color: #ead6cf;
-        background: linear-gradient(180deg, #fff1ea 0%, #fff8ef 100%);
-        color: #724a35;
+        border-bottom-color: #cfddf0;
+        background: linear-gradient(180deg, #ecf4ff 0%, #f4f8ff 100%);
+        color: #214a76;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-big-card-title {
@@ -1204,9 +1669,9 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-big-table thead th {
-        border-bottom-color: #ecd9d2;
-        background: linear-gradient(180deg, #fff4ee 0%, #fff9f2 100%);
-        color: #724b34;
+        border-bottom-color: #c6d8ec;
+        background: linear-gradient(180deg, #edf5ff 0%, #e7f1ff 100%);
+        color: #1e4673;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-big-table thead th {
@@ -1251,8 +1716,8 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-big-table td {
-        border-bottom-color: #eee1d7;
-        color: #5f4b3f;
+        border-bottom-color: #d7e2f1;
+        color: #21486f;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-big-table td {
@@ -1265,7 +1730,7 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-big-table tbody tr:nth-child(even) td {
-        background: #fffdf9;
+        background: #fbfdff;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-big-table tbody tr:nth-child(even) td {
@@ -1277,7 +1742,7 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-big-table tr.m4-gap-row td {
-        background: #ffe8df !important;
+        background: #e9f2ff !important;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-big-table tr.m4-gap-row td {
@@ -1290,7 +1755,7 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-axis {
-        color: #6f4a36;
+        color: #1c4572;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-axis {
@@ -1298,7 +1763,7 @@
       }
 
       #gf-15 .m4-big-card:nth-child(1) .m4-method {
-        color: #7a5642;
+        color: #2a547f;
       }
 
       #gf-15 .m4-big-card:nth-child(2) .m4-method {
@@ -1593,6 +2058,49 @@
         border-top: 5px solid #4a84bc;
         background: linear-gradient(180deg, #dff0ff 0%, #f2f8ff 38%, #ffffff 100%);
         color: #25577f;
+      }
+
+      #qa-01 .qa-wrap {
+        min-height: 62vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        gap: 0.14em;
+      }
+
+      #qa-01 .qa-title {
+        margin: 0;
+        font-size: 2em;
+        letter-spacing: 0.02em;
+        color: #16375f;
+        font-weight: 700;
+      }
+
+      #qa-01 .qa-subtitle {
+        margin: 0;
+        font-size: 0.84em;
+        color: #3b5f8d;
+      }
+
+      #qa-01 .qa-qr {
+        width: min(34vw, 240px);
+        max-width: 100%;
+        height: auto;
+      }
+
+      #qa-01 .qa-link {
+        margin: 0;
+        font-size: 0.54em;
+        line-height: 1.25;
+      }
+
+      #qa-01 .qa-link a {
+        color: #1f4f87;
+        text-decoration: none;
+      }
+
+      #qa-01 .qa-link a:hover {
+        text-decoration: underline;
       }
 
       @keyframes m4SlideIn {
@@ -1974,6 +2482,20 @@
           grid-template-columns: 1fr;
         }
 
+        .xor-example-slide .xor-layout {
+          grid-template-columns: 1fr;
+          gap: 0.28em;
+        }
+
+        .xor-example-slide .xor-points {
+          margin-left: 0.85em;
+          font-size: 0.72em;
+        }
+
+        .xor-example-slide .xor-table {
+          font-size: 0.74em;
+        }
+
         .micro-row {
           grid-template-columns: 1fr;
           gap: 4px;
@@ -1989,6 +2511,14 @@
 
         .uq26-kicker {
           font-size: 0.66em;
+        }
+
+        #gf-05 .uq26-terms {
+          grid-template-columns: 1fr;
+        }
+
+        #gf-05 .uq26-term-text {
+          font-size: 0.56em;
         }
 
         #gf-05b .uq27-layout {
@@ -2081,8 +2611,7 @@
           padding: 0.12em 0.14em;
         }
 
-        #gf-12 .g12-bridge,
-        #gf-12 .g12-target {
+        #gf-12 .g12-footer {
           max-width: 96%;
         }
 
@@ -2146,6 +2675,18 @@
 
         #gf-15 .m4-deficit-bar {
           grid-column: 1 / -1;
+        }
+
+        #qa-01 .qa-wrap {
+          min-height: 56vh;
+        }
+
+        #qa-01 .qa-title {
+          font-size: 1.66em;
+        }
+
+        #qa-01 .qa-qr {
+          width: min(48vw, 220px);
         }
 
         .top-nav.collapsed {
@@ -2274,17 +2815,15 @@
           <p class="cover-affiliation">Computer Science and Engineering<br>Mississippi State University</p>
           <p class="cover-date">Feb 22, 2026</p>
           <aside class="notes">
-            Opening slide. Introduce the tutorial scope, the speakers, and the four main sections.
-            Clarify that we focus on uncertainty-aware methods for dynamical networks.
-            Transition to the motivation section.
-          </aside>
+              Welcome to this tutorial on uncertainty quantification for dynamical networks. I am going to show how uncertainty enters networked systems, how it propagates, and how it changes decisions. We will move from motivation, to UQ foundations, to graph-specific modeling, and then to a task-based roadmap for current research.
+            </aside>
         </section>
         <section id="sec-global-framework" data-section-title="Overview">
           <section id="gf-01" data-subsection="Module 1 — Motivation">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Rumor Can Cost Live</h1>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
             <aside class="notes">
-              Next, we unpack the coupling intuition: two networks may not touch, yet risk still propagates.
+              A rumor can produce real-world harm, even when nothing physical has changed at the beginning. This opening example sets the central motivation for the tutorial: information dynamics can become risk dynamics. We start from this intuition and then formalize it with uncertainty-aware graph models.
             </aside>
           </section>
 
@@ -2295,10 +2834,7 @@
             <p class="plain-box" style="max-width: 84%;">During COVID, misinformation and disease did not interact directly, but they coupled through human decisions. A rumor changes beliefs, beliefs change actions, and actions change exposure. That is the kind of coupled network dynamics I study. These systems do not touch, yet they amplify each other.</p>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
             <aside class="notes">
-              During COVID, misinformation and disease did not interact directly, but they coupled through human decisions.
-              A rumor changes beliefs, beliefs change actions, and actions change exposure.
-              These systems do not touch, yet they amplify each other.
-              Now that we see coupling, we show why small perturbations can amplify into system disruption.
+              This slide shows why two systems that never directly touch can still become tightly coupled. During COVID, misinformation affected beliefs, beliefs changed behavior, and behavior changed exposure and spread. So the coupling mechanism is human decision-making, which turns social information into epidemiological impact.
             </aside>
           </section>
 
@@ -2310,9 +2846,56 @@
             <p class="gray-box">Risk can propagate across domains: information to behavior to health to mobility to supply chain.</p>
             <p class="reference">Ref: <strong>Dynamical interplay between awareness and epidemic spreading in multiplex networks</strong> — Granell, Gomez, Arenas — Physical Review Letters — 2013.</p>
             <aside class="notes">
-              The upper figure highlights nonlinear amplification; the lower figure highlights cross-domain cascades.
-              The goal of this slide is an intuitive takeaway: local perturbations can become system-level risk.
-              Next, we identify why modeling and prediction are difficult: heterogeneity, coupling, and interdisciplinary silos.
+              Here we see two key patterns: nonlinear amplification and cross-domain cascades. A small perturbation can grow into a system-level shift, and risk can travel across domains such as information, mobility, health, and supply chains. This is why local intuition is often insufficient for networked uncertainty.
+            </aside>
+          </section>
+
+          <section id="gf-03a" data-subsection="Module 1 — Motivation">
+            <h2>Graph dynamics are everywhere</h2>
+            <div class="g03a-grid">
+              <figure class="g03a-card">
+                <img src="assets/brain.gif" alt="Brain network animation">
+                <figcaption class="g03a-caption">Brain Network</figcaption>
+              </figure>
+              <figure class="g03a-card">
+                <img src="assets/airnet.gif" alt="Air transportation network animation">
+                <figcaption class="g03a-caption">Air Transportation Network</figcaption>
+              </figure>
+              <figure class="g03a-card">
+                <video autoplay loop muted playsinline preload="metadata" aria-label="Large language model interaction animation">
+                  <source src="assets/llm.mp4" type="video/mp4">
+                </video>
+                <figcaption class="g03a-caption">LLM Interaction Graph</figcaption>
+              </figure>
+              <figure class="g03a-card">
+                <img src="assets/coffine.gif" alt="Caffeine interaction network animation">
+                <figcaption class="g03a-caption">Caffeine Interaction Network</figcaption>
+              </figure>
+            </div>
+            <aside class="notes">
+              This slide asks a single question: how structure controls flow behavior. The four examples show different systems where topology shapes propagation: neural activity, transportation routes, language-model communication patterns, and molecular interaction dynamics.
+            </aside>
+          </section>
+
+          <section id="gf-03b" data-subsection="Module 1 — Motivation">
+            <h2>More edges can make a network worse</h2>
+            <p class="g03b-question">What about <strong>cutting off</strong> some roads?</p>
+            <aside class="notes">
+              This example challenges the intuition that adding more links always improves system outcomes. We highlight two recent U.S. risk signals, then pose the key intervention idea: in some networked systems, removing selected links can reduce global harm by changing flow patterns.
+            </aside>
+          </section>
+
+          <section id="gf-03c" data-subsection="Module 1 — Motivation">
+            <h2>More edges can make a network worse</h2>
+            <p class="g03b-question">What about <strong>cutting off</strong> some roads?</p>
+            <div class="g03c-pair">
+              <img src="assets/braess_commute.png" alt="Commute-time network example with candidate edge removal">
+              <img src="assets/paradox.gif" alt="Braess paradox animation">
+            </div>
+            <p class="g03c-note">More roads lead to higher commute time.</p>
+            <p class="reference">Ref: Steinberg, R., &amp; Zangwill, W. I. (1983). <strong>The prevalence of Braess' paradox</strong>. Transportation Science, 17(3), 301-318.</p>
+            <aside class="notes">
+              This follow-up demonstrates Braess-style behavior: adding an edge can increase total travel time due to selfish routing. Emphasize that topology interventions can improve outcomes even when they reduce available routes.
             </aside>
           </section>
 
@@ -2333,9 +2916,7 @@
             </ul>
             <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
             <aside class="notes">
-              Motivation wrap-up: the core challenge is not one model, but cross-layer heterogeneity and coupling.
-              Before graph-model details, we first establish a shared UQ vocabulary.
-              Before we talk about graph dynamics specifically, we need a shared vocabulary for UQ.
+              This slide summarizes why the problem is hard in practice. We have heterogeneous variables across domains, indirect coupling through behavior or policy layers, and fragmented methods across disciplines. The key takeaway is that we need a unified, uncertainty-aware perspective rather than isolated models.
             </aside>
           </section>
 
@@ -2347,9 +2928,7 @@
             <p class="gray-box">Even a small community yields a large optimization problem before uncertainty is added.</p>
             <p class="reference">Ref: <strong>Maximizing the Spread of Influence through a Social Network</strong> — Kempe, Kleinberg, Tardos — KDD — 2003.</p>
             <aside class="notes">
-              This slide reframes influence maximization as a combinatorial search problem.
-              Use the chocolate image as intuition, then show that even k=3 in a 100-person community yields 161,700 seed combinations.
-              Next, we transition from motivation into UQ basics.
+              Influence maximization is a useful example of combinatorial difficulty. Even with 100 nodes and only 3 seeds, we already have 161,700 possible choices. So before we add uncertainty, the search problem is already large; after adding uncertainty, principled UQ becomes essential.
             </aside>
           </section>
 
@@ -2362,34 +2941,118 @@
             <p class="toy-calc"><strong>Search difficulty:</strong> searching in a huge space of possible node sets.</p>
             <p class="reference">Ref: <strong>Multiple-source localization from a single-snapshot observation using graph Bayesian optimization</strong> — Zhang, Zonghan, Zijian Zhang, Zhiqian Chen — AAAI — 2024.</p>
             <aside class="notes">
-              Frame source localization as an inverse problem with limited evidence.
-              Emphasize multi-source scenarios and non-identifiability under partial observation.
-              End with the combinatorial search challenge over source-node sets.
+              Source localization is an inverse problem with limited evidence. We often observe only one snapshot, there may be multiple sources, and many source sets can explain the same observations. The core challenge is identifiability under uncertainty in a very large combinatorial space.
             </aside>
           </section>
 
           <section id="gf-05" data-subsection="Module 2 — UQ Basics">
             <h2>What Is Uncertainty Quantification?</h2>
             <p class="uq26-kicker">From point estimate to decision-ready uncertainty.</p>
-            <div class="uq26-card uq26-core uq26-single">
-              <p class="uq26-label">Core Question</p>
-              <p class="uq26-question">How sure are we, and what is the cost if this estimate is wrong?</p>
-              <p class="uq26-body">UQ keeps uncertainty in both parameters and future outcomes, rather than collapsing everything to one number.</p>
-              <div class="uq26-formula-block">
-                <p class="formula">\[
-                p(\theta \mid \mathcal{D}),\quad p(y^\ast \mid \mathcal{D})
-                \]</p>
+            <div class="uq26-stack">
+              <div class="uq26-question-frame">
+                <p class="uq26-question-tag">Core Question</p>
+                <p class="uq26-question-main">How sure are we, and what is the cost if this estimate is wrong?</p>
+              </div>
+              <div class="uq26-terms">
+                <div class="uq26-term">
+                  <p class="uq26-term-title">Term 1: Parameter uncertainty</p>
+                  <p class="formula">\[
+                  p(\theta \mid \mathcal{D})
+                  \]</p>
+                  <p class="uq26-term-text">\(\theta\) is the model-parameter vector and \(\mathcal{D}\) is observed data. This posterior distribution tells us which parameter values remain plausible after seeing evidence.</p>
+                </div>
+                <div class="uq26-term">
+                  <p class="uq26-term-title">Term 2: Predictive uncertainty</p>
+                  <p class="formula">\[
+                  p(y^\ast \mid \mathcal{D})
+                  \]</p>
+                  <p class="uq26-term-text">\(y^\ast\) is a future quantity of interest. This predictive distribution tells us how uncertain future outcomes are, conditioned on the observed data.</p>
+                </div>
               </div>
             </div>
             <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
             <aside class="notes">
-              Keep this slide minimal: define the central question and the two uncertainty targets.
-              We intentionally defer method taxonomy to the next slide.
-              After this conceptual definition, move into concrete priors/posteriors/predictives.
+              Start with the red-framed core question and pause on why confidence and decision cost matter. Then introduce only the two terms below the frame: first parameter uncertainty p(theta given D), then predictive uncertainty p(y star given D). Clarify notation explicitly: theta is the parameter vector, D is observed data, and y star is the future target. Save the exact relationship between these two terms for the next slide.
             </aside>
           </section>
 
-          <section id="gf-05b" data-subsection="Module 2 — UQ Basics" data-uq27-active="1">
+          <section id="gf-06" data-subsection="Module 2 — UQ Basics">
+            <h2>Prior, Likelihood, Posterior (Bayes Update)</h2>
+            <div class="uq28-bottom">
+              <div class="uq28-equation">
+                <div class="uq28-step">
+                  <p class="uq28-equation-label">Step 1 — Inference</p>
+                  <p class="formula">\[
+                  \overbrace{p(\theta\mid\mathcal{D})}^{\text{posterior}}
+                  \propto
+                  \overbrace{p(\mathcal{D}\mid\theta)}^{\text{likelihood}}
+                  \overbrace{p(\theta)}^{\text{prior}}
+                  \]</p>
+                  <p class="uq28-note"><strong>Input:</strong> prior \(p(\theta)\), data \(\mathcal{D}\)<br><strong>Output:</strong> posterior \(p(\theta\mid\mathcal{D})\)</p>
+                </div>
+                <div class="uq28-step">
+                  <p class="uq28-equation-label">Step 2 — Prediction</p>
+                  <p class="formula">\[
+                  \overbrace{p(y^\ast\mid\mathcal{D})}^{\text{predictive}}
+                  \propto
+                  \overbrace{p(y^\ast\mid\theta)}^{\text{forward model}}
+                  \overbrace{p(\theta\mid\mathcal{D})}^{\text{parameter posterior}}
+                  \]</p>
+                  <p class="uq28-note"><strong>Input:</strong> posterior \(p(\theta\mid\mathcal{D})\), model \(p(y^\ast\mid\theta)\)<br><strong>Output:</strong> predictive uncertainty \(p(y^\ast\mid\mathcal{D})\)</p>
+                </div>
+              </div>
+              <div class="uq28-figure-wrap">
+                <img class="visual uq28-figure" src="assets/posterior_prior.png" alt="Posterior and prior comparison" style="width: 100%; height: auto;">
+              </div>
+            </div>
+            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
+            <aside class="notes">
+              Emphasize first that these are complementary tasks, not opposite tasks. Present both cards with the same template: Input then Output. Step 1 transforms prior plus data into posterior p(theta given D). Step 2 reuses that posterior with the forward model to form predictive uncertainty p(y star given D). So Step 2 directly consumes Step 1.
+            </aside>
+          </section>
+
+<section id="gf-08" data-subsection="Module 2 — UQ Basics">
+            <h2>Aleatoric vs Epistemic Uncertainty</h2>
+            <div class="uq29-layout">
+              <div class="uq29-main">
+                <div class="uq29-compare">
+                  <div class="uq29-col a">
+                    <p class="uq29-label">Aleatoric</p>
+                    <ul class="uq29-list">
+                      <li>Inherent randomness in data generation.</li>
+                      <li>Examples: measurement noise, random contacts.</li>
+                      <li>Not eliminated by collecting more data.</li>
+                    </ul>
+                  </div>
+                  <div class="uq29-col e">
+                    <p class="uq29-label">Epistemic</p>
+                    <ul class="uq29-list">
+                      <li>Uncertainty from limited data/model mismatch.</li>
+                      <li>Examples: unknown parameters, missing mechanisms.</li>
+                      <li>Can shrink with better data or better models.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="formula uq29-formula">\[
+                \mathrm{Var}(Z)=\mathbb{E}[\mathrm{Var}(Z\mid\Theta)] + \mathrm{Var}(\mathbb{E}[Z\mid\Theta])
+                \]</p>
+                <p class="uq29-split">
+                  <span>\(\mathbb{E}[\mathrm{Var}(Z\mid\Theta)]\): aleatoric part</span>
+                  <span>\(\mathrm{Var}(\mathbb{E}[Z\mid\Theta])\): epistemic part</span>
+                </p>
+              </div>
+              <div class="uq29-visual">
+                <img class="visual uq29-image" src="assets/Aleatoric vs Epistemic.png" alt="Aleatoric vs Epistemic uncertainty figure">
+                <p class="uq29-takeaway"><strong>Key point:</strong> more data mainly reduces epistemic uncertainty, not aleatoric noise.</p>
+              </div>
+            </div>
+            <p class="reference">Ref: <a href="https://medium.com/data-science/" target="_blank" rel="noopener noreferrer">https://medium.com/data-science/</a></p>
+            <aside class="notes">
+              Here we distinguish two uncertainty types that are often confused. Aleatoric uncertainty is irreducible data variability, while epistemic uncertainty comes from limited knowledge and can often be reduced with more data or better models. This distinction matters because the mitigation strategy is different for each type.
+            </aside>
+          </section>
+
+<section id="gf-05b" data-subsection="Module 2 — UQ Basics" data-uq27-active="1">
             <h2>UQ lifecycle</h2>
             <div class="uq27-layout">
               <div class="uq27-main">
@@ -2519,77 +3182,7 @@
             <span class="fragment uq27-step" data-fragment-index="5" aria-hidden="true"></span>
             <p class="reference">Refs: <strong>Bayesian Data Analysis</strong> (Gelman et al., 2013); <strong>Global Sensitivity Analysis</strong> (Saltelli et al., 2008); <strong>A New Approach to Linear Filtering and Prediction Problems</strong> (Kalman, 1960); <strong>Algorithmic Learning in a Random World</strong> (Vovk et al., 2005).</p>
             <aside class="notes">
-              This slide presents a seven-stage UQ lifecycle with synchronized category highlighting and panel content.
-              Keep each category explanation short and method-focused.
-              Emphasize static/dynamic differences for each category.
-            </aside>
-          </section>
-
-          <section id="gf-06" data-subsection="Module 2 — UQ Basics">
-            <h2>Prior, Likelihood, Posterior (Bayes Update)</h2>
-            <div class="uq28-bottom">
-              <div class="uq28-equation">
-                <p class="uq28-equation-label">Bayes Update</p>
-                <p class="formula">\[
-                \overbrace{p(\theta\mid\mathcal{D})}^{\text{posterior}}
-                \propto
-                \overbrace{p(\mathcal{D}\mid\theta)}^{\text{likelihood}}
-                \overbrace{p(\theta)}^{\text{prior}}
-                \]</p>
-                <p class="uq28-note">Likelihood reweights prior belief to produce posterior belief.</p>
-              </div>
-              <div class="uq28-figure-wrap">
-                <img class="visual uq28-figure" src="assets/posterior_prior.png" alt="Posterior and prior comparison" style="width: 100%; height: auto;">
-              </div>
-            </div>
-            <p class="reference">Ref: <strong>Bayesian Data Analysis (3rd ed.)</strong> — Gelman, Carlin, Stern, Dunson, Vehtari, Rubin — CRC Press — 2013.</p>
-            <aside class="notes">
-              Explain the equation directly on-slide using overbrace labels consistently.
-              Keep the slide focused on posterior inference only.
-              Next we move to other uncertainty notions and their interpretation.
-            </aside>
-          </section>
-
-          <section id="gf-08" data-subsection="Module 2 — UQ Basics">
-            <h2>Aleatoric vs Epistemic Uncertainty</h2>
-            <div class="uq29-layout">
-              <div class="uq29-main">
-                <div class="uq29-compare">
-                  <div class="uq29-col a">
-                    <p class="uq29-label">Aleatoric</p>
-                    <ul class="uq29-list">
-                      <li>Inherent randomness in data generation.</li>
-                      <li>Examples: measurement noise, random contacts.</li>
-                      <li>Not eliminated by collecting more data.</li>
-                    </ul>
-                  </div>
-                  <div class="uq29-col e">
-                    <p class="uq29-label">Epistemic</p>
-                    <ul class="uq29-list">
-                      <li>Uncertainty from limited data/model mismatch.</li>
-                      <li>Examples: unknown parameters, missing mechanisms.</li>
-                      <li>Can shrink with better data or better models.</li>
-                    </ul>
-                  </div>
-                </div>
-                <p class="formula uq29-formula">\[
-                \mathrm{Var}(Z)=\mathbb{E}[\mathrm{Var}(Z\mid\Theta)] + \mathrm{Var}(\mathbb{E}[Z\mid\Theta])
-                \]</p>
-                <p class="uq29-split">
-                  <span>\(\mathbb{E}[\mathrm{Var}(Z\mid\Theta)]\): aleatoric part</span>
-                  <span>\(\mathrm{Var}(\mathbb{E}[Z\mid\Theta])\): epistemic part</span>
-                </p>
-              </div>
-              <div class="uq29-visual">
-                <img class="visual uq29-image" src="assets/Aleatoric vs Epistemic.png" alt="Aleatoric vs Epistemic uncertainty figure">
-                <p class="uq29-takeaway"><strong>Key point:</strong> more data mainly reduces epistemic uncertainty, not aleatoric noise.</p>
-              </div>
-            </div>
-            <p class="reference">Ref: <a href="https://medium.com/data-science/" target="_blank" rel="noopener noreferrer">https://medium.com/data-science/</a></p>
-            <aside class="notes">
-              The side-by-side comparison makes both uncertainty types visually concrete.
-              Tell the audience that collecting more data mainly reduces epistemic uncertainty.
-              Finally, we need to define what "trustworthy probabilities" mean: calibration.
+              This lifecycle is a connected pipeline, not a checklist. We start with representation to define what is uncertain, then propagation maps that uncertainty through the forward model. Propagation is a forward push from uncertain inputs to uncertain outputs, while sequential UQ adds a recursive predict-observe-update loop as new data arrives over time. Sensitivity and decomposition tell us which inputs dominate uncertainty, and inverse UQ uses data to recover unknown parameters. Risk and reliability translate posterior uncertainty into tail-risk and failure-aware decisions, while distribution-free UQ adds coverage guarantees when model assumptions are weak. So each category feeds the next one: define, propagate, update, diagnose, infer, decide, and guarantee.
             </aside>
           </section>
 
@@ -2597,75 +3190,90 @@
             <h2>Graph Dynamics: What Are the Random Variables?</h2>
             <p class="g10-kicker">Define objects first, then specify evolution and observation.</p>
             <div class="g10-layout">
-              <table class="g10-table">
-                <thead>
-                  <tr><th>Symbol</th><th>Role</th><th>Everyday Reading</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>\(A_t\)</td><td>Time-varying connectivity</td><td>Who contacts whom at day \(t\) (home, office, transit).</td></tr>
-                  <tr><td>\(X_t\)</td><td>Hidden system state</td><td>Unobserved status (infected, informed, traveling, etc.).</td></tr>
-                  <tr><td>\(Y_t\)</td><td>Noisy observation</td><td>What sensors/reports actually record.</td></tr>
-                  <tr><td>\(\theta\)</td><td>Dynamic parameters</td><td>Transmission, recovery, policy, and coupling strength.</td></tr>
-                </tbody>
-              </table>
-              <div class="g10-system">
-                <div class="g10-eq-block">
-                  <p class="g10-label">State Evolution</p>
-                  <p class="formula">\[
-                  X_{t+1} = F(X_t, A_t; \theta) + w_t
-                  \]</p>
+              <div class="g10-card">
+                <p class="g10-card-title">Core Variables</p>
+                <table class="g10-table">
+                  <thead>
+                    <tr><th>Symbol</th><th>Role</th><th>Everyday Reading</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>\(A_t\)</td><td>Time-varying connectivity</td><td>Who contacts whom at day \(t\) (home, office, transit).</td></tr>
+                    <tr><td>\(X_t\)</td><td>Hidden system state</td><td>Unobserved status (infected, informed, traveling, etc.).</td></tr>
+                    <tr><td>\(Y_t\)</td><td>Noisy observation</td><td>What sensors/reports actually record.</td></tr>
+                    <tr><td>\(\theta\)</td><td>Dynamic parameters</td><td>Transmission, recovery, policy, and coupling strength.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="g10-card">
+                <p class="g10-card-title">State-Space Dynamics</p>
+                <div class="g10-system">
+                  <div class="g10-eq-block">
+                    <p class="g10-label">State Evolution</p>
+                    <p class="formula">\[
+                    X_{t+1} = F(X_t, A_t; \theta) + w_t
+                    \]</p>
+                  </div>
+                  <div class="g10-eq-block">
+                    <p class="g10-label">State/Observation Dimensions</p>
+                    <p class="formula">\[
+                    A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
+                    \]</p>
+                  </div>
                 </div>
-                <div class="g10-eq-block">
-                  <p class="g10-label">State/Observation Dimensions</p>
-                  <p class="formula">\[
-                  A_t \in \{0,1\}^{n\times n},\quad X_t \in \mathbb{R}^{n\times d},\quad Y_t \in \mathbb{R}^{m}
-                  \]</p>
-                </div>
-                <p class="g10-flow"><span>propagate with \(A_t, X_t, \theta\)</span><span>update with \(Y_t\)</span></p>
-                <p class="g10-note">Use \(Y_t\) to update uncertainty about hidden states after each propagation step.</p>
               </div>
             </div>
             <p class="reference">Ref: <strong>Temporal networks</strong> — Holme, Saramaki — Physics Reports — 2012.</p>
             <aside class="notes">
-              This slide focuses only on object definitions: clear roles for \(A_t, X_t, Y_t, \theta\).
-              We define random variables first, then discuss methods and validation.
-              Next, we show where UQ sits: posterior over latent quantities and predictive over task outputs.
+              This slide sets the core graph-dynamical notation used later. A_t is the evolving graph structure, X_t is the latent state, Y_t is what we observe, and theta denotes model parameters. Keeping these roles explicit helps us map uncertainty sources to the correct part of the model.
             </aside>
           </section>
 
-          <section id="gf-12" data-subsection="Module 3 — UQ × Graph Dynamics">
+                    <section id="gf-12" data-subsection="Module 3 — UQ × Graph Dynamics">
             <h2>Three Entry Points of Uncertainty in Graph Dynamics</h2>
-            <p class="g12-kicker">Each source enters at a different location, but all three propagate to the same downstream task risk.</p>
+            <p class="g12-kicker">Each source enters at a different location, and all must be modeled jointly to avoid overconfidence.</p>
             <div class="g12-grid">
               <div class="g12-item s">
-                <p class="g12-title">Structural uncertainty \((A_{ij,t})\)</p>
+                <div class="g12-head">
+                  <p class="g12-title">Structural uncertainty \((A_{ij,t})\)</p>
+                  <span class="g12-tag m" title="Mostly epistemic, can include aleatoric variability">E + A</span>
+                </div>
                 <p class="g12-text">We do not observe all true contacts; edges can be missing or misrecorded.</p>
                 <p class="formula g12-formula">\[
                 A_{ij,t}\sim \mathrm{Bernoulli}(p_{ij,t})
                 \]</p>
               </div>
               <div class="g12-item p">
-                <p class="g12-title">Parametric uncertainty \((\theta)\)</p>
+                <div class="g12-head">
+                  <p class="g12-title">Parametric uncertainty \((\theta)\)</p>
+                  <span class="g12-tag e" title="Mostly epistemic uncertainty">E</span>
+                </div>
                 <p class="g12-text">Transmission or coupling strengths shift across office, dormitory, and transit settings.</p>
                 <p class="formula g12-formula">\[
                 \theta \sim p(\theta\mid \mathcal{D})
                 \]</p>
               </div>
               <div class="g12-item o">
-                <p class="g12-title">Observational uncertainty \((\varepsilon_t, R_t)\)</p>
+                <div class="g12-head">
+                  <p class="g12-title">Observational uncertainty \((\varepsilon_t, R_t)\)</p>
+                  <span class="g12-tag a" title="Mostly aleatoric uncertainty">A</span>
+                </div>
                 <p class="g12-text">Reports are delayed/noisy and sensing quality can drift over time.</p>
                 <p class="formula g12-formula">\[
                 Y_t = H_t X_t + \varepsilon_t,\quad \varepsilon_t\sim \mathcal{N}(0,R_t)
                 \]</p>
               </div>
             </div>
-            <p class="g12-bridge">The same \(Y_t\) can often be explained by multiple \((A,\theta,X)\) combinations, so dropping any one source typically yields overconfident intervals.</p>
-            <p class="g12-target"><span>All three propagate to \(p(Q\mid\mathcal{D})\)</span></p>
+            <div class="g12-footer">
+              <p class="g12-legend">
+                <span><strong>E</strong>: epistemic</span>
+                <span><strong>A</strong>: aleatoric</span>
+                <span><strong>E + A</strong>: mixed (epistemic-dominant)</span>
+              </p>
+              <p class="g12-bridge"><strong>Identifiability note:</strong> the same \(Y_t\) can be explained by multiple \((A,\theta,X)\) combinations, so ignoring one source often creates overconfident intervals.</p>
+            </div>
             <p class="reference">Ref: <strong>Discovering Latent Network Structure in Point Process Data</strong> — Linderman, Adams — ICML — 2014.</p>
             <aside class="notes">
-              Split uncertainty entry points into three categories to avoid labeling everything as generic noise.
-              Each category affects the same \(Q\), but through different propagation paths.
-              Next, we explain the core thesis: why uncertainty is not local in graphs.
+              Now we separate uncertainty into three entry points: structural, parametric, and observational. These sources are different, but they all propagate to the same downstream quantity of interest. If we ignore any one source, uncertainty intervals typically become overconfident.
             </aside>
           </section>
 
@@ -2803,9 +3411,7 @@
               Ref: <a href="https://arxiv.org/abs/2403.07185">Wang et al., Uncertainty in Graph Neural Networks: A Survey (TMLR 2024)</a>; <a href="https://arxiv.org/abs/2404.14642">Chen et al., Uncertainty Quantification on Graph Learning: A Survey (2024)</a>.
             </p>
             <aside class="notes">
-              Step 1: show the complete axis-level comparison with coverage-deficit and Gap 1/2/3 directly below.
-              Step 2: compress into a small table view and show the three major gaps.
-              Step 3: map those three gaps into the final Tutorial column that closes the missing coverage.
+              This comparison shows what existing graph-UQ surveys cover well and what they still miss. The strongest gaps are in sequential UQ, spectral propagation methods, and sensitivity plus reliability analysis. The point is not criticism; it is to motivate why this tutorial fills those missing core areas.
             </aside>
           </section>
 
@@ -2813,17 +3419,15 @@
             <style>
               #gf-16 { padding-bottom: 2.3em; }
             </style>
-            <h2>Six-Task Dependency Flow</h2>
+            <h2>Tutorial Agenda</h2>
             <div class="g16-layout">
               <div class="g16-copy">
-                <p class="g16-copy-kicker">How to read this slide</p>
                 <p class="g16-copy-text">The six tasks form one practical pipeline from uncertain evidence to deployable decisions.</p>
                 <ul class="g16-points">
                   <li><strong>A</strong> estimates uncertain structure and parameters from observed data.</li>
                   <li><strong>B, C, D</strong> are parallel analyses that consume A: forecasting, source explanation, and hidden-state estimation.</li>
                   <li><strong>E</strong> turns model outputs into intervention choices under uncertainty.</li>
                   <li><strong>F</strong> verifies calibration and reliability before real deployment.</li>
-                  <li><strong>Click once:</strong> A and F fade to gray, so B/C/D/E stay highlighted.</li>
                 </ul>
               </div>
               <div class="visual visual-gf16">
@@ -2852,8 +3456,6 @@
                       <polygon points="0 0,9 4.5,0 9" fill="#97a0ac"/>
                     </marker>
                   </defs>
-
-                  <text x="50" y="48" class="g16-text" font-size="18">Simplified Task Flow (Top to Bottom)</text>
 
                   <rect x="305" y="56" width="290" height="56" rx="11" class="g16-node g16-a g16-af-node"/>
                   <text x="324" y="91" class="g16-text" font-size="20">A. Structure inference</text>
@@ -2893,9 +3495,7 @@
               </div>
             </div>
             <aside class="notes">
-              The left side gives a compact narration of the six-task pipeline.
-              The right side keeps only the dependency graph in top-to-bottom order: A to B/C/D to E to F.
-              First click: fade A and F to gray to focus attention on B, C, D, and E.
+              This slide gives the six-task dependency flow as one practical pipeline. Task A provides structure and parameters, tasks B through D run parallel analyses, task E converts outputs into interventions, and task F validates reliability before deployment. So the workflow moves from uncertain evidence to trustworthy decisions.
             </aside>
           </section>
 
@@ -2904,86 +3504,782 @@
         <section id="sec-task-b" data-section-title="Diffusion Forecasting">
           <section id="task-b-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Diffusion Forecasting</h1>
+            <p class="plain-box">Forward and Backward Diffusion · Feb 22, 2026 · Zonghan Zhang</p>
             <aside class="notes">
-              Section transition: Diffusion Forecasting.
-              Define the task objective, what is predicted, and where uncertainty enters.
-              Then move to the overview slide.
+              This section follows the full source deck and is organized under exactly two modules only: forward diffusion and backward diffusion.
             </aside>
           </section>
-          <section id="task-b-01" data-subsection="Module 1 — Overview">
-            <h2>Diffusion Forecasting</h2>
-            <p class="plain-box">Overview of uncertainty-aware diffusion forecasting on dynamic graphs.</p>
+
+          <section id="task-b-01" class="agenda-slide" data-subsection="Overview">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li>Structural Uncertainty</li>
+                  <li>Intrinsic Stochastic Uncertainty</li>
+                  <li>Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
             <aside class="notes">
-              Provide a concise task definition for diffusion forecasting on graphs.
-              Emphasize uncertainty from graph structure, transmission dynamics, and observation noise.
-              Set up the criteria used to compare methods in the paper slide.
+              This is the global outline. All following slides stay inside these two modules.
             </aside>
           </section>
-          <section id="task-b-02" data-subsection="Module 2 — Research Papers">
-            <h2>Diffusion Forecasting: Research Papers</h2>
-            <p class="plain-box">Key papers, methods, and benchmark settings for diffusion forecasting.</p>
+
+          <section id="task-b-02" data-subsection="Overview">
+            <h2>Uncertainty in Graph Diffusion</h2>
+            <p class="plain-box">$$Y = F(\mathbf{A},\omega,\Theta,I_0)$$</p>
+            <ul>
+              <li>$\mathbf{A}$: graph structure</li>
+              <li>$\omega$: stochastic realization</li>
+              <li>$\Theta$: diffusion parameters</li>
+              <li>$I_0$: initial seeds</li>
+              <li>$Y$: cascade outcome</li>
+            </ul>
             <aside class="notes">
-              Walk through representative papers and summarize each method in one sentence.
-              Compare assumptions, uncertainty modeling choices, and evaluation settings.
-              End with open gaps and practical takeaways.
+              This slide introduces the notation used throughout both modules.
             </aside>
           </section>
+
+          <section id="task-b-03" class="agenda-slide" data-subsection="Structural Uncertainty">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-active">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-04" data-subsection="Structural Uncertainty">
+            <h2>Structural Amplification of Uncertainty</h2>
+            <p class="plain-box">$$(\textcolor{red}{\mathbf{A}},\omega,\Theta,I_0)\rightarrow Y$$</p>
+            <ul>
+              <li>Spectral quantity: $\rho(\mathbf{A})$.</li>
+              <li>Rates: $\beta$ (infection), $\delta$ (recovery), network size $n$.</li>
+              <li>Representative condition: $$\rho(\mathbf{A}) &lt; \frac{1}{\beta}$$</li>
+              <li>Representative bound: $$E(\tau)\leq\frac{\log(n)+1}{1-\beta\rho(\mathbf{A})}$$</li>
+            </ul>
+            <p class="reference">Ganesh, Massoulie, Towsley (IEEE INFOCOM, 2005)</p>
+          </section>
+
+          <section id="task-b-05" class="agenda-slide" data-subsection="Intrinsic Stochastic Uncertainty">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-active">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-06" data-subsection="Intrinsic Stochastic Uncertainty">
+            <h2>Intrinsic Stochastic Uncertainty</h2>
+            <p class="plain-box">$$(\mathbf{A},\textcolor{red}{\omega},\Theta,I_0)\rightarrow Y$$</p>
+            <ul>
+              <li>Even fixed $(\mathbf{A},\Theta,I_0)$ yields variable outcomes due to $\omega$.</li>
+              <li>Final size is distributional, not deterministic.</li>
+              <li>Uncertainty remains substantial at finite $n$.</li>
+            </ul>
+            <p class="reference">Britton (Mathematical Biosciences, 2010)</p>
+          </section>
+
+          <section id="task-b-07" data-subsection="Intrinsic Stochastic Uncertainty">
+            <h2>Intrinsic Uncertainty: Final Size Approximation</h2>
+            <ul>
+              <li>Mean equation: $$z = 1-e^{-R_0z}$$</li>
+              <li>Example setting in source deck: $n=1000$, $m=1$, $R_0=1.5$.</li>
+              <li>Example values: $$z^*\approx0.583,\quad Z_n\approx583,\quad \mathrm{STD}\approx58.0$$</li>
+            </ul>
+          </section>
+
+          <section id="task-b-08" data-subsection="Intrinsic Stochastic Uncertainty">
+            <h2>Intrinsic Stochastic Uncertainty (Simulation View)</h2>
+            <img class="visual" src="assets/diffusion_2_8_hist.png" alt="Histogram of final outbreak size with all simulations on the left and major-epidemic subset on the right" style="max-width: 92%; max-height: 56vh;">
+            <p class="reference">Left: all simulations. Right: major-epidemic outcomes.</p>
+          </section>
+
+          <section id="task-b-09" class="agenda-slide" data-subsection="Input / Parameter Uncertainty">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-active">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-10" data-subsection="Input / Parameter Uncertainty">
+            <h2>Input / Parameter Uncertainty</h2>
+            <p class="plain-box">$$(\mathbf{A},\omega,\textcolor{red}{\Theta,I_0})\rightarrow Y$$</p>
+            <p class="plain-box">$$Y=f(X_1,X_2,\ldots,X_n)$$</p>
+            <ul>
+              <li>Variance decomposition identifies dominant uncertain inputs.</li>
+              <li>$X_i$ can represent seed indicators or uncertain parameters.</li>
+            </ul>
+            <img class="visual" src="assets/sobol.png" alt="Sobol index decomposition visualization" style="max-width: 63%; max-height: 34vh;">
+            <p class="reference">Zhang and Chen (SDM, 2023)</p>
+          </section>
+
+          <section id="task-b-11" data-subsection="Input / Parameter Uncertainty">
+            <h2>Tools of Uncertainty Decomposition</h2>
+            <div class="term-grid">
+              <div class="term-card term-c1"><strong>Sobol indices</strong><br>Variance sensitivity and interaction effects.</div>
+              <div class="term-card term-c2"><strong>Shapley values</strong><br>Attribution decomposition across inputs.</div>
+            </div>
+            <object data="assets/shapley_vs_sobol.pdf" type="application/pdf" aria-label="Shapley versus Sobol comparison figure" style="width: 88%; height: 46vh; margin-top: 0.35em;">
+              <p class="reference">Open <a href="assets/shapley_vs_sobol.pdf" target="_blank" rel="noopener noreferrer">shapley_vs_sobol.pdf</a>.</p>
+            </object>
+          </section>
+
+          <section id="task-b-12" data-subsection="Input / Parameter Uncertainty">
+            <h2>What Is Sobol's Indices (First-Order Effect)</h2>
+            <ul>
+              <li>First-order effect: how much variance node \(i\) explains alone.</li>
+              <li>First-order contribution is the variance explained by one variable alone.</li>
+            </ul>
+            <p class="plain-box">
+              $$S_i := \frac{\mathbb{V}_{X_i}\!\left[\mathbb{E}_{X_{\sim i}}\!\left(Y \mid X_i\right)\right]}{\mathbb{V}(Y)}$$
+            </p>
+            <p class="plain-box">
+              If \(i\) is important, then \(\mathbb{E}(Y \mid X_i)\) changes a lot and \(\mathbb{V}_{X_i}\!\left[\mathbb{E}(Y \mid X_i)\right]\) is large.
+            </p>
+          </section>
+
+          <section id="task-b-14" data-subsection="Input / Parameter Uncertainty">
+            <h2>What Is Sobol's Indices (Set Effect)</h2>
+            <ul>
+              <li>Set effect: how much variance the pair \((i,j)\) explains together.</li>
+            </ul>
+            <p class="plain-box">
+              $$S_{ij} := \frac{\mathbb{V}_{X_i,X_j}\!\left[\mathbb{E}_{X_{\sim ij}}\!\left(Y \mid X_i, X_j\right)\right]}{\mathbb{V}(Y)}$$
+            </p>
+            <p class="plain-box">
+              If \(i\) is important in the \((i,j)\) set, then \(\mathbb{E}(Y \mid X_i, X_j)\) changes a lot and \(\mathbb{V}_{X_i}\!\left[\mathbb{E}(Y \mid X_i, X_j)\right]\) is large.
+            </p>
+            <p class="plain-box">Baseline: Variance of \(Y\).</p>
+          </section>
+
+          <section id="task-b-15" data-subsection="Input / Parameter Uncertainty">
+            <h2>What Is Sobol's Indices (Higher-Order Effect)</h2>
+            <p class="plain-box">Higher-order effect:</p>
+            <p class="plain-box">
+              $$S_{ij}^{(H)}=\frac{\mathbb{V}_{ij}^{(H)}}{\mathbb{V}(Y)}=S_{ij}-S_i-S_j$$
+            </p>
+          </section>
+
+          <section id="task-b-16" data-subsection="Input / Parameter Uncertainty">
+            <h2>Examples: Sobol vs Shapley (XOR)</h2>
+            <ul>
+              <li>XOR toy model exposes the difference between sensitivity and attribution.</li>
+              <li>Next slide shows exact values side-by-side with the truth table.</li>
+            </ul>
+          </section>
+
+          <section id="task-b-17" class="xor-example-slide" data-subsection="Input / Parameter Uncertainty">
+            <h2>Examples</h2>
+            <div class="xor-layout">
+              <ul class="xor-points">
+                <li class="xor-head">Sobol total index</li>
+                <li>- \(X_1\): 1.0 (100%)</li>
+                <li>- \(X_2\): 1.0</li>
+                <li>- Remove \(X_1\) or \(X_2\), loss is 100%</li>
+                <li class="xor-head">Shapley</li>
+                <li>- \(X_1\): 0.5</li>
+                <li>- \(X_2\): 0.5</li>
+                <li>- \(X_1\) or \(X_2\) take 50% each</li>
+              </ul>
+              <div class="xor-table-wrap">
+                <table class="xor-table" aria-label="XOR truth table">
+                  <thead>
+                    <tr>
+                      <th>X1</th>
+                      <th>X2</th>
+                      <th>XOR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
         </section>
 
-        <section id="sec-task-c" data-section-title="Source Explanation">
+        <section id="sec-task-c" data-section-title="Source Explaination">
           <section id="task-c-home" class="section-home" data-section-home="1">
-            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Source Explanation</h1>
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Source Explaination</h1>
             <aside class="notes">
-              Section transition: Source Explanation.
-              Explain that the goal is to infer plausible origins under partial and noisy observations.
-              Then move to the overview slide.
+              Next is Source Explanation. The central objective is to identify plausible origins of observed cascades under partial and noisy evidence. We will look at both interpretability and uncertainty quality.
             </aside>
           </section>
-          <section id="task-c-01" data-subsection="Module 1 — Overview">
+          <section id="task-b-18" class="agenda-slide" data-subsection="Recover Structure">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-active">Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-19" data-subsection="Recover Structure">
+            <h2>2.1 What Is an Inverse Problem?</h2>
+            <p class="plain-box">Forward: $$(\mathbf{A},\omega,\Theta,I_0)\rightarrow Y$$</p>
+            <p class="plain-box">Backward: $$Y\rightarrow(\mathbf{A},\omega,\Theta,I_0)$$</p>
+          </section>
+
+          <section id="task-b-20" class="agenda-slide" data-subsection="Recover Structure (Topology)">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-active">Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-21" data-subsection="Recover Structure (Topology)">
+            <h2>2.2 Recover Graph Topology</h2>
+            <p class="plain-box">$$Y\rightarrow(\textcolor{red}{\mathbf{A}},\omega,\Theta,I_0)$$</p>
+            <ul>
+              <li>Infer diffusion network from cascade observations.</li>
+              <li>Sparse reconstruction under edge budget constraints.</li>
+            </ul>
+            <p class="reference">Gomez-Rodriguez, Leskovec, Krause (TKDD, 2012)</p>
+          </section>
+
+          <section id="task-b-22" data-subsection="Recover Structure (Topology)">
+            <h2>Recover Graph Topology (Figure)</h2>
+            <p class="plain-box">Continuation figure from source deck.</p>
+          </section>
+
+          <section id="task-b-23" class="agenda-slide" data-subsection="Recover Parameters">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li class="agenda-active">Recover Parameters</li>
+                  <li>Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-27" data-subsection="Recover Parameters">
+            <h2>2.4 Sensitivity Analysis for Parameters</h2>
+            <p class="plain-box">$$Y\rightarrow(\mathbf{A},\omega,\textcolor{red}{\Theta},I_0)$$</p>
+            <ul>
+              <li>Identifiability degrades if $$\frac{\partial Y}{\partial\Theta}\approx0.$$</li>
+              <li>Methods: Morris, Sobol, sensitivity heat-map approaches.</li>
+            </ul>
+            <p class="reference">Wu et al. (J. R. Soc. Interface, 2013)</p>
+          </section>
+
+          <section id="task-b-28" class="agenda-slide" data-subsection="Recover Input">
+            <h2>Outline of the Talk</h2>
+            <div class="agenda-grid">
+              <div class="agenda-col">
+                <p class="agenda-num">01</p>
+                <p class="agenda-head">Forward Diffusion and Cascade: Three Types</p>
+                <ul class="agenda-list">
+                  <li class="agenda-muted">Structural Uncertainty</li>
+                  <li class="agenda-muted">Intrinsic Stochastic Uncertainty</li>
+                  <li class="agenda-muted">Input / Parameter Uncertainty</li>
+                </ul>
+              </div>
+              <div class="agenda-col">
+                <p class="agenda-num">02</p>
+                <p class="agenda-head">Uncertainty in the Inverse Problems: Four Types</p>
+                <ul class="agenda-list">
+                  <li>Recover Structure</li>
+                  <li>Recover Hidden States</li>
+                  <li>Recover Parameters</li>
+                  <li class="agenda-active">Recover Input</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="task-b-30" data-subsection="Recover Input">
+            <h2>2.6 Likelihood-Based Source Localization</h2>
+            <p class="plain-box">$$Y\rightarrow(\mathbf{A},\omega,\Theta,\textcolor{red}{I_0})$$</p>
+            <ul>
+              <li>Posterior objective:
+                $$I_0^\star=\arg\max_{I_0\subseteq V,\ |I_0|=k}p(I_0\mid Y,\mathbf{A},\Theta)$$
+              </li>
+              <li>Likelihood form:
+                $$\mathcal{L}(I_0)=\prod_{v\in V_I}P(v\in Y\mid I_0,\mathbf{A},\Theta)\prod_{u\notin V_I}\left(1-P(u\in Y\mid I_0,\mathbf{A},\Theta)\right)$$
+              </li>
+              <li>Bayesian optimization step:
+                $$I_0^{(t+1)}=\arg\max_{I_0}\left[\mu_t(I_0)+\kappa\,\sigma_t(I_0)\right]$$
+              </li>
+            </ul>
+            <p class="reference">Zhang, Zhang, and Chen (AAAI, 2024)</p>
+          </section>
+
+          <section id="task-b-34" data-subsection="Recover Input">
+            <h2>From Forward Propagation to Inverse Recovery</h2>
+            <p class="plain-box">$$Y=F(\mathbf{A},\Theta,\omega,I_0)$$</p>
+            <div class="term-grid">
+              <div class="term-card term-c1">
+                <strong>Forward UQ</strong><br>
+                Structural amplification<br>
+                Stochastic variability<br>
+                Sensitivity and interaction
+              </div>
+              <div class="term-card term-c4">
+                <strong>Backward UQ</strong><br>
+                Parameter identifiability<br>
+                Likelihood-based source localization
+              </div>
+            </div>
+            <aside class="notes">
+              Final synthesis: one forward operator connects the two-module story from uncertainty propagation to inverse recovery.
+            </aside>
+          </section>
+
+          <section id="task-c-01" data-subsection="Overview">
             <h2>Source Explanation</h2>
             <p class="plain-box">Overview of source explanation under uncertain transmission pathways.</p>
             <aside class="notes">
-              Define source explanation as an inverse problem with non-identifiability.
-              Highlight key uncertainty sources: missing observations, unknown diffusion parameters, and multiple valid explanations.
-              Prepare the audience for methods and benchmarks in the next slide.
+              Source explanation is fundamentally an inverse problem and often non-identifiable. Multiple source sets can match the same observed snapshot, especially with missing data. That is why we should return probabilistic explanations instead of a single deterministic guess.
             </aside>
           </section>
-          <section id="task-c-02" data-subsection="Module 2 — Research Papers">
+          <section id="task-c-02" data-subsection="Research Papers">
             <h2>Source Explanation: Research Papers</h2>
             <p class="plain-box">Representative papers on source tracing, explanation quality, and uncertainty calibration.</p>
             <aside class="notes">
-              Present representative papers on source localization and explanation quality.
-              Contrast deterministic ranking versus probabilistic explanation sets.
-              Emphasize calibration and robustness under sparse observations.
+              In this set of papers, I emphasize how methods score candidate sources and quantify confidence. The most useful approaches balance search efficiency, explanation quality, and uncertainty calibration. Pay attention to whether they evaluate under realistic observation sparsity.
             </aside>
           </section>
         </section>
 
-        <section id="sec-task-d" data-section-title="State Estimation">
+        <section id="sec-task-d" data-section-title="State Estimation" data-hide-subsection-titles="1">
           <section id="task-d-home" class="section-home" data-section-home="1">
-            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">State Estimation</h1>
+            <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">State Estimation for Dynamical Networks</h1>
+            <p class="plain-box">Tracking latent node states from noisy, partial observations over time.</p>
             <aside class="notes">
-              Section transition: State Estimation.
-              Explain that we track latent system states over time under noisy, partial measurements.
-              Then move to the overview slide.
+              This section follows the State Estimation module as a complete mini-track. The objective is recursive estimation of hidden network states together with honest uncertainty. We will move from classical filtering to graph-aware and learning-augmented estimators.
             </aside>
           </section>
-          <section id="task-d-01" data-subsection="Module 1 — Overview">
-            <h2>State Estimation</h2>
-            <p class="plain-box">Overview of latent-state estimation and uncertainty tracking over time.</p>
+
+          <section id="task-d-01" data-subsection="Slide 2 — Roadmap">
+            <h2>Roadmap</h2>
+            <ul class="step-list compact">
+              <li>Problem setup: state-space models on graphs and uncertainty sources.</li>
+              <li>Classical estimators: KF, EKF, UKF, and distributed consensus filtering.</li>
+              <li>Graph-native estimators: graph priors, spectral ideas, and graph EKF/UKF.</li>
+              <li>Modern layers: neural-aided filtering, calibration, and dynamic-graph tracking.</li>
+            </ul>
             <aside class="notes">
-              Introduce state estimation as sequential posterior updating.
-              Connect this task to filtering and smoothing families in the UQ lifecycle.
-              Clarify what outputs matter: state trajectories and confidence intervals.
+              Use this as a map for the next 20 plus slides. The first block is modeling, the second is filtering mechanics, the third injects graph structure, and the final block addresses robustness and deployment details.
             </aside>
           </section>
-          <section id="task-d-02" data-subsection="Module 2 — Research Papers">
-            <h2>State Estimation: Research Papers</h2>
-            <p class="plain-box">Core papers on dynamic state inference, filtering, and uncertainty propagation.</p>
+
+          <section id="task-d-02" data-subsection="Slide 3 — State-Space Model on a Network">
+            <h2>State-Space Model on a Network</h2>
+            <p class="plain-box">$x_{t+1} = f_t(x_t, A_t) + w_t,\;\; y_t = h_t(x_t, A_t) + v_t$</p>
+            <ul>
+              <li>$x_t \in \mathbb{R}^n$: latent node states (congestion, infection load, demand, etc.).</li>
+              <li>$A_t$: network structure or coupling operator (fixed or time-varying).</li>
+              <li>Goal: estimate $p(x_t \mid y_{1:t})$ (filtering) and optionally $p(x_{1:T}\mid y_{1:T})$ (smoothing).</li>
+            </ul>
             <aside class="notes">
-              Review core papers on dynamic state inference and uncertainty propagation.
-              Compare model assumptions, update mechanisms, and computational tradeoffs.
-              Highlight where graph structure is explicitly used versus ignored.
+              Emphasize that the graph is part of the dynamical system, not just side information. The core output is a posterior distribution over states, not only a point estimate.
+            </aside>
+          </section>
+
+          <section id="task-d-03" data-subsection="Slide 4 — Sources of Uncertainty in Estimation">
+            <h2>Sources of Uncertainty in Estimation</h2>
+            <div class="term-grid">
+              <div class="term-card term-c1"><strong>Process noise</strong><br>Stochastic evolution, unmodeled shocks, hidden exogenous drivers.</div>
+              <div class="term-card term-c2"><strong>Observation noise</strong><br>Sensor error, packet loss, quantization, reporting delay.</div>
+              <div class="term-card term-c3"><strong>Model mismatch</strong><br>Wrong transition function, wrong linearization, misspecified covariances.</div>
+              <div class="term-card term-c4"><strong>Graph uncertainty</strong><br>Missing edges, time-varying connectivity, uncertain weights.</div>
+            </div>
+            <aside class="notes">
+              This decomposition helps decide what estimator to use. In networked systems, graph uncertainty often dominates and should be represented explicitly.
+            </aside>
+          </section>
+
+          <section id="task-d-04" data-subsection="Slide 5 — Kalman Filter Recap: Predict to Update">
+            <h2>Kalman Filter Recap: Predict to Update</h2>
+            <p class="plain-box">$x_{t|t-1}=F x_{t-1|t-1},\;\; P_{t|t-1}=F P_{t-1|t-1}F^\top + Q$</p>
+            <p class="plain-box">$K_t=P_{t|t-1}H^\top (H P_{t|t-1} H^\top + R)^{-1},\;\; x_{t|t}=x_{t|t-1}+K_t(y_t-Hx_{t|t-1})$</p>
+            <ul>
+              <li>Optimal for linear-Gaussian systems under correct $Q,R$.</li>
+              <li>Posterior covariance $P_{t|t}$ is the uncertainty object we act on.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://doi.org/10.1115/1.3662552" target="_blank" rel="noopener noreferrer">Kalman (1960)</a></p>
+            <aside class="notes">
+              Keep the interpretation simple: predict with dynamics, correct with data. The Kalman gain trades trust between model and measurement through covariances.
+            </aside>
+          </section>
+
+          <section id="task-d-05" data-subsection="Slide 6 — EKF vs UKF: Nonlinear Intuition">
+            <h2>EKF vs UKF: Nonlinear Intuition</h2>
+            <ul>
+              <li><strong>EKF:</strong> linearize $f,h$ locally via Jacobians, then run KF updates.</li>
+              <li><strong>UKF:</strong> propagate sigma points through true nonlinear maps; no explicit Jacobian.</li>
+              <li>Rule of thumb: EKF is cheaper; UKF is often more stable under stronger nonlinearity.</li>
+            </ul>
+            <p class="reference">References: <a href="https://www.sciencedirect.com/science/article/pii/S0005109822006628" target="_blank" rel="noopener noreferrer">Li et al. (2023)</a>, <a href="https://ieeexplore.ieee.org/abstract/document/10096261" target="_blank" rel="noopener noreferrer">Sagi et al. (2023)</a></p>
+            <aside class="notes">
+              Highlight that both methods approximate Bayesian filtering differently. UKF typically gives better curvature capture, while EKF remains attractive for real-time systems.
+            </aside>
+          </section>
+
+          <section id="task-d-06" data-subsection="Slide 7 — Centralized vs Distributed Filtering">
+            <h2>Centralized vs Distributed Filtering</h2>
+            <ul>
+              <li><strong>Centralized:</strong> global fusion center, statistically efficient, communication heavy.</li>
+              <li><strong>Distributed:</strong> local estimators + neighbor communication, scalable and fault tolerant.</li>
+              <li>Main tradeoff: estimation optimality vs communication and synchronization cost.</li>
+            </ul>
+            <aside class="notes">
+              In many network settings, centralized fusion is either too expensive or impossible due privacy and bandwidth. Distributed filtering is usually the deployment path.
+            </aside>
+          </section>
+
+          <section id="task-d-07" data-subsection="Slide 8 — Distributed Kalman Filter with Consensus">
+            <h2>Distributed Kalman Filter with Consensus</h2>
+            <p class="plain-box">$x_i^{(k+1)} = x_i^{(k)} + \sum_{j \in \mathcal{N}_i} c_{ij}\left(x_j^{(k)} - x_i^{(k)}\right)$</p>
+            <ul>
+              <li>Each node runs local predict-update and then consensus fusion over neighbors.</li>
+              <li>Consensus rounds reduce disagreement from partial local views.</li>
+              <li>Convergence depends on graph connectivity, weights, and communication delay.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://ieeexplore.ieee.org/document/1583486" target="_blank" rel="noopener noreferrer">Olfati-Saber (2005/2007)</a></p>
+            <aside class="notes">
+              Explain that consensus is the mechanism that approximates centralized fusion without collecting raw data centrally. Communication quality directly affects posterior quality.
+            </aside>
+          </section>
+
+          <section id="task-d-08" data-subsection="Slide 9 — DKF: Algorithm Loop per Time Step">
+            <h2>DKF: Algorithm Loop per Time Step</h2>
+            <ol class="step-list compact">
+              <li>Local predict: propagate $(x_{i,t-1|t-1}, P_{i,t-1|t-1})$ using local dynamics.</li>
+              <li>Local update: assimilate local measurement $y_{i,t}$.</li>
+              <li>Consensus fusion: exchange estimates/covariances with neighbors.</li>
+              <li>Optional covariance inflation: stabilize under mismatch and delayed packets.</li>
+            </ol>
+            <aside class="notes">
+              Keep this practical: the exact fusion rule varies across variants, but this four-step loop is common. Stress that inflation and robustness terms are often necessary in real systems.
+            </aside>
+          </section>
+
+          <section id="task-d-09" data-subsection="Slide 10 — Scalability: Localization Idea (Traffic)">
+            <h2>Scalability: Localization Idea (Traffic)</h2>
+            <ul>
+              <li>Partition a large road graph into overlapping local regions.</li>
+              <li>Run local EKF updates within each region and stitch via boundary exchange.</li>
+              <li>Complexity drops from global dense operations to near-linear local solves.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://ieeexplore.ieee.org/document/6105572" target="_blank" rel="noopener noreferrer">van Hinsbergen et al. (2012)</a></p>
+            <aside class="notes">
+              Localization is the main scalability trick for very large sensor networks. You give up some optimality to gain tractable real-time inference.
+            </aside>
+          </section>
+
+          <section id="task-d-10" data-subsection="Slide 11 — Traffic Estimation with Sparse Sensors">
+            <h2>Traffic Estimation with Sparse Sensors</h2>
+            <ul>
+              <li>Only a small subset of links are measured directly.</li>
+              <li>Dynamics + topology propagate information into unobserved links.</li>
+              <li>Performance hinges on sensor placement and process-noise tuning.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://www.sciencedirect.com/science/article/pii/S0191261504000438" target="_blank" rel="noopener noreferrer">Wang &amp; Papageorgiou (2005)</a></p>
+            <aside class="notes">
+              Sparse observation is the normal case, not an edge case. Good priors and well-designed sensor placement are as important as the filtering algorithm.
+            </aside>
+          </section>
+
+          <section id="task-d-11" data-subsection="Slide 12 — Posterior Variance Map: Where We Don't Know">
+            <h2>Posterior Variance Map: Where We Don't Know</h2>
+            <ul>
+              <li>Use diagonal or block summaries of $P_{t|t}$ to visualize uncertainty hotspots.</li>
+              <li>High-variance nodes guide adaptive sensing and intervention prioritization.</li>
+              <li>Variance diagnostics are essential to avoid overconfident deployment decisions.</li>
+            </ul>
+            <aside class="notes">
+              This slide reframes covariance as an action signal. The uncertainty map is often more useful for decision-makers than the mean estimate.
+            </aside>
+          </section>
+
+          <section id="task-d-12" data-subsection="Slide 13 — Graph Signal Viewpoint: State Lives on Nodes">
+            <h2>Graph Signal Viewpoint: State Lives on Nodes</h2>
+            <ul>
+              <li>Treat each state snapshot $x_t$ as a graph signal over vertices.</li>
+              <li>Graph structure defines smoothness, propagation paths, and frequency content.</li>
+              <li>This viewpoint enables graph spectral priors inside Bayesian filtering.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://doi.org/10.1109/MSP.2012.2235192" target="_blank" rel="noopener noreferrer">Shuman et al. (2013)</a></p>
+            <aside class="notes">
+              The key shift is to use graph signal processing as the inductive bias layer. It tells us what kind of state patterns are plausible on the network.
+            </aside>
+          </section>
+
+          <section id="task-d-13" data-subsection="Slide 14 — Smoothness Prior plus Graph Fourier Intuition">
+            <h2>Smoothness Prior + Graph Fourier Intuition</h2>
+            <p class="plain-box">Smoothness prior: $x_t^\top L x_t$ small, where $L$ is graph Laplacian.</p>
+            <ul>
+              <li>Low graph-frequency components encode slowly varying states over neighbors.</li>
+              <li>High graph-frequency components capture abrupt local anomalies.</li>
+              <li>Spectral priors regularize ill-posed sparse-observation settings.</li>
+            </ul>
+            <aside class="notes">
+              Explain the intuition first: smooth states align with the network geometry. This prior is especially useful when data is sparse or noisy.
+            </aside>
+          </section>
+
+          <section id="task-d-14" data-subsection="Slide 15 — Kalman Filtering over Graphs: Core Idea">
+            <h2>Kalman Filtering over Graphs: Core Idea</h2>
+            <ul>
+              <li>Model transition and noise covariance with graph-aware operators.</li>
+              <li>Perform filtering in vertex domain or reduced graph spectral domain.</li>
+              <li>Benefit: better sample efficiency and calibrated uncertainty under structured dynamics.</li>
+            </ul>
+            <p class="reference">References: <a href="https://ieeexplore.ieee.org/abstract/document/5200489" target="_blank" rel="noopener noreferrer">Shi (2009)</a>, <a href="https://arxiv.org/abs/2303.12021" target="_blank" rel="noopener noreferrer">Alippi &amp; Zambon (2023)</a></p>
+            <aside class="notes">
+              Stress that graph-aware filtering is not just an implementation trick. It changes the prior and covariance geometry to match network physics.
+            </aside>
+          </section>
+
+          <section id="task-d-15" data-subsection="Slide 16 — Sensor Placement and Sampling on Graphs">
+            <h2>Sensor Placement and Sampling on Graphs</h2>
+            <ul>
+              <li>Choose measurement nodes to maximize observability and reduce posterior uncertainty.</li>
+              <li>Typical objectives: maximize $\log \det(I + HPH^\top)$ or minimize trace$(P_{t|t})$.</li>
+              <li>Greedy and convex relaxations scale to large networks with budget constraints.</li>
+            </ul>
+            <p class="reference">References: <a href="https://doi.org/10.1109/TSP.2008.2007095" target="_blank" rel="noopener noreferrer">Joshi &amp; Boyd (2009)</a>, <a href="https://doi.org/10.1029/2020WR028317" target="_blank" rel="noopener noreferrer">Bartos &amp; Kerkez (2021)</a></p>
+            <aside class="notes">
+              This is where estimation meets design. Better sensor placement can improve uncertainty more than switching between similar filtering variants.
+            </aside>
+          </section>
+
+          <section id="task-d-16" data-subsection="Slide 17 — Graph EKF: Nonlinear Dynamics on Graph Signals">
+            <h2>Graph EKF: Nonlinear Dynamics on Graph Signals</h2>
+            <ul>
+              <li>Linearize graph-coupled nonlinear transition around current estimate.</li>
+              <li>Keep graph-aware Jacobian structure for efficient sparse updates.</li>
+              <li>Works well when nonlinearity is moderate and Jacobians are reliable.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://ieeexplore.ieee.org/abstract/document/10096261" target="_blank" rel="noopener noreferrer">Sagi et al. (2023)</a></p>
+            <aside class="notes">
+              Graph EKF extends the EKF recipe while respecting graph coupling. Mention that Jacobian quality drives stability in practice.
+            </aside>
+          </section>
+
+          <section id="task-d-17" data-subsection="Slide 18 — Graph UKF: Sigma Points for Graph Signals">
+            <h2>Graph UKF: Sigma Points for Graph Signals</h2>
+            <ul>
+              <li>Generate sigma points in graph-state space and propagate through nonlinear dynamics.</li>
+              <li>Captures second-order effects better than first-order linearization.</li>
+              <li>Higher compute than EKF but often better robustness to curvature.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://www.sciencedirect.com/science/article/pii/S0005109822006628" target="_blank" rel="noopener noreferrer">Li et al. (2023)</a></p>
+            <aside class="notes">
+              Use this slide to position UKF as a stronger nonlinear approximation when the model is not too high-dimensional for sigma-point propagation.
+            </aside>
+          </section>
+
+          <section id="task-d-18" data-subsection="Slide 19 — Model Mismatch Is the Norm (Why Learning Helps)">
+            <h2>Model Mismatch Is the Norm (Why Learning Helps)</h2>
+            <ul>
+              <li>Real systems violate assumed transition and noise models.</li>
+              <li>Residual learning can correct bias while preserving Bayesian update structure.</li>
+              <li>Key requirement: maintain uncertainty tracking, not only lower RMSE.</li>
+            </ul>
+            <aside class="notes">
+              Classical filters are sensitive to mismatch. The practical strategy is hybridization: keep model-based recursion, learn the hard residual terms.
+            </aside>
+          </section>
+
+          <section id="task-d-19" data-subsection="Slide 20 — GSP-KalmanNet: Neural-Aided Filtering on Graphs">
+            <h2>GSP-KalmanNet: Neural-Aided Filtering on Graphs</h2>
+            <ul>
+              <li>Neural module learns gain-like corrections or latent dynamics residuals.</li>
+              <li>Graph structure enters both feature design and message passing.</li>
+              <li>Empirically improves robustness under partial model misspecification.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://ieeexplore.ieee.org/abstract/document/10632588" target="_blank" rel="noopener noreferrer">Buchnik et al. (2024)</a></p>
+            <aside class="notes">
+              Position this as a middle ground: not fully black-box, not purely analytic. It tends to work well when you have moderate data and imperfect physics.
+            </aside>
+          </section>
+
+          <section id="task-d-20" data-subsection="Slide 21 — Results and Tradeoffs: Classical vs Graph vs Neural">
+            <h2>Results and Tradeoffs: Classical vs Graph vs Neural</h2>
+            <div class="term-grid">
+              <div class="term-card term-c1"><strong>Classical KF/EKF/UKF</strong><br>Strong when model is accurate, low data requirement, interpretable covariance.</div>
+              <div class="term-card term-c2"><strong>Graph-aware filters</strong><br>Better under sparse sensing by leveraging topology and smoothness priors.</div>
+              <div class="term-card term-c3"><strong>Neural-aided filters</strong><br>More robust to mismatch, higher training/compute cost, calibration must be checked.</div>
+              <div class="term-card term-c4"><strong>Deployment view</strong><br>Select by latency budget, data volume, and calibration target.</div>
+            </div>
+            <aside class="notes">
+              The right choice is system-dependent. Avoid one-size-fits-all claims; frame this as a design matrix for practitioners.
+            </aside>
+          </section>
+
+          <section id="task-d-21" data-subsection="Slide 22 — Summary: What to Use When">
+            <h2>Summary: What to Use When</h2>
+            <ul class="step-list compact">
+              <li><strong>Linear + good model + strict latency:</strong> KF / localized KF.</li>
+              <li><strong>Moderate nonlinearity:</strong> EKF; <strong>stronger nonlinearity:</strong> UKF.</li>
+              <li><strong>Sparse sensing on large graphs:</strong> graph-aware filtering + sensor design.</li>
+              <li><strong>Persistent mismatch:</strong> neural-aided filtering with explicit uncertainty checks.</li>
+            </ul>
+            <aside class="notes">
+              This is the decision slide. Tie method selection to observable conditions, not to paper popularity.
+            </aside>
+          </section>
+
+          <section id="task-d-22" data-subsection="Slide 23 — Calibrated Uncertainty: Conformal Layer on Networks">
+            <h2>Calibrated Uncertainty: Conformal Layer on Networks</h2>
+            <ul>
+              <li>Add conformal prediction on top of filter outputs for finite-sample coverage.</li>
+              <li>Construct node/time-conditional prediction sets with guaranteed marginal validity.</li>
+              <li>Critical when downstream interventions depend on uncertainty thresholds.</li>
+            </ul>
+            <p class="reference">Reference: <a href="https://arxiv.org/abs/2302.10095" target="_blank" rel="noopener noreferrer">Lunde et al. (2025)</a></p>
+            <aside class="notes">
+              Conformal methods provide a calibration safeguard, especially when model assumptions are violated. This is often the easiest way to harden uncertainty outputs for practice.
+            </aside>
+          </section>
+
+          <section id="task-d-23" data-subsection="Slide 24 — Tracking a Dynamic Network (Graph Changes)">
+            <h2>Tracking a Dynamic Network (Graph Changes)</h2>
+            <ul>
+              <li>Jointly track states $x_t$ and evolving graph $A_t$ under structural drift.</li>
+              <li>Use change-point detection, adaptive covariances, or dual estimation loops.</li>
+              <li>Open challenge: preserving calibration when both topology and dynamics shift.</li>
+            </ul>
+            <p class="plain-box">State estimation is no longer only "estimate $x_t$"; it is increasingly "estimate $(x_t, A_t)$ with uncertainty."</p>
+            <aside class="notes">
+              Close by emphasizing that dynamic topology is the next frontier. The main research gap is trustworthy uncertainty under joint state-graph evolution.
             </aside>
           </section>
         </section>
@@ -2992,27 +4288,37 @@
           <section id="task-e-home" class="section-home" data-section-home="1">
             <h1 style="margin: 0; font-size: 3.2em; line-height: 1.2; text-align: center;">Intervention Design</h1>
             <aside class="notes">
-              Section transition: Intervention Design.
-              Explain that this task turns uncertain predictions into actionable policies.
-              Then move to the overview slide.
+              The final section is Intervention Design. Here we convert uncertain predictions into concrete actions under budget and risk constraints. The key question is how to choose policies that remain reliable under uncertainty.
             </aside>
           </section>
           <section id="task-e-01" data-subsection="Module 1 — Overview">
             <h2>Intervention Design</h2>
             <p class="plain-box">Overview of robust intervention design under uncertainty and budget constraints.</p>
             <aside class="notes">
-              Define intervention design under uncertainty with limited budget and risk constraints.
-              Emphasize the decision objective and the uncertainty-aware policy criterion.
-              Link to downstream validation and trust requirements.
+              Intervention design should optimize not just expected utility but also robustness to adverse outcomes. Depending on the application, we may use risk-sensitive, chance-constrained, or distributionally robust objectives. The common theme is uncertainty-aware decision making.
             </aside>
           </section>
           <section id="task-e-02" data-subsection="Module 2 — Research Papers">
             <h2>Intervention Design: Research Papers</h2>
             <p class="plain-box">Key papers on policy optimization, robustness, and risk-aware decisions.</p>
             <aside class="notes">
-              Summarize representative papers on robust policy optimization.
-              Compare expected-value optimization against risk-aware or distributionally robust formulations.
-              Close with practical guidance for deployment under uncertainty.
+              In this paper review, I compare how methods encode risk and how they validate policy reliability. A practical method should show both effectiveness and calibration under shift or stress scenarios. That is the standard for deployment-ready intervention design.
+            </aside>
+          </section>
+        </section>
+
+        <section id="sec-qa" data-section-title="Q&A">
+          <section id="qa-01" data-subsection="Closing">
+            <div class="qa-wrap">
+              <p class="qa-title">Q&amp;A</p>
+              <p class="qa-subtitle">Thank you.</p>
+              <img class="qa-qr" src="assets/ref_md_qr.png" alt="QR code linking to the reference markdown file">
+              <p class="qa-link">
+                <a href="https://github.com/aquastar/wsdm25-revealjs-slides/blob/master/ref.md" target="_blank" rel="noopener noreferrer">github.com/aquastar/wsdm25-revealjs-slides/blob/master/ref.md</a>
+              </p>
+            </div>
+            <aside class="notes">
+              We are at the final slide. Thank you for your attention. I will now take questions. If you want to open the reference list quickly, please scan this QR code.
             </aside>
           </section>
         </section>
@@ -3512,15 +4818,19 @@
 
           const subList = document.createElement('ul');
           subList.className = 'toc-sub-list';
+          const hideSubsectionTitles = bucket.sectionEl && bucket.sectionEl.dataset && bucket.sectionEl.dataset.hideSubsectionTitles === '1';
+          const hasMultipleSubsections = bucket.subsections.length > 1 && !hideSubsectionTitles;
 
           bucket.subsections.forEach((subsection) => {
             const subsectionLi = document.createElement('li');
             subsectionLi.className = 'toc-subsection';
 
-            const subsectionTitleEl = document.createElement('span');
-            subsectionTitleEl.className = 'toc-subsection-title';
-            subsectionTitleEl.textContent = subsection.title;
-            subsectionLi.appendChild(subsectionTitleEl);
+            if (hasMultipleSubsections) {
+              const subsectionTitleEl = document.createElement('span');
+              subsectionTitleEl.className = 'toc-subsection-title';
+              subsectionTitleEl.textContent = subsection.title;
+              subsectionLi.appendChild(subsectionTitleEl);
+            }
 
             const subsectionItems = document.createElement('ul');
             subsectionItems.className = 'toc-subsection-items';
@@ -3538,8 +4848,11 @@
               if (!isCoverSlide) {
                 entry.slide.setAttribute('data-heading-index', itemNumber);
               }
-              btn.textContent = `${itemNumber}. ${entry.title}`;
-              btn.setAttribute('aria-label', `Go to page ${itemNumber}: ${entry.title}`);
+              const escapedItemNumber = itemNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const dedupedTitle = entry.title.replace(new RegExp(`^${escapedItemNumber}\\s*[.:\\-]?\\s*`), '').trim();
+              const titleForMenu = dedupedTitle || entry.title;
+              btn.textContent = `${itemNumber}. ${titleForMenu}`;
+              btn.setAttribute('aria-label', `Go to page ${itemNumber}: ${titleForMenu}`);
               btn.addEventListener('click', () => Reveal.slide(entry.indices.h, entry.indices.v || 0));
 
               itemLi.appendChild(btn);
@@ -3547,7 +4860,7 @@
 
               entry.itemEl = itemLi;
               entry.groupEl = groupLi;
-              entry.subsectionEl = subsectionLi;
+              entry.subsectionEl = hasMultipleSubsections ? subsectionLi : null;
               tocEntries.push(entry);
             });
 
